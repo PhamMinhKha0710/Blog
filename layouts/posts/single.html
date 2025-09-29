@@ -1,0 +1,156 @@
+{{- define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end -}}
+
+{{- define "head" -}}
+    {{- partial "head/meta.html" . -}}
+    {{- partial "head/link.html" . -}}
+    {{- partial "head/seo.html" . -}}
+    <script src="{{ "js/smart-toc.js" | relURL }}"></script>
+{{- end -}}
+
+{{- define "content" -}}
+    {{- $params := .Scratch.Get "params" -}}
+    
+    <div class="post-container">
+        <article class="post-single">
+            <header class="post-header">
+                {{- /* Title */ -}}
+                <h1 class="post-title">
+                    {{ .Title }}
+                    {{- if .IsTranslated -}}
+                        <span class="post-translations">
+                            {{- range .Translations -}}
+                                <a href="{{ .Permalink }}" class="post-translation-link">{{ .Language.LanguageName }}</a>
+                            {{- end -}}
+                        </span>
+                    {{- end -}}
+                </h1>
+
+                {{- /* Meta */ -}}
+                <div class="post-meta">
+                    {{- /* Date */ -}}
+                    <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+                        {{- printf `<i class="far fa-calendar-alt fa-fw"></i> %s` (.Date.Format ($.Site.Params.dateFormat | default "2006-01-02")) | safeHTML -}}
+                    </time>
+                    
+                    {{- /* Categories */ -}}
+                    {{- with .Params.categories -}}
+                    <span class="post-categories">
+                        <i class="far fa-folder fa-fw"></i>
+                        {{- range $index, $value := . -}}
+                            {{- if gt $index 0 }}, {{ end -}}
+                            <a href="{{ print "/categories/" (urlize $value) | relLangURL }}">{{ $value }}</a>
+                        {{- end -}}
+                    </span>
+                    {{- end -}}
+
+                    {{- /* Reading Time */ -}}
+                    <span class="post-reading-time">
+                        <i class="far fa-clock fa-fw"></i>
+                        {{- .ReadingTime }} phút đọc
+                    </span>
+
+                    {{- /* Author */ -}}
+                    {{- with .Params.author -}}
+                    <span class="post-author">
+                        <i class="fas fa-user fa-fw"></i>
+                        {{- . -}}
+                    </span>
+                    {{- end -}}
+                </div>
+            </header>
+
+            {{- /* Featured Image */ -}}
+            {{- $image := .Resources.GetMatch "featured-image" -}}
+            {{- with .Params.featuredImage -}}
+                {{- $image = . | relURL -}}
+            {{- end -}}
+            {{- with $image -}}
+            <div class="post-featured-image">
+                <img loading="lazy" src="{{ . }}" alt="Featured Image">
+            </div>
+            {{- end -}}
+
+            {{- /* Removed mobile TOC as we now use a toggle button instead */ -}}
+
+            {{- /* Content */ -}}
+            <div class="post-content">
+                {{- /* Display content */ -}}
+                {{ .Content }}
+            </div>
+
+            {{- /* Footer */ -}}
+            <footer class="post-footer">
+                {{- /* Tags */ -}}
+                {{- with .Params.tags -}}
+                <div class="post-tags">
+                    <i class="fas fa-tags fa-fw"></i>
+                    {{- range $index, $value := . -}}
+                        {{- if gt $index 0 }}, {{ end -}}
+                        <a href="{{ print "/tags/" (urlize $value) | relLangURL }}">{{ $value }}</a>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* Navigation between posts */ -}}
+                {{- partial "single/post-navigation.html" . -}}
+                
+                {{- /* Share buttons */ -}}
+                {{- partial "single/share.html" . -}}
+            </footer>
+
+            {{- /* Comment */ -}}
+            {{- partial "comment.html" . -}}
+        </article>
+        
+        {{- /* Desktop TOC (fixed on the right) */ -}}
+        {{- if .Params.toc | default $params.toc | default $.Site.Params.page.toc | default true -}}
+        <aside class="post-sidebar" role="complementary" aria-label="Table of contents sidebar">
+            <div id="smart-toc" class="sidebar-toc">
+                <div class="sidebar-toc-title">
+                    <i class="fas fa-bookmark fa-fw"></i> Mục lục
+                </div>
+                <div class="sidebar-toc-content" role="navigation" aria-label="Table of contents">
+                    <nav class="toc-nav">
+                        {{ .TableOfContents }}
+                    </nav>
+                </div>
+            </div>
+            
+            {{- /* Mobile TOC Toggle Button */ -}}
+            <button id="toc-toggle-btn" class="toc-toggle-btn" aria-expanded="false" aria-label="Toggle table of contents">
+                <i class="fas fa-list"></i>
+            </button>
+            
+            {{- /* Related posts section */ -}}
+            <div class="sidebar-related-posts">
+                <div class="sidebar-related-title">
+                    <i class="fas fa-bookmark fa-fw"></i> Bài viết liên quan
+                </div>
+                <div class="sidebar-related-content">
+                    <ul>
+                        {{- $related := .Site.RegularPages.Related . | first 5 -}}
+                        {{- with $related -}}
+                            {{- range . -}}
+                                <li>
+                                    <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                                </li>
+                            {{- end -}}
+                        {{- else -}}
+                            {{- range first 5 (where .Site.RegularPages "Type" "posts") -}}
+                                <li>
+                                    <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                                </li>
+                            {{- end -}}
+                        {{- end -}}
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        {{- end -}}
+    </div>
+{{- end -}}
+
+{{- define "script" -}}
+<script src="/js/smart-toc.js"></script>
+{{- end -}}
+

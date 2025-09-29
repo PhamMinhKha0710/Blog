@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Socket - Tag - My Blog</title>
+        <link>http://localhost:1313/tags/socket/</link>
+        <description>Socket - Tag - My Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/socket/" rel="self" type="application/rss+xml" /><item>
+    <title>Socket Programming trong Java: Xây dựng ứng dụng Client-Server</title>
+    <link>http://localhost:1313/posts/socket-programming-trong-java/</link>
+    <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Phạm Minh Kha</name>
+    </author><guid>http://localhost:1313/posts/socket-programming-trong-java/</guid>
+    <description><![CDATA[<h2 id="socket-programming-trong-java-là-gì" class="headerLink">
+    <a href="#socket-programming-trong-java-l%c3%a0-g%c3%ac" class="header-mark"></a>Socket Programming trong Java là gì?</h2><p>Socket Programming là kỹ thuật lập trình cho phép giao tiếp giữa các máy tính khác nhau thông qua mạng. Trong Java, việc xây dựng ứng dụng client-server trở nên dễ dàng hơn nhờ vào package <code>java.net</code> cung cấp các lớp như <code>Socket</code> và <code>ServerSocket</code> để thực hiện giao tiếp mạng.</p>
+<p>Socket programming đóng vai trò quan trọng trong việc phát triển các ứng dụng phân tán, hệ thống chat, trò chơi trực tuyến hay bất kỳ ứng dụng nào yêu cầu giao tiếp qua mạng.</p>]]></description>
+</item></channel>
+</rss>

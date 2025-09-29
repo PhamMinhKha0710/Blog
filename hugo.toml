@@ -1,0 +1,92 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My Blog'
+
+# Theme configuration
+theme = 'DoIt'
+
+# Enable features
+enableRobotsTXT = true
+enableEmoji = true
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About"
+    url = "/about/"
+    title = ""
+    weight = 4
+
+# Params configuration
+[params]
+  # DoIt theme version
+  version = "0.3.X"
+  # site description
+  description = "My Blog Site"
+  # site keywords
+  keywords = ["Blog", "Hugo", "DoIt"]
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "auto"
+  # Author config
+  [params.author]
+    name = "Phạm Minh Kha"
+    email = "phamminhkha19091710@gmail.com"
+    link = "https://github.com/PhamMinhKha0710"
+  # Home page profile
+  [params.home.profile]
+    enable = true
+    # Gravatar Email for preferred avatar in home page
+    gravatarEmail = ""
+    # URL of avatar shown in home page
+    avatarURL = "/images/posts/avatar.jpg"
+    # title shown in home page (HTML format is supported)
+    title = ""
+    # subtitle shown in home page (HTML format is supported)
+    subtitle = "Welcome to my blog"
+    # whether to use typeit animation for subtitle
+    typeit = true
+    # whether to show social links
+    social = true
+    # disclaimer (HTML format is supported)
+    disclaimer = ""
+    
+  # Page config
+  [params.page]
+    # TOC config
+    [params.page.toc]
+      # whether to enable the table of contents
+      enable = true
+      # whether to keep the static table of contents expanded
+      keepStatic = false
+      # whether to make the table of contents in the sidebar automatically collapsed
+      auto = true

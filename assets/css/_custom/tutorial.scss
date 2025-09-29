@@ -1,0 +1,311 @@
+/* Tutorial Post Styles */
+
+.tutorial-post {
+  /* Additional styles for tutorial layout */
+  
+  .post-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background-color: var(--secondary-background-color);
+    border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    .tutorial-difficulty,
+    .tutorial-time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      .difficulty-label,
+      .time-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary-color);
+        margin-bottom: 0.5rem;
+      }
+      
+      .difficulty-level,
+      .time-value {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+      
+      .difficulty-beginner {
+        color: #4caf50;
+      }
+      
+      .difficulty-intermediate {
+        color: #ff9800;
+      }
+      
+      .difficulty-advanced {
+        color: #f44336;
+      }
+      
+      i {
+        margin-right: 0.25rem;
+      }
+      
+      span {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+  
+  .tutorial-requirements {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--secondary-background-color);
+    
+    h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--text-color);
+      
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+    
+    ul {
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  .tutorial-overview {
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    .overview-header {
+      background-color: var(--secondary-background-color);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      
+      h2 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: var(--text-color);
+        
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    
+    .overview-content {
+      padding: 1.5rem;
+      
+      .overview-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-top: 0;
+      }
+      
+      .overview-steps {
+        margin-top: 1.5rem;
+        
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: var(--text-color);
+        }
+        
+        nav {
+          ul {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            
+            li {
+              margin-bottom: 0.75rem;
+              
+              a {
+                color: var(--primary-color);
+                text-decoration: none;
+                
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              
+              ul {
+                list-style-type: disc;
+                margin-top: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Styling steps in the content */
+  .post-content {
+    h2 {
+      display: flex;
+      align-items: center;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--secondary-background-color);
+      border-left: 5px solid var(--primary-color);
+      border-radius: 0 8px 8px 0;
+      
+      &::before {
+        content: "Bước " attr(data-step) ":";
+        margin-right: 0.75rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+    }
+    
+    /* Add visual indicators for important notes */
+    .note, 
+    .tip, 
+    .warning, 
+    .important {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      position: relative;
+      padding-left: 4rem;
+      
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+        font-size: 1.5rem;
+      }
+      
+      strong:first-child {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+    }
+    
+    .note {
+      background-color: rgba(33, 150, 243, 0.1);
+      border-left: 5px solid #2196f3;
+      
+      &::before {
+        content: "\f05a"; /* info circle */
+        color: #2196f3;
+      }
+    }
+    
+    .tip {
+      background-color: rgba(76, 175, 80, 0.1);
+      border-left: 5px solid #4caf50;
+      
+      &::before {
+        content: "\f0eb"; /* lightbulb */
+        color: #4caf50;
+      }
+    }
+    
+    .warning {
+      background-color: rgba(255, 152, 0, 0.1);
+      border-left: 5px solid #ff9800;
+      
+      &::before {
+        content: "\f071"; /* exclamation triangle */
+        color: #ff9800;
+      }
+    }
+    
+    .important {
+      background-color: rgba(244, 67, 54, 0.1);
+      border-left: 5px solid #f44336;
+      
+      &::before {
+        content: "\f06a"; /* exclamation circle */
+        color: #f44336;
+      }
+    }
+    
+    /* Code snippet with file name */
+    .code-with-filename {
+      margin: 1.5rem 0;
+      
+      .filename {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        font-family: monospace;
+        font-size: 0.9rem;
+        border-radius: 8px 8px 0 0;
+      }
+      
+      pre {
+        margin-top: 0;
+        border-radius: 0 8px 8px 8px;
+      }
+    }
+  }
+  
+  /* Tutorial completion section */
+  .tutorial-completion {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem;
+    padding: 1.5rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 8px;
+    
+    .completion-icon {
+      font-size: 3rem;
+      margin-right: 1.5rem;
+      color: #4caf50;
+    }
+    
+    .completion-message {
+      h3 {
+        margin-top: 0;
+        color: #4caf50;
+      }
+      
+      p {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .next-steps {
+        h4 {
+          font-size: 1.1rem;
+          margin-bottom: 0.75rem;
+        }
+        
+        ul {
+          margin-top: 0;
+          padding-left: 1.25rem;
+          
+          li {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

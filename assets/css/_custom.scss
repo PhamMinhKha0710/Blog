@@ -1,0 +1,189 @@
+// Custom styles
+@import "_custom/post";
+@import "_custom/tutorial";
+@import "_custom/comparison";
+@import "_custom/interactive";
+@import "_custom/toc";
+
+:root {
+  /* Define custom color variables for light mode */
+  --card-background-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary-color: #666666;
+  --border-color: #eaeaea;
+  --secondary-background-color: #f9f9f9;
+  --primary-color: #2a6df4;
+  --accent-color: #2a6df4;
+  --accent-color-rgb: 42, 109, 244; /* RGB values for accent color */
+  --rgb-primary-color: 42, 109, 244; /* RGB values for primary color */
+  --quote-background-color: #f8f9fa;
+  --quote-text-color: #555;
+  --code-background-color: #f5f5f5;
+  --code-text-color: #e83e8c;
+  --tag-background-color: #f0f0f0;
+  --tag-text-color: #555;
+  --table-row-odd-background-color: #f8f8f8;
+  --font-color: #333333;
+}
+
+[theme=dark] {
+  /* Define custom color variables for dark mode */
+  --card-background-color: #252627;
+  --text-color: #e1e1e1;
+  --text-secondary-color: #a8a8b2;
+  --border-color: #3b3b3c;
+  --secondary-background-color: #1d1e1f;
+  --primary-color: #6f9eff;
+  --accent-color: #6f9eff;
+  --accent-color-rgb: 111, 158, 255; /* RGB values for accent color */
+  --rgb-primary-color: 111, 158, 255; /* RGB values for primary color */
+  --quote-background-color: #1f2020;
+  --quote-text-color: #c9c9c9;
+  --code-background-color: #2d2d30;
+  --code-text-color: #f08c9e;
+  --tag-background-color: #3b3b3c;
+  --tag-text-color: #c9c9c9;
+  --table-row-odd-background-color: #2a2b2d;
+  --font-color: #e1e1e1;
+}
+
+// Add animated gradient background to header
+.home[posts] .home-avatar {
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: gradient 15s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Style for code blocks
+.post-content {
+  // Add fancy decorations to code blocks
+  div.highlight {
+    position: relative;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    // Language badge styling
+    &::before {
+      content: attr(data-lang);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 0 8px 0 8px;
+    }
+    
+    pre {
+      margin: 0;
+      padding: 2rem 1rem 1rem;
+      font-family: 'Fira Code', 'Source Code Pro', 'Monaco', monospace;
+    }
+  }
+  
+  // Better blockquotes
+  blockquote {
+    border-left-width: 5px;
+    border-left-color: var(--primary-color);
+    
+    &::before {
+      content: "\201C";
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      position: absolute;
+      left: 10px;
+      top: -10px;
+      opacity: 0.2;
+      color: var(--primary-color);
+    }
+  }
+  
+  // Anchor links
+  h2, h3, h4, h5, h6 {
+    position: relative;
+    
+    .header-mark {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    
+    &:hover .header-mark {
+      opacity: 1;
+    }
+  }
+  
+  // Image captions
+  figure {
+    margin: 2rem auto;
+    text-align: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary-color);
+      font-style: italic;
+    }
+  }
+}
+
+// Progress bar at top of page
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  z-index: 999;
+  transition: width 0.1s ease;
+}
+
+// Custom bullet points
+ul:not(.toc) {
+  li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 1.5rem;
+    
+    &::before {
+      content: '\2022';
+      color: #2a6df4;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+  }
+}

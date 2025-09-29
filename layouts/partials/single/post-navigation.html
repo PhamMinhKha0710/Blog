@@ -1,0 +1,21 @@
+{{- if or .PrevInSection .NextInSection -}}
+<nav class="post-nav">
+    {{- with .NextInSection -}}
+        <a class="next" rel="next" href="{{ .RelPermalink }}">
+            <span class="nav-text">{{ .Title }}</span>
+            <i class="fas fa-chevron-right fa-fw"></i>
+        </a>
+    {{- end -}}
+    {{- with .PrevInSection -}}
+        <a class="prev" rel="prev" href="{{ .RelPermalink }}">
+            <i class="fas fa-chevron-left fa-fw"></i>
+            <span class="nav-text">{{ .Title }}</span>
+        </a>
+    {{- end -}}
+</nav>
+{{- end -}}
+
+
+
+
+

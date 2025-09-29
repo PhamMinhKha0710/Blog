@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Blog - Tag - My Blog</title>
+        <link>http://localhost:1313/tags/blog/</link>
+        <description>Blog - Tag - My Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/blog/" rel="self" type="application/rss+xml" /><item>
+    <title>Chào Mừng Đến Với Blog Của Tôi</title>
+    <link>http://localhost:1313/posts/welcome-post/</link>
+    <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Phạm Minh Kha</name>
+    </author><guid>http://localhost:1313/posts/welcome-post/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="chào-mừng-đến-với-blog-của-tôi" class="headerLink">
+    <a href="#ch%c3%a0o-m%e1%bb%abng-%c4%91%e1%ba%bfn-v%e1%bb%9bi-blog-c%e1%bb%a7a-t%c3%b4i" class="header-mark"></a>Chào mừng đến với blog của tôi!</h2><p>Xin chào các bạn! Mình là Phạm Minh Kha, một lập trình viên đam mê công nghệ. Blog này được tạo ra với mục đích chia sẻ kiến thức và kinh nghiệm về lập trình Java và JavaScript, cũng như các công nghệ web hiện đại.</p>
+<h3 id="mục-tiêu-của-blog" class="headerLink">
+    <a href="#m%e1%bb%a5c-ti%c3%aau-c%e1%bb%a7a-blog" class="header-mark"></a>Mục tiêu của blog</h3><ul>
+<li>Chia sẻ kiến thức chuyên môn về Java, JavaScript và phát triển web</li>
+<li>Đăng tải các bài hướng dẫn chi tiết (tutorials) với ví dụ thực tế</li>
+<li>Giới thiệu các kỹ thuật và công nghệ mới trong ngành</li>
+<li>Xây dựng cộng đồng và kết nối với những người đam mê công nghệ</li>
+</ul>
+<h3 id="các-tính-năng-của-blog" class="headerLink">
+    <a href="#c%c3%a1c-t%c3%adnh-n%c4%83ng-c%e1%bb%a7a-blog" class="header-mark"></a>Các tính năng của blog</h3><ul>
+<li>Thiết kế đẹp mắt và tương thích với mọi thiết bị</li>
+<li>Chế độ sáng/tối linh hoạt</li>
+<li>Hỗ trợ code highlighting cho nhiều ngôn ngữ lập trình:</li>
+</ul>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">java</p>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,14 @@
+{{- if .TableOfContents -}}
+<div class="post-toc">
+    <div class="post-toc-title">
+        <i class="fas fa-list-ul fa-fw"></i> Mục lục
+        <button class="toc-dropdown-btn" aria-expanded="true" aria-label="Toggle table of contents">
+            <i class="fas fa-chevron-down fa-fw"></i>
+        </button>
+    </div>
+    <div class="post-toc-content" role="navigation" aria-label="Table of contents">
+        {{ .TableOfContents }}
+    </div>
+</div>
+{{- end -}}
+
