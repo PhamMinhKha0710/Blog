@@ -53,6 +53,8 @@ enableEmoji = true
   version = "0.3.X"
   # site description
   description = "My Blog Site"
+  # Ignore some log messages
+  ignoreLogs = ['warning-goldmark-raw-html', 'shortcode-not-found']
   # site keywords
   keywords = ["Blog", "Hugo", "DoIt"]
   # site default theme ("light", "dark", "auto")

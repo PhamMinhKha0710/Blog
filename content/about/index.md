@@ -30,9 +30,9 @@ Xin chào! Tôi là Phạm Minh Kha, một lập trình viên chuyên về Java 
 
 ### Học Vấn
 
-- **Đại học Công nghệ Thông tin TP.HCM** (2021 - 2025)
+- **Đại học Công nghệ TP.HCM** (2022 - 2026)
   - Chuyên ngành: Kỹ thuật Phần mềm
-  - GPA: 8.5/10
+  - GPA: 3.2/4.0
 
 ### Mục Tiêu
 
