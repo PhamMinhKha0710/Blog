@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add image lightbox
   setupImageLightbox();
+  
+  // Initialize Table of Contents scroll spy
+  initTocScrollSpy();
 });
 
 // Add copy button to code blocks
@@ -201,6 +204,126 @@ function setupImageLightbox() {
           document.body.style.overflow = '';
         }
       });
+    });
+  });
+}
+
+// Initialize Table of Contents scroll spy
+function initTocScrollSpy() {
+  // Get TOC links and content headings
+  const tocLinks = document.querySelectorAll('.post-toc-content a, .sidebar-toc-content a');
+  if (tocLinks.length === 0) return;
+  
+  // Get all headings in the content
+  const headings = document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]');
+  if (headings.length === 0) return;
+  
+  // Create an array of heading positions
+  let headingPositions = [];
+  
+  function updateHeadingPositions() {
+    headingPositions = Array.from(headings).map(function(heading) {
+      return {
+        id: heading.id,
+        top: heading.getBoundingClientRect().top + window.scrollY,
+        element: heading
+      };
+    });
+  }
+  
+  // Initial calculation
+  updateHeadingPositions();
+  
+  // Recalculate on window resize
+  window.addEventListener('resize', updateHeadingPositions);
+  
+  // Function to update active TOC link
+  function updateActiveTocLink() {
+    const scrollPosition = window.scrollY + 100; // Offset for better UX
+    
+    // Find the current heading
+    let currentHeading = null;
+    
+    for (let i = headingPositions.length - 1; i >= 0; i--) {
+      if (scrollPosition >= headingPositions[i].top) {
+        currentHeading = headingPositions[i];
+        break;
+      }
+    }
+    
+    // Remove all active classes
+    tocLinks.forEach(function(link) {
+      link.classList.remove('active');
+    });
+    
+    // Add active class to current heading's link
+    if (currentHeading) {
+      tocLinks.forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href && href.includes('#' + currentHeading.id)) {
+          link.classList.add('active');
+          
+          // Auto-scroll TOC to show active item
+          const tocContent = link.closest('.post-toc-content, .sidebar-toc-content');
+          if (tocContent) {
+            const linkTop = link.offsetTop;
+            const linkHeight = link.offsetHeight;
+            const containerHeight = tocContent.clientHeight;
+            const scrollTop = tocContent.scrollTop;
+            
+            // Scroll if link is not fully visible
+            if (linkTop < scrollTop || linkTop + linkHeight > scrollTop + containerHeight) {
+              tocContent.scrollTo({
+                top: linkTop - containerHeight / 2 + linkHeight / 2,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }
+      });
+    }
+  }
+  
+  // Update on scroll with throttling for performance
+  let isScrolling = false;
+  
+  window.addEventListener('scroll', function() {
+    if (!isScrolling) {
+      window.requestAnimationFrame(function() {
+        updateActiveTocLink();
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  });
+  
+  // Initial update
+  updateActiveTocLink();
+  
+  // Smooth scroll when clicking TOC links
+  tocLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const href = this.getAttribute('href');
+      if (!href || !href.includes('#')) return;
+      
+      const targetId = href.split('#')[1];
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 80;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Update URL without jumping
+        if (history.pushState) {
+          history.pushState(null, null, href);
+        }
+      }
     });
   });
 }

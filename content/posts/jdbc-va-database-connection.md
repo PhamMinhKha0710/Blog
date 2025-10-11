@@ -450,7 +450,7 @@ public class ConnectionPoolExample {
 
 ## Xử lý các loại dữ liệu phức tạp
 
-### 1. Làm việc với BLOB và CLOB
+#### 1. Làm việc với BLOB và CLOB
 
 ```java
 import java.io.*;
@@ -520,7 +520,7 @@ public class BlobExample {
 }
 ```
 
-### 2. Làm việc với Date và Time
+#### 2. Làm việc với Date và Time
 
 ```java
 import java.sql.*;

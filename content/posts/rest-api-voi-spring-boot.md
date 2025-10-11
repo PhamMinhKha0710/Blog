@@ -515,7 +515,7 @@ public class UserController {
 
 ## Tính năng nâng cao trong REST API
 
-### 1. Phân trang và Sắp xếp
+#### 1. Phân trang và Sắp xếp
 
 ```java
 // Trong Repository
@@ -553,7 +553,7 @@ public ResponseEntity<Map<String, Object>> getAllUsers(
 }
 ```
 
-### 2. DTO (Data Transfer Object)
+#### 2. DTO (Data Transfer Object)
 
 ```java
 // UserDTO.java
@@ -593,7 +593,7 @@ public ResponseEntity<List<UserDTO>> getAllUsersDTO() {
 }
 ```
 
-### 3. Bảo mật API với Spring Security
+#### 3. Bảo mật API với Spring Security
 
 ```java
 // Thêm dependency
@@ -633,7 +633,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-### 4. Swagger/OpenAPI cho tài liệu API
+#### 4. Swagger/OpenAPI cho tài liệu API
 
 ```java
 // Thêm dependency
@@ -661,7 +661,7 @@ public class OpenAPIConfig {
 }
 ```
 
-### 5. Xử lý Validation
+#### 5. Xử lý Validation
 
 ```java
 // Entity với validation annotations
@@ -684,7 +684,7 @@ public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 
 ## Best Practices cho REST API
 
-### 1. Sử dụng HTTP Methods đúng cách
+#### 1. Sử dụng HTTP Methods đúng cách
 
 - **GET**: Lấy dữ liệu (idempotent)
 - **POST**: Tạo mới dữ liệu
@@ -692,13 +692,13 @@ public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 - **PATCH**: Cập nhật một phần dữ liệu
 - **DELETE**: Xóa dữ liệu (idempotent)
 
-### 2. Sử dụng HTTP Status Code phù hợp
+#### 2. Sử dụng HTTP Status Code phù hợp
 
 - **2xx**: Thành công (200 OK, 201 Created, 204 No Content)
 - **4xx**: Lỗi client (400 Bad Request, 401 Unauthorized, 404 Not Found)
 - **5xx**: Lỗi server (500 Internal Server Error)
 
-### 3. Thiết kế URL có ý nghĩa
+#### 3. Thiết kế URL có ý nghĩa
 
 ```
 # Tốt
@@ -714,7 +714,7 @@ GET /get-all-users           # Động từ trong URL
 GET /users/get/123           # Động từ trong URL
 ```
 
-### 4. Xử lý ngoại lệ hợp lý
+#### 4. Xử lý ngoại lệ hợp lý
 
 ```java
 @ExceptionHandler(ResourceNotFoundException.class)
@@ -731,7 +731,7 @@ public ResponseEntity<ErrorDetails> handleResourceNotFoundException(
 }
 ```
 
-### 5. Phiên bản API
+#### 5. Phiên bản API
 
 ```java
 // URL versioning
@@ -758,7 +758,7 @@ public ResponseEntity<List<User>> getAllUsersV1() { ... }
 public ResponseEntity<List<UserDTO>> getAllUsersV2() { ... }
 ```
 
-### 6. Rate Limiting
+#### 6. Rate Limiting
 
 ```java
 // Sử dụng Spring Cloud Gateway hoặc Bucket4j

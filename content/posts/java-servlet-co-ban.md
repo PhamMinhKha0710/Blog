@@ -46,21 +46,21 @@ Các Servlet Container phổ biến:
 
 ## Cài đặt môi trường phát triển Servlet
 
-### Bước 1: Cài đặt JDK
+#### Bước 1: Cài đặt JDK
 
 Trước tiên, cần đảm bảo JDK đã được cài đặt trên máy tính. Tải và cài đặt JDK từ trang chủ Oracle.
 
-### Bước 2: Cài đặt Apache Tomcat
+#### Bước 2: Cài đặt Apache Tomcat
 
 1. Tải Apache Tomcat từ trang chủ: https://tomcat.apache.org/
 2. Giải nén vào thư mục mong muốn (ví dụ: `C:\apache-tomcat`)
 3. Thiết lập biến môi trường `CATALINA_HOME` trỏ đến thư mục Tomcat
 
-### Bước 3: Cài đặt IDE (Eclipse hoặc IntelliJ IDEA)
+#### Bước 3: Cài đặt IDE (Eclipse hoặc IntelliJ IDEA)
 
 Cài đặt Eclipse hoặc IntelliJ IDEA và cấu hình để làm việc với Tomcat.
 
-### Bước 4: Tạo dự án Web
+#### Bước 4: Tạo dự án Web
 
 Trong Eclipse:
 1. File > New > Dynamic Web Project
@@ -642,7 +642,7 @@ public class LoggingFilter implements Filter {
 
 ## Ví dụ ứng dụng thực tế: Hệ thống đăng nhập
 
-### 1. LoginServlet
+#### 1. LoginServlet
 
 ```java
 @WebServlet("/login")
@@ -721,7 +721,7 @@ public class LoginServlet extends HttpServlet {
 }
 ```
 
-### 2. AuthenticationFilter
+#### 2. AuthenticationFilter
 
 ```java
 @WebFilter("/*")
@@ -765,7 +765,7 @@ public class AuthenticationFilter implements Filter {
 }
 ```
 
-### 3. DashboardServlet
+#### 3. DashboardServlet
 
 ```java
 @WebServlet("/dashboard")
@@ -809,7 +809,7 @@ public class DashboardServlet extends HttpServlet {
 }
 ```
 
-### 4. LogoutServlet
+#### 4. LogoutServlet
 
 ```java
 @WebServlet("/logout")

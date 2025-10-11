@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Portfolio -  - My Blog</title>
-        <link>http://localhost:52620/portfolio/</link>
+        <link>http://localhost:57974/portfolio/</link>
         <description>Portfolio -  - My Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Sat, 04 Oct 2025 00:59:44 &#43;0700</lastBuildDate><atom:link href="http://localhost:52620/portfolio/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Sat, 04 Oct 2025 00:59:44 &#43;0700</lastBuildDate><atom:link href="http://localhost:57974/portfolio/" rel="self" type="application/rss+xml" /></channel>
 </rss>

@@ -1,18 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Blog - Tag - My Blog</title>
-        <link>http://localhost:1313/tags/blog/</link>
-        <description>Blog - Tag - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/blog/" rel="self" type="application/rss+xml" /><item>
-    <title>Chào Mừng Đến Với Code Journey</title>
-    <link>http://localhost:1313/posts/welcome-post/</link>
-    <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/welcome-post/</guid>
-    <description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog - Tag - My Blog</title><link>https://example.org/tags/blog/</link><description>Blog - Tag - My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor><webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/tags/blog/" rel="self" type="application/rss+xml"/><item><title>Chào Mừng Đến Với Code Journey</title><link>https://example.org/posts/welcome-post/</link><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/welcome-post/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
             </div><h2 id="-chào-mừng-đến-với-code-journey" class="headerLink">
-    <a href="#-ch%c3%a0o-m%e1%bb%abng-%c4%91%e1%ba%bfn-v%e1%bb%9bi-code-journey" class="header-mark"></a>👋 Chào mừng đến với Code Journey!</h2><p>Xin chào các bạn! Mình là <strong>Phạm Minh Kha</strong>, một kỹ sư phần mềm với niềm đam mê sâu sắc về công nghệ và chia sẻ kiến thức. Blog này là nơi mình ghi lại hành trình khám phá thế giới lập trình, từ những khái niệm cơ bản đến các kỹ thuật nâng cao trong Java, JavaScript và phát triển web hiện đại.</p>]]></description>
-</item></channel>
-</rss>
+    <a href="#-ch%c3%a0o-m%e1%bb%abng-%c4%91%e1%ba%bfn-v%e1%bb%9bi-code-journey" class="header-mark"></a>👋 Chào mừng đến với Code Journey!</h2><p>Xin chào các bạn! Mình là <strong>Phạm Minh Kha</strong>, một kỹ sư phần mềm với niềm đam mê sâu sắc về công nghệ và chia sẻ kiến thức. Blog này là nơi mình ghi lại hành trình khám phá thế giới lập trình, từ những khái niệm cơ bản đến các kỹ thuật nâng cao trong Java, JavaScript và phát triển web hiện đại.</p>]]></description></item></channel></rss>

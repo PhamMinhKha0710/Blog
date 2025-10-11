@@ -819,7 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## Các Best Practice khi làm việc với AJAX và Fetch API
 
-### 1. Luôn xử lý lỗi
+#### 1. Luôn xử lý lỗi
 
 ```javascript
 fetch('https://api.example.com/data')
@@ -838,7 +838,7 @@ fetch('https://api.example.com/data')
     });
 ```
 
-### 2. Hiển thị trạng thái loading
+#### 2. Hiển thị trạng thái loading
 
 ```javascript
 const loadData = async () => {
@@ -857,7 +857,7 @@ const loadData = async () => {
 };
 ```
 
-### 3. Thêm timeout cho request
+#### 3. Thêm timeout cho request
 
 ```javascript
 const fetchWithTimeout = (url, options = {}, timeout = 5000) => {
@@ -870,7 +870,7 @@ const fetchWithTimeout = (url, options = {}, timeout = 5000) => {
 };
 ```
 
-### 4. Tái sử dụng logic fetch
+#### 4. Tái sử dụng logic fetch
 
 ```javascript
 // Tạo một helper function
@@ -889,7 +889,7 @@ const getUsers = () => apiRequest('https://api.example.com/users');
 const getUserById = (id) => apiRequest(`https://api.example.com/users/${id}`);
 ```
 
-### 5. Debounce tìm kiếm
+#### 5. Debounce tìm kiếm
 
 ```javascript
 // Debounce function

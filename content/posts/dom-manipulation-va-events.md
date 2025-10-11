@@ -1,520 +1,1225 @@
 +++
-title = "DOM Manipulation và Events trong JavaScript: Tạo trang web động"
+title = "DOM Manipulation và Events trong JavaScript: Từ Zero đến Hero"
 date = "2025-09-20"
-description = "Tìm hiểu về Document Object Model (DOM), cách thao tác với DOM và xử lý sự kiện trong JavaScript để tạo các trang web động và tương tác"
+description = "Hiểu DOM qua ví dụ thực tế: Cửa hàng sách, điều khiển từ xa, công tắc đèn. Từ cơ bản đến Event Delegation và Performance Optimization"
 categories = ["JavaScript"]
 tags = ["JavaScript", "Web"]
 author = "Phạm Minh Kha"
 +++
 
-## Document Object Model (DOM) là gì?
+## DOM là gì? Hãy tưởng tượng HTML như một ngôi nhà!
 
-Document Object Model (DOM) là một API cho HTML và XML, cung cấp cấu trúc dạng cây của tài liệu, cho phép ngôn ngữ như JavaScript truy cập và thay đổi cấu trúc, nội dung và kiểu của tài liệu web.
+Khi bạn viết HTML, trình duyệt không hiểu HTML dưới dạng text. Nó chuyển HTML thành một **cây đối tượng** gọi là **DOM (Document Object Model)** - như bản thiết kế ngôi nhà!
 
-Khi một trang web được tải, trình duyệt tạo ra một mô hình DOM của trang đó. DOM đại diện cho HTML như một cấu trúc cây với các nút (nodes), trong đó mỗi thẻ HTML là một nút phần tử (element node), và văn bản bên trong thẻ là nút văn bản (text node).
+**Hình dung:**
+```html
+<html>
+  <body>
+    <h1>Welcome</h1>
+    <p>This is a paragraph</p>
+  </body>
+</html>
+```
 
-### Cấu trúc cây DOM
+**Trình duyệt thấy như thế này (cây DOM):**
+```
+document (Ngôi nhà)
+│
+└── html (Tầng 1)
+    └── body (Phòng khách)
+        ├── h1 (Bảng hiệu: "Welcome")
+        └── p (Ghế sofa: "This is a paragraph")
+```
 
+### Sơ đồ DOM đầy đủ hơn
+
+**HTML phức tạp hơn:**
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Site</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Article Title</h2>
+        <p>Article content here...</p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2025 My Website</p>
+    </footer>
+  </body>
+</html>
+```
+
+**Cây DOM tương ứng:**
 ```
 document
+│
+├── doctype: html
+│
 └── html
     ├── head
     │   ├── title
-    │   │   └── "My Web Page"
-    │   └── meta
+    │   │   └── #text: "My Website"
+    │   └── link [rel="stylesheet", href="style.css"]
+    │
     └── body
-        ├── h1
-        │   └── "Welcome"
-        ├── p
-        │   └── "This is a paragraph"
-        └── div
-            └── "Content here"
+        ├── header
+        │   ├── h1
+        │   │   └── #text: "Welcome to My Site"
+        │   └── nav
+        │       └── ul
+        │           ├── li
+        │           │   └── a [href="/"]
+        │           │       └── #text: "Home"
+        │           └── li
+        │               └── a [href="/about"]
+        │                   └── #text: "About"
+        │
+        ├── main
+        │   └── article
+        │       ├── h2
+        │       │   └── #text: "Article Title"
+        │       └── p
+        │           └── #text: "Article content here..."
+        │
+        └── footer
+            └── p
+                └── #text: "© 2025 My Website"
 ```
 
-Mỗi nút trong cây DOM có các thuộc tính và phương thức cho phép JavaScript tương tác với nó. DOM là cầu nối giúp JavaScript thay đổi nội dung, cấu trúc và kiểu của trang web một cách động.
+**Giải thích:**
+- 🔵 **Element Node** (màu xanh): `<html>`, `<body>`, `<h1>`, `<p>`, v.v.
+- 📝 **Text Node**: Nội dung văn bản (ví dụ: "Welcome to My Site")
+- 🔗 **Attribute Node**: Thuộc tính như `href="/about"`
 
-## Truy cập các phần tử DOM
+---
 
-JavaScript cung cấp nhiều phương thức để truy cập các phần tử DOM:
+**JavaScript = Người thợ sửa nhà:**
+- Có thể **đọc** bảng hiệu (lấy text)
+- Có thể **thay đổi** bảng hiệu thành "Goodbye"
+- Có thể **thêm** bàn, ghế mới
+- Có thể **xóa** đồ đạc cũ
+- Có thể **sơn lại** (đổi màu, style)
 
-### 1. getElementById
+---
 
-Truy cập phần tử bằng ID duy nhất:
+## Mối quan hệ trong cây DOM - Như gia đình!
 
-```javascript
-// HTML: <div id="main">Content</div>
-const mainDiv = document.getElementById('main');
-console.log(mainDiv.textContent); // Output: Content
+**Ví dụ HTML:**
+```html
+<div id="family">
+  <div id="parent">
+    <span id="child1">Con 1</span>
+    <span id="child2">Con 2</span>
+  </div>
+</div>
 ```
 
-### 2. getElementsByClassName
-
-Truy cập nhiều phần tử bằng tên lớp:
-
-```javascript
-// HTML: 
-// <p class="highlight">First paragraph</p>
-// <p class="highlight">Second paragraph</p>
-const highlightedElements = document.getElementsByClassName('highlight');
-console.log(highlightedElements.length); // Output: 2
-console.log(highlightedElements[0].textContent); // Output: First paragraph
+**Sơ đồ cây gia đình:**
+```
+                    div#family (Ông/Bà) 👴
+                         │
+                    parentElement
+                         │
+                         ↓
+                    div#parent (Cha/Mẹ) 👨
+                    │          │
+            ┌───────┴───┬──────┴────────┐
+            │           │               │
+         children    children      (có thể có)
+            │           │          thêm con nữa
+            ↓           ↓
+      span#child1   span#child2
+      (Con đầu)     (Con thứ 2)
+          👦            👧
+            │           │
+            └─ sibling ─┘
+         (Anh em ruột)
 ```
 
-### 3. getElementsByTagName
+**Quan hệ gia đình:**
 
-Truy cập các phần tử bằng tên thẻ:
+1. **Parent (Cha) - Child (Con):**
+   - `<div id="parent">` là **cha** của `<span id="child1">`
+   - `<span id="child1">` là **con** của `<div id="parent">`
+
+2. **Sibling (Anh em):**
+   - `child1` và `child2` là **anh em** (cùng cha)
+   - Dùng `nextSibling` để lấy em kế tiếp
+   - Dùng `previousSibling` để lấy anh/chị trước đó
+
+3. **Ancestor (Tổ tiên) - Descendant (Con cháu):**
+   - `<div id="family">` là **tổ tiên** của `child1` (ông/bà)
+   - `child1` là **con cháu** của `family`
+
+**Trong JavaScript:**
+```javascript
+const parent = document.getElementById('parent');
+const child1 = document.getElementById('child1');
+const child2 = document.getElementById('child2');
+
+// Quan hệ Parent-Child
+console.log(parent.children);          // [child1, child2]
+console.log(parent.firstChild);        // child1
+console.log(parent.lastChild);         // child2
+console.log(child1.parentElement);     // div#parent
+
+// Quan hệ Sibling
+console.log(child1.nextElementSibling);      // child2
+console.log(child2.previousElementSibling);  // child1
+
+// Quan hệ Ancestor-Descendant
+console.log(parent.parentElement);     // div#family (ông/bà)
+console.log(child1.closest('#family')); // Tìm tổ tiên gần nhất
+```
+
+**Ví dụ thực tế: Duyệt cây DOM**
+```javascript
+const family = document.getElementById('family');
+
+// Duyệt tất cả con cháu
+function traverseDOM(node, level = 0) {
+    const indent = '  '.repeat(level);
+    console.log(indent + node.tagName + (node.id ? '#' + node.id : ''));
+    
+    // Duyệt đệ quy các con
+    for (let child of node.children) {
+        traverseDOM(child, level + 1);
+    }
+}
+
+traverseDOM(family);
+// Output:
+// DIV#family
+//   DIV#parent
+//     SPAN#child1
+//     SPAN#child2
+```
+
+---
+
+## Tìm phần tử DOM - Như tìm đồ trong nhà
+
+### 1. getElementById - Tìm theo số nhà
+
+**Ví dụ thực tế:** Tìm căn hộ theo số nhà 101
 
 ```javascript
-const paragraphs = document.getElementsByTagName('p');
-for(let i = 0; i < paragraphs.length; i++) {
-    console.log(paragraphs[i].textContent);
+// HTML: <div id="house-101">Nhà số 101</div>
+const house = document.getElementById('house-101');
+console.log(house.textContent);  // Output: Nhà số 101
+```
+
+**Đặc điểm:**
+- ✅ **Nhanh nhất** (trình duyệt có "sổ địa chỉ" cho ID)
+- ✅ Chỉ trả về **1 phần tử duy nhất**
+- ⚠️ ID phải **không trùng** (như số nhà)
+
+---
+
+### 2. getElementsByClassName - Tìm theo nhóm
+
+**Ví dụ thực tế:** Tìm tất cả nhà có màu đỏ
+
+```javascript
+// HTML:
+// <div class="red-house">Nhà đỏ 1</div>
+// <div class="red-house">Nhà đỏ 2</div>
+// <div class="blue-house">Nhà xanh</div>
+
+const redHouses = document.getElementsByClassName('red-house');
+console.log(redHouses.length);  // Output: 2
+
+// Duyệt qua từng nhà
+for (let i = 0; i < redHouses.length; i++) {
+    console.log(redHouses[i].textContent);
 }
 ```
 
-### 4. querySelector
+**Đặc điểm:**
+- ✅ Trả về **nhiều phần tử** (HTMLCollection)
+- ⚠️ Kết quả là **"live"** - tự động cập nhật khi DOM thay đổi!
 
-Truy cập phần tử đầu tiên khớp với bộ chọn CSS:
-
+**Cẩn thận với "live collection":**
 ```javascript
-const firstHighlight = document.querySelector('.highlight');
-const mainHeader = document.querySelector('h1.main-header');
-const specificInput = document.querySelector('input[type="text"]');
+const items = document.getElementsByClassName('item');
+console.log(items.length);  // 5
+
+// Thêm item mới vào DOM
+document.body.innerHTML += '<div class="item">New</div>';
+
+console.log(items.length);  // 6 (tự động cập nhật!)
 ```
 
-### 5. querySelectorAll
+---
 
-Truy cập tất cả các phần tử khớp với bộ chọn CSS:
+### 3. querySelector - Tìm kiếm mạnh mẽ (như Google!)
+
+**Ví dụ thực tế:** Tìm với điều kiện phức tạp
 
 ```javascript
-const allHighlights = document.querySelectorAll('.highlight');
-const allLinks = document.querySelectorAll('a[href^="https"]'); // Tất cả link bắt đầu bằng https
+// Tìm nhà đỏ ĐẦU TIÊN
+const firstRedHouse = document.querySelector('.red-house');
 
-allHighlights.forEach(element => {
-    console.log(element.textContent);
+// Tìm input có type="email"
+const emailInput = document.querySelector('input[type="email"]');
+
+// Tìm button trong form
+const submitBtn = document.querySelector('form button.submit');
+
+// Tìm đoạn văn thứ 2 trong div
+const secondP = document.querySelector('div p:nth-child(2)');
+```
+
+**Đặc điểm:**
+- ✅ **Linh hoạt nhất** - dùng CSS selector
+- ✅ Chỉ trả về **phần tử đầu tiên** tìm thấy
+- ✅ Kết quả **không live** (tĩnh)
+
+---
+
+### 4. querySelectorAll - Tìm TẤT CẢ
+
+```javascript
+// Tìm TẤT CẢ nhà đỏ
+const allRedHouses = document.querySelectorAll('.red-house');
+
+// Tìm tất cả link bắt đầu bằng "https"
+const secureLinks = document.querySelectorAll('a[href^="https"]');
+
+// Duyệt qua từng phần tử
+allRedHouses.forEach(house => {
+    console.log(house.textContent);
 });
 ```
 
-## Thao tác với nội dung DOM
+**Đặc điểm:**
+- ✅ Trả về **NodeList** (giống mảng)
+- ✅ Kết quả **tĩnh** (không tự động cập nhật)
+- ✅ Có thể dùng `.forEach()`
 
-### Thay đổi nội dung văn bản
+---
+
+## So sánh các phương thức tìm kiếm
+
+| Phương thức | Tìm bằng | Kết quả | Live? | Khi nào dùng |
+|-------------|----------|---------|-------|--------------|
+| `getElementById()` | ID | 1 phần tử | Không | Tìm phần tử quan trọng (header, form) |
+| `querySelector()` | CSS selector | 1 phần tử đầu | Không | **Khuyến nghị dùng** (linh hoạt nhất) |
+| `querySelectorAll()` | CSS selector | Tất cả | Không | Tìm nhiều phần tử |
+| `getElementsByClassName()` | Class | Tất cả | **Có** | Cần cập nhật tự động (hiếm dùng) |
+
+**Lời khuyên:** 
+- 🎯 **Dùng `querySelector()`** cho hầu hết trường hợp
+- 🎯 **Dùng `querySelectorAll()`** khi cần nhiều phần tử
+
+---
+
+## Thao tác nội dung - Như viết bảng hiệu
+
+### 1. textContent - Chỉ văn bản
+
+**Ví dụ:** Thay đổi tên cửa hàng
 
 ```javascript
-// Sử dụng textContent - lấy/đặt tất cả văn bản
-const heading = document.querySelector('h1');
-console.log(heading.textContent); // Lấy nội dung văn bản
-heading.textContent = 'New Heading'; // Đặt nội dung văn bản mới
+const storeName = document.querySelector('.store-name');
 
-// Sử dụng innerText - tương tự nhưng quan tâm đến kiểu hiển thị CSS
-const paragraph = document.querySelector('p');
-console.log(paragraph.innerText);
-paragraph.innerText = 'Updated paragraph text';
+// Đọc tên hiện tại
+console.log(storeName.textContent);  // "ABC Store"
+
+// Đổi tên mới
+storeName.textContent = "XYZ Super Store";
 ```
 
-### Thay đổi HTML
+**Đặc điểm:**
+- ✅ **An toàn** - không chạy HTML
+- ✅ Lấy **tất cả text** (kể cả ẩn)
+
+---
+
+### 2. innerHTML - Có cả HTML
+
+**Ví dụ:** Thêm menu vào cửa hàng
 
 ```javascript
-const container = document.querySelector('.container');
+const menu = document.querySelector('.menu');
 
-// Lấy HTML bên trong
-console.log(container.innerHTML);
+// Đọc HTML hiện tại
+console.log(menu.innerHTML);
 
-// Thay đổi HTML bên trong
-container.innerHTML = '<h2>New Content</h2><p>This is dynamic HTML</p>';
+// Thay đổi toàn bộ HTML
+menu.innerHTML = `
+    <h2>Menu Hôm Nay</h2>
+    <ul>
+        <li>Phở - 30k</li>
+        <li>Cơm - 25k</li>
+    </ul>
+`;
 
-// Thêm HTML vào cuối
-container.innerHTML += '<div class="new-element">Appended element</div>';
+// Thêm vào cuối (append)
+menu.innerHTML += '<li>Bún - 20k</li>';
 ```
 
-### Thuộc tính
+**Đặc điểm:**
+- ✅ Mạnh mẽ - có thể thêm HTML phức tạp
+- ⚠️ **Nguy hiểm** - có thể bị tấn công XSS nếu dùng data từ user
+
+**Cảnh báo XSS:**
+```javascript
+// ❌ NGUY HIỂM: Nếu userInput = '<img src=x onerror="alert(1)">'
+element.innerHTML = userInput;  // Code độc sẽ chạy!
+
+// ✅ AN TOÀN: Dùng textContent
+element.textContent = userInput;  // Chỉ hiển thị text
+```
+
+---
+
+## Thao tác thuộc tính - Như thay biển số xe
+
+**Ví dụ:** Thay đổi link, ảnh, input
 
 ```javascript
 const link = document.querySelector('a');
 
-// Lấy giá trị thuộc tính
-console.log(link.getAttribute('href'));
-console.log(link.href); // Cũng hoạt động với các thuộc tính chuẩn
+// Đọc thuộc tính
+console.log(link.getAttribute('href'));  // "https://google.com"
+console.log(link.href);                  // Cách khác (dễ hơn)
 
-// Đặt giá trị thuộc tính
-link.setAttribute('href', 'https://example.com');
-link.href = 'https://example.com'; // Cách khác
+// Đổi link
+link.setAttribute('href', 'https://facebook.com');
+link.href = 'https://facebook.com';  // Cách khác
 
-// Kiểm tra sự tồn tại của thuộc tính
-console.log(link.hasAttribute('target'));
+// Kiểm tra có thuộc tính không
+console.log(link.hasAttribute('target'));  // false
 
 // Xóa thuộc tính
 link.removeAttribute('target');
-
-// Thuộc tính data-*
-console.log(link.dataset.info); // Truy cập data-info
-link.dataset.testValue = 'abc123'; // Tạo thuộc tính data-test-value
 ```
 
-## Tạo và xóa phần tử DOM
+**Data attributes (data-*):**
+```javascript
+// HTML: <div data-user-id="123" data-role="admin">User</div>
+const userDiv = document.querySelector('div');
+
+console.log(userDiv.dataset.userId);  // "123"
+console.log(userDiv.dataset.role);    // "admin"
+
+// Thêm data attribute
+userDiv.dataset.status = 'active';
+// → Tạo thuộc tính data-status="active"
+```
+
+---
+
+## Tạo và xóa phần tử - Như xây nhà mới
 
 ### Tạo phần tử mới
 
+**Ví dụ:** Thêm sách mới vào giá
+
 ```javascript
-// Tạo phần tử
-const newDiv = document.createElement('div');
+// 1. Tạo phần tử
+const newBook = document.createElement('div');
 
-// Thêm nội dung
-newDiv.textContent = 'This is a newly created div';
+// 2. Thêm nội dung
+newBook.textContent = 'Harry Potter';
 
-// Thêm thuộc tính
-newDiv.id = 'newElement';
-newDiv.className = 'highlight bordered';
-newDiv.setAttribute('data-created', 'dynamically');
+// 3. Thêm class
+newBook.className = 'book fantasy';
+// Hoặc: newBook.classList.add('book', 'fantasy');
 
-// Thêm phần tử vào DOM
-const container = document.querySelector('.container');
-container.appendChild(newDiv);
+// 4. Thêm ID
+newBook.id = 'book-101';
+
+// 5. Thêm thuộc tính
+newBook.setAttribute('data-price', '150000');
+
+// 6. Thêm vào DOM
+const bookshelf = document.querySelector('.bookshelf');
+bookshelf.appendChild(newBook);
 ```
+
+**Các cách thêm vào DOM:**
+
+```javascript
+const parent = document.querySelector('.parent');
+const newElement = document.createElement('div');
+
+// Thêm vào cuối
+parent.appendChild(newElement);      // Cách cũ
+parent.append(newElement);           // Cách mới (khuyến nghị)
+
+// Thêm vào đầu
+parent.prepend(newElement);
+
+// Thêm trước phần tử khác
+const sibling = document.querySelector('.sibling');
+sibling.before(newElement);
+
+// Thêm sau phần tử khác
+sibling.after(newElement);
+```
+
+---
 
 ### Xóa phần tử
 
 ```javascript
-// Xóa phần tử
-const elementToRemove = document.getElementById('oldElement');
-if (elementToRemove) {
-    elementToRemove.parentNode.removeChild(elementToRemove);
-}
+const oldBook = document.getElementById('book-old');
 
-// Cách hiện đại (không hỗ trợ IE)
-elementToRemove.remove();
+// Cách mới (dễ nhất)
+oldBook.remove();
+
+// Cách cũ (vẫn hoạt động)
+oldBook.parentNode.removeChild(oldBook);
 ```
 
-### Thao tác với nhiều phần tử
+---
+
+## Hiệu suất: Thêm nhiều phần tử cùng lúc
+
+**Vấn đề:** Thêm 1000 quyển sách - CHẬM!
+
+**❌ Cách SAI (chậm):**
+```javascript
+const bookshelf = document.querySelector('.bookshelf');
+
+for (let i = 0; i < 1000; i++) {
+    const book = document.createElement('div');
+    book.textContent = `Book ${i}`;
+    bookshelf.appendChild(book);  // 1000 lần Reflow! 💀
+}
+```
+
+Mỗi lần `appendChild()`, trình duyệt phải **tính toán lại layout** (Reflow) → **Chậm như rùa!** 🐢
+
+---
+
+**✅ Cách ĐÚNG (nhanh): Dùng DocumentFragment**
 
 ```javascript
-// Tạo phần tử fragment để tối ưu hiệu suất khi thêm nhiều phần tử
+const bookshelf = document.querySelector('.bookshelf');
 const fragment = document.createDocumentFragment();
 
-for (let i = 0; i < 100; i++) {
-    const newItem = document.createElement('li');
-    newItem.textContent = `Item ${i}`;
-    fragment.appendChild(newItem);
+// Thêm vào fragment (không vào DOM thật)
+for (let i = 0; i < 1000; i++) {
+    const book = document.createElement('div');
+    book.textContent = `Book ${i}`;
+    fragment.appendChild(book);  // Không Reflow!
 }
 
-// Chỉ thực hiện một lần reflow
-const list = document.getElementById('myList');
-list.appendChild(fragment);
+// Chỉ Reflow 1 lần duy nhất
+bookshelf.appendChild(fragment);  // 🚀 Nhanh!
 ```
 
-## Thay đổi kiểu CSS với JavaScript
+**Ví dụ thực tế:**
+```
+Không dùng Fragment: 1000 lần Reflow = 500ms
+Dùng Fragment:       1 lần Reflow    = 5ms
 
-### Thay đổi style trực tiếp
+→ Nhanh gấp 100 lần! 🚀
+```
+
+---
+
+## Thay đổi CSS - Như sơn lại nhà
+
+### 1. Thay đổi style trực tiếp
 
 ```javascript
-const element = document.getElementById('myElement');
+const box = document.querySelector('.box');
 
-// Thay đổi một thuộc tính CSS
-element.style.color = 'blue';
-element.style.backgroundColor = '#f0f0f0'; // Chú ý camelCase thay vì background-color
-element.style.padding = '10px';
-element.style.border = '1px solid black';
+// Đổi 1 thuộc tính
+box.style.color = 'red';
+box.style.backgroundColor = 'yellow';  // Chú ý: camelCase!
+box.style.padding = '20px';
+box.style.border = '2px solid black';
 
-// Đọc giá trị computed style
-const computedStyle = window.getComputedStyle(element);
-console.log(computedStyle.fontSize);
+// Đọc style (chỉ đọc được inline style)
+console.log(box.style.color);  // "red"
+
+// Đọc style đã tính toán (computed style)
+const computed = window.getComputedStyle(box);
+console.log(computed.fontSize);      // "16px"
+console.log(computed.display);       // "block"
 ```
 
-### Thao tác với các lớp CSS
+**Chú ý:**
+- `element.style.backgroundColor` (camelCase)
+- `background-color` trong CSS → `backgroundColor` trong JS
+
+---
+
+### 2. Thao tác với class CSS (Khuyến nghị!)
+
+Thay vì đổi từng style, **dùng class** để quản lý!
 
 ```javascript
-const element = document.getElementById('myElement');
+const button = document.querySelector('.button');
 
-// Kiểm tra lớp
-console.log(element.classList.contains('active')); // true hoặc false
+// Kiểm tra có class không
+console.log(button.classList.contains('active'));  // false
 
-// Thêm lớp
-element.classList.add('highlight');
+// Thêm class
+button.classList.add('active');
+button.classList.add('primary', 'large');  // Thêm nhiều cùng lúc
 
-// Xóa lớp
-element.classList.remove('old-class');
+// Xóa class
+button.classList.remove('active');
 
-// Chuyển đổi lớp (thêm nếu không có, xóa nếu đã có)
-element.classList.toggle('visible');
+// Toggle class (có thì xóa, không có thì thêm)
+button.classList.toggle('active');
 
-// Thay thế lớp
-element.classList.replace('old-class', 'new-class');
+// Thay class
+button.classList.replace('old-class', 'new-class');
 ```
 
-## Xử lý sự kiện trong JavaScript
+**Ví dụ thực tế: Toggle dark mode**
+```javascript
+const toggleBtn = document.querySelector('.theme-toggle');
 
-Sự kiện (Events) cho phép JavaScript phát hiện và phản ứng với các hành động của người dùng và thay đổi trên trang.
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Lưu lựa chọn vào localStorage
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+```
 
-### Đăng ký Event Listener
+---
+
+## Events - Như chuông cửa nhà!
+
+**Hình dung:** Bạn lắp chuông cửa và đợi khách bấm
 
 ```javascript
 const button = document.querySelector('button');
 
-// Cách 1: Sử dụng addEventListener
+// Lắp chuông (đăng ký event listener)
 button.addEventListener('click', function() {
-    console.log('Button clicked!');
+    console.log('🔔 Có người bấm nút!');
     alert('Hello!');
 });
-
-// Cách 2: Sử dụng thuộc tính on-event
-button.onclick = function() {
-    console.log('Button clicked via onclick property!');
-};
 ```
 
-### Tham số Event Object
+**Ba bước:**
+1. **Tìm phần tử** (`querySelector`)
+2. **Lắp chuông** (`addEventListener`)
+3. **Định nghĩa hành động** (function)
+
+---
+
+### Event Object - Thông tin về sự kiện
 
 ```javascript
 const input = document.querySelector('input');
 
 input.addEventListener('keyup', function(event) {
-    console.log('Key pressed:', event.key);
-    console.log('Key code:', event.keyCode);
-    console.log('Current value:', event.target.value);
+    console.log('Phím vừa nhấn:', event.key);
+    console.log('Mã phím:', event.keyCode);
+    console.log('Giá trị hiện tại:', event.target.value);
     
     // Kiểm tra phím Enter
     if (event.key === 'Enter') {
-        alert('You pressed Enter!');
+        console.log('Bạn vừa nhấn Enter!');
     }
 });
 ```
 
-### Ngăn hành vi mặc định
+**event.target** = Phần tử được click/nhấn
+**event.currentTarget** = Phần tử có event listener
+
+---
+
+### preventDefault - Ngăn hành động mặc định
+
+**Ví dụ 1: Ngăn link chuyển trang**
 
 ```javascript
 const link = document.querySelector('a');
 
 link.addEventListener('click', function(event) {
-    event.preventDefault(); // Ngăn không cho chuyển đến link
-    console.log('Link was clicked, but default action was prevented');
+    event.preventDefault();  // Không chuyển trang
+    console.log('Link bị chặn! Không đi đâu cả!');
 });
+```
 
+**Ví dụ 2: Ngăn form gửi đi (để validate)**
+
+```javascript
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn không cho gửi form
-    console.log('Form submission prevented');
-    // Xử lý form với JavaScript
+    event.preventDefault();  // Không gửi form
+    
+    const email = document.querySelector('#email').value;
+    
+    if (!email.includes('@')) {
+        alert('Email không hợp lệ!');
+    } else {
+        console.log('Email OK, gửi form đi...');
+        // Gửi bằng JavaScript (AJAX)
+    }
 });
 ```
 
-### Ngừng lan truyền sự kiện
+---
+
+## Event Propagation - Sự kiện lan truyền
+
+**Hình dung:** Bạn bấm nút trong phòng → Cả nhà đều biết!
+
+```html
+<div id="house">
+    <div id="room">
+        <button id="button">Bấm tôi</button>
+    </div>
+</div>
+```
+
+Khi bấm `<button>`, sự kiện **lan truyền** qua 3 giai đoạn:
+
+**Sơ đồ Event Propagation:**
+```
+                        window
+                          │
+                          ↓ (1) CAPTURING PHASE 🔻
+                      document                    ↑ (3) BUBBLING PHASE 🔺
+                          │                       │
+                          ↓                       ↑
+                     div#house                    │
+                          │                       │
+                          ↓                       ↑
+                      div#room                    │
+                          │                       │
+                          ↓                       ↑
+                     ═══════════                  │
+                     ║ button  ║ ← (2) TARGET PHASE 🎯
+                     ═══════════
+                     
+GIAI ĐOẠN 1: CAPTURING (Đi xuống)
+window → document → div#house → div#room → button
+
+GIAI ĐOẠN 2: TARGET (Đích)
+Sự kiện đến phần tử được click (button)
+
+GIAI ĐOẠN 3: BUBBLING (Nổi lên)
+button → div#room → div#house → document → window
+```
+
+### Giai đoạn 1: Capturing (Đi xuống) 🔻
+
+Sự kiện bắt đầu từ `window` → `document` → `house` → `room` → `button`
+
+**Lắng nghe ở giai đoạn Capturing:**
+```javascript
+// Tham số thứ 3 = true → Lắng nghe ở Capturing phase
+house.addEventListener('click', () => {
+    console.log('House - Capturing');
+}, true);  // ← true = Capturing!
+
+button.addEventListener('click', () => {
+    console.log('Button clicked');
+});
+
+// Khi click button, output:
+// House - Capturing (chạy trước!)
+// Button clicked
+```
+
+### Giai đoạn 2: Target (Đích) 🎯
+
+Sự kiện đến đúng phần tử được bấm (`button`)
+
+### Giai đoạn 3: Bubbling (Nổi lên - Mặc định) 🔺
+
+Sự kiện "nổi lên" ngược lại: `button` → `room` → `house` → `document` → `window`
+
+**Ví dụ thực tế:**
 
 ```javascript
-// HTML: <div id="outer"><div id="inner"><button>Click me</button></div></div>
+const house = document.getElementById('house');
+const room = document.getElementById('room');
+const button = document.getElementById('button');
 
-const button = document.querySelector('button');
-const innerDiv = document.getElementById('inner');
-const outerDiv = document.getElementById('outer');
-
-button.addEventListener('click', function(event) {
-    console.log('Button clicked');
-    event.stopPropagation(); // Ngăn sự kiện lan truyền lên phần tử cha
+button.addEventListener('click', () => {
+    console.log('3️⃣ Button clicked!');
 });
 
-innerDiv.addEventListener('click', function() {
-    console.log('Inner div clicked'); // Sẽ không chạy khi nhấn vào button
+room.addEventListener('click', () => {
+    console.log('2️⃣ Room clicked!');
 });
 
-outerDiv.addEventListener('click', function() {
-    console.log('Outer div clicked'); // Sẽ không chạy khi nhấn vào button
+house.addEventListener('click', () => {
+    console.log('1️⃣ House clicked!');
+});
+
+// Khi bấm button, output:
+// 3️⃣ Button clicked!
+// 2️⃣ Room clicked!  ← Bubbling!
+// 1️⃣ House clicked!  ← Tiếp tục bubbling!
+```
+
+---
+
+### stopPropagation - Ngăn lan truyền
+
+```javascript
+button.addEventListener('click', (event) => {
+    console.log('Button clicked!');
+    event.stopPropagation();  // Dừng ngay tại đây!
+});
+
+room.addEventListener('click', () => {
+    console.log('Room clicked!');  // Không chạy!
 });
 ```
 
-### Ủy thác sự kiện (Event Delegation)
+**Output:**
+```
+Button clicked!
+(Dừng lại, không lan ra ngoài)
+```
 
-Kỹ thuật đăng ký một sự kiện cho phần tử cha thay vì cho từng phần tử con, tận dụng sự lan truyền sự kiện.
+---
+
+## Event Delegation - Kỹ thuật quan trọng nhất! 🔥
+
+**Vấn đề:** Bạn có 100 nút trong danh sách
+
+**Sơ đồ so sánh:**
+
+**❌ Cách SAI - Gắn listener cho từng phần tử:**
+```
+ul#todo-list
+├── li [🎧 listener 1] ← Tốn RAM
+├── li [🎧 listener 2] ← Tốn RAM
+├── li [🎧 listener 3] ← Tốn RAM
+├── ... (97 listeners nữa)
+└── li [🎧 listener 100] ← Tốn RAM
+
+Thêm li mới → ❌ Không có listener!
+```
+
+**✅ Cách ĐÚNG - Event Delegation:**
+```
+ul#todo-list [🎧 1 LISTENER DUY NHẤT]
+│    ↑
+│    │ Bubbling
+│    │
+├── li (click) ────┘
+├── li (click) ────┘
+├── li (click) ────┘
+├── ...
+└── li (click) ────┘
+
+Thêm li mới → ✅ Tự động có listener!
+```
+
+---
+
+**❌ Cách SAI (chậm, tốn RAM):**
+
+```javascript
+const buttons = document.querySelectorAll('.item-button');
+
+// Gắn 100 event listeners!
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Button clicked!');
+    });
+});
+
+// Nếu thêm nút mới → Phải gắn listener thủ công!
+```
+
+**Vấn đề:**
+- 💾 Tốn RAM (100 listeners)
+- ❌ Nút mới thêm vào → **Không có listener**
+- 🐌 Chậm khi thêm/xóa phần tử
+
+---
+
+**✅ Cách ĐÚNG: Event Delegation (Ủy quyền)**
+
+**Ý tưởng:** Gắn **1 listener duy nhất** vào thằng cha, tận dụng Event Bubbling!
+
+```javascript
+const todoList = document.getElementById('todo-list');
+
+// Chỉ gắn 1 listener vào <ul>
+todoList.addEventListener('click', function(event) {
+    // Kiểm tra xem có phải button không
+    if (event.target.classList.contains('delete-btn')) {
+        const item = event.target.closest('li');
+        item.remove();
+        console.log('Đã xóa item!');
+    }
+});
+```
+
+**HTML:**
+```html
+<ul id="todo-list">
+    <li>Task 1 <button class="delete-btn">Xóa</button></li>
+    <li>Task 2 <button class="delete-btn">Xóa</button></li>
+    <li>Task 3 <button class="delete-btn">Xóa</button></li>
+</ul>
+```
+
+**Lợi ích:**
+- ✅ **1 listener** thay vì 100 listeners
+- ✅ Nút mới thêm vào → **Tự động có listener**!
+- ✅ Tiết kiệm RAM
+- ✅ Dễ maintain
+
+**Ví dụ thực tế:**
 
 ```javascript
 // HTML:
-// <ul id="todoList">
-//   <li>Task 1</li>
-//   <li>Task 2</li>
-//   <li>Task 3</li>
+// <ul id="product-list">
+//   <li data-id="1">Product 1 <button class="buy">Mua</button></li>
+//   <li data-id="2">Product 2 <button class="buy">Mua</button></li>
 // </ul>
 
-const todoList = document.getElementById('todoList');
+const productList = document.getElementById('product-list');
 
-// Thay vì đăng ký sự kiện cho từng li
-todoList.addEventListener('click', function(event) {
-    // Kiểm tra xem phần tử được click có phải là li không
-    if (event.target.tagName === 'LI') {
-        event.target.classList.toggle('completed');
-        console.log('Task toggled:', event.target.textContent);
+productList.addEventListener('click', (event) => {
+    // Kiểm tra nút "Mua"
+    if (event.target.classList.contains('buy')) {
+        const productId = event.target.closest('li').dataset.id;
+        console.log(`Mua sản phẩm #${productId}`);
+        addToCart(productId);
     }
 });
 
-// Thêm task mới sẽ tự động có sự kiện click mà không cần đăng ký thêm
-const newTask = document.createElement('li');
-newTask.textContent = 'Task 4';
-todoList.appendChild(newTask);
+// Thêm sản phẩm mới → Tự động hoạt động!
+productList.innerHTML += '<li data-id="3">Product 3 <button class="buy">Mua</button></li>';
 ```
+
+---
 
 ## Các sự kiện phổ biến
 
-### Sự kiện chuột
+### 🖱️ Sự kiện chuột
 
 ```javascript
-element.addEventListener('click', handleClick); // Khi nhấp chuột
-element.addEventListener('dblclick', handleDoubleClick); // Khi nhấp đúp chuột
-element.addEventListener('mousedown', handleMouseDown); // Khi nhấn nút chuột xuống
-element.addEventListener('mouseup', handleMouseUp); // Khi thả nút chuột
-element.addEventListener('mousemove', handleMouseMove); // Khi di chuyển chuột
-element.addEventListener('mouseover', handleMouseOver); // Khi chuột di chuyển vào phần tử
-element.addEventListener('mouseout', handleMouseOut); // Khi chuột di chuyển ra khỏi phần tử
-element.addEventListener('contextmenu', handleRightClick); // Khi nhấp chuột phải
+element.addEventListener('click', () => {});        // Nhấp chuột
+element.addEventListener('dblclick', () => {});     // Nhấp đúp
+element.addEventListener('mousedown', () => {});    // Nhấn xuống
+element.addEventListener('mouseup', () => {});      // Thả ra
+element.addEventListener('mousemove', () => {});    // Di chuyển chuột
+element.addEventListener('mouseenter', () => {});   // Chuột vào
+element.addEventListener('mouseleave', () => {});   // Chuột ra
+element.addEventListener('contextmenu', () => {});  // Click chuột phải
 ```
 
-### Sự kiện bàn phím
+**Ví dụ: Theo dõi vị trí chuột**
 
 ```javascript
-document.addEventListener('keydown', handleKeyDown); // Khi nhấn phím xuống
-document.addEventListener('keyup', handleKeyUp); // Khi thả phím
-document.addEventListener('keypress', handleKeyPress); // Khi nhấn và thả phím
+document.addEventListener('mousemove', (event) => {
+    console.log(`X: ${event.clientX}, Y: ${event.clientY}`);
+});
 ```
 
-### Sự kiện form
+---
+
+### ⌨️ Sự kiện bàn phím
 
 ```javascript
-form.addEventListener('submit', handleSubmit); // Khi form được gửi
-input.addEventListener('focus', handleFocus); // Khi phần tử nhận focus
-input.addEventListener('blur', handleBlur); // Khi phần tử mất focus
-input.addEventListener('change', handleChange); // Khi giá trị thay đổi và mất focus
-input.addEventListener('input', handleInput); // Khi giá trị thay đổi ngay lập tức
+document.addEventListener('keydown', () => {});   // Nhấn phím
+document.addEventListener('keyup', () => {});     // Thả phím
+document.addEventListener('keypress', () => {});  // Nhấn và thả
 ```
 
-### Sự kiện document/window
+**Ví dụ: Phát hiện Ctrl+S**
 
 ```javascript
-window.addEventListener('load', handleLoad); // Khi trang và tài nguyên đã tải xong
-document.addEventListener('DOMContentLoaded', handleDOMLoaded); // Khi DOM đã tải xong (không đợi hình ảnh)
-window.addEventListener('resize', handleResize); // Khi cửa sổ thay đổi kích thước
-window.addEventListener('scroll', handleScroll); // Khi cuộn trang
-window.addEventListener('beforeunload', handleBeforeUnload); // Trước khi trang được đóng
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();  // Không lưu trang
+        console.log('Ctrl+S pressed!');
+        saveDocument();
+    }
+});
 ```
 
-## Ví dụ thực tế: Xây dựng ứng dụng Todo List
+---
 
-Hãy xây dựng một ứng dụng Todo List đơn giản để minh họa các khái niệm DOM và sự kiện:
+### 📝 Sự kiện form
+
+```javascript
+form.addEventListener('submit', () => {});   // Gửi form
+input.addEventListener('focus', () => {});   // Nhận focus
+input.addEventListener('blur', () => {});    // Mất focus
+input.addEventListener('change', () => {});  // Thay đổi (blur sau đó)
+input.addEventListener('input', () => {});   // Thay đổi ngay lập tức
+```
+
+**Ví dụ: Validate real-time**
+
+```javascript
+const emailInput = document.querySelector('#email');
+
+emailInput.addEventListener('input', (event) => {
+    const email = event.target.value;
+    
+    if (email.includes('@')) {
+        emailInput.style.borderColor = 'green';
+    } else {
+        emailInput.style.borderColor = 'red';
+    }
+});
+```
+
+---
+
+### 🌐 Sự kiện window/document
+
+```javascript
+window.addEventListener('load', () => {});              // Trang đã tải xong
+document.addEventListener('DOMContentLoaded', () => {}); // DOM đã sẵn sàng
+window.addEventListener('resize', () => {});            // Thay đổi kích thước
+window.addEventListener('scroll', () => {});            // Cuộn trang
+window.addEventListener('beforeunload', () => {});      // Sắp đóng trang
+```
+
+**Ví dụ: Back to top button**
+
+```javascript
+const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+```
+
+---
+
+## Ứng dụng thực tế: Todo List App
+
+Hãy xây dựng một ứng dụng Todo List hoàn chỉnh để áp dụng tất cả kiến thức!
 
 ### HTML
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
         }
         
         .container {
             max-width: 600px;
             margin: 0 auto;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
         
-        h1 {
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
             text-align: center;
-            color: #333;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
         
         .todo-form {
             display: flex;
-            margin-bottom: 20px;
+            padding: 20px;
+            gap: 10px;
+            border-bottom: 1px solid #eee;
         }
         
         #todo-input {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        #todo-input:focus {
+            outline: none;
+            border-color: #667eea;
         }
         
         .add-button {
-            background: #4CAF50;
+            background: #667eea;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
-            border-radius: 0 4px 4px 0;
             font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .add-button:hover {
+            background: #5568d3;
+        }
+        
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-btn {
+            background: #f5f5f5;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
         }
         
         .todo-list {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            padding: 20px;
+            min-height: 200px;
         }
         
         .todo-item {
-            padding: 10px 15px;
-            border-bottom: 1px solid #eee;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
         }
         
         .todo-item:hover {
-            background-color: #f9f9f9;
+            background: #f0f0f0;
+            transform: translateX(5px);
         }
         
-        .completed {
+        .todo-item.completed {
+            opacity: 0.6;
+        }
+        
+        .todo-item.completed .todo-text {
             text-decoration: line-through;
             color: #888;
+        }
+        
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .todo-text {
+            flex: 1;
+            font-size: 16px;
         }
         
         .delete-btn {
             background: #ff4d4d;
             color: white;
             border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
+            padding: 6px 12px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .delete-btn:hover {
+            background: #cc0000;
         }
         
         .empty-message {
             text-align: center;
             color: #888;
             font-style: italic;
+            padding: 40px;
         }
         
-        .filters {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0 10px;
-        }
-        
-        .filter-btn {
-            background: #f1f1f1;
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        
-        .filter-btn.active {
-            background: #4CAF50;
-            color: white;
-            border-color: #4CAF50;
+        .stats {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Todo App</h1>
+        <div class="header">
+            <h1>📝 My Todo App</h1>
+            <p>Quản lý công việc hàng ngày</p>
+        </div>
         
         <form class="todo-form" id="todo-form">
-            <input type="text" id="todo-input" placeholder="Thêm việc cần làm...">
-            <button type="submit" class="add-button">Thêm</button>
+            <input 
+                type="text" 
+                id="todo-input" 
+                placeholder="Thêm việc cần làm..."
+                autocomplete="off"
+            >
+            <button type="submit" class="add-button">➕ Thêm</button>
         </form>
         
         <div class="filters">
@@ -523,9 +1228,12 @@ Hãy xây dựng một ứng dụng Todo List đơn giản để minh họa các
             <button class="filter-btn" data-filter="completed">Đã xong</button>
         </div>
         
-        <ul class="todo-list" id="todo-list">
-            <li class="empty-message">Không có việc cần làm. Thêm việc mới!</li>
-        </ul>
+        <ul class="todo-list" id="todo-list"></ul>
+        
+        <div class="stats" id="stats">
+            <span id="total-count">0</span> việc | 
+            <span id="completed-count">0</span> đã xong
+        </div>
     </div>
     
     <script src="app.js"></script>
@@ -536,118 +1244,114 @@ Hãy xây dựng một ứng dụng Todo List đơn giản để minh họa các
 ### JavaScript (app.js)
 
 ```javascript
-// DOM Elements
+// ============================================
+// DOM ELEMENTS
+// ============================================
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
-const emptyMessage = document.querySelector('.empty-message');
 const filterButtons = document.querySelectorAll('.filter-btn');
+const totalCount = document.getElementById('total-count');
+const completedCount = document.getElementById('completed-count');
 
-// App state
+// ============================================
+// STATE
+// ============================================
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let currentFilter = 'all';
 
-// Event Listeners
+// ============================================
+// INITIALIZATION
+// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     renderTodos();
-    
-    // Form submission event
-    todoForm.addEventListener('submit', addTodo);
-    
-    // Todo list event delegation
-    todoList.addEventListener('click', handleTodoClick);
-    
-    // Filter buttons
-    document.querySelector('.filters').addEventListener('click', handleFilterClick);
+    updateStats();
 });
 
-// Functions
-function addTodo(e) {
+// ============================================
+// EVENT LISTENERS
+// ============================================
+
+// 1. Form submission (Thêm todo mới)
+todoForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const todoText = todoInput.value.trim();
+    const text = todoInput.value.trim();
     
-    if (todoText === '') {
-        // Highlight the input with error
-        todoInput.classList.add('error');
-        setTimeout(() => todoInput.classList.remove('error'), 1000);
+    if (text === '') {
+        // Highlight input nếu rỗng
+        todoInput.style.borderColor = 'red';
+        setTimeout(() => {
+            todoInput.style.borderColor = '#ddd';
+        }, 1000);
         return;
     }
     
-    // Create new todo object
+    // Tạo todo mới
     const newTodo = {
         id: Date.now(),
-        text: todoText,
-        completed: false
+        text: text,
+        completed: false,
+        createdAt: new Date().toISOString()
     };
     
-    // Add to todo array
     todos.push(newTodo);
-    
-    // Save to localStorage
     saveToLocalStorage();
     
-    // Clear input
+    // Clear input và re-render
     todoInput.value = '';
-    
-    // Render todos
     renderTodos();
-}
+    updateStats();
+});
 
-function handleTodoClick(e) {
-    const item = e.target;
+// 2. Event Delegation cho todo list
+todoList.addEventListener('click', (e) => {
+    const target = e.target;
+    const todoItem = target.closest('.todo-item');
     
-    // Check if the delete button was clicked
-    if (item.classList.contains('delete-btn')) {
-        const todoId = Number(item.parentElement.dataset.id);
-        removeTodo(todoId);
+    if (!todoItem) return;
+    
+    const todoId = Number(todoItem.dataset.id);
+    
+    // Xóa todo
+    if (target.classList.contains('delete-btn')) {
+        deleteTodo(todoId);
     }
-    // Check if the todo text was clicked
-    else if (item.classList.contains('todo-item') || item.parentElement.classList.contains('todo-item')) {
-        const todoElement = item.classList.contains('todo-item') ? item : item.parentElement;
-        const todoId = Number(todoElement.dataset.id);
-        toggleComplete(todoId);
+    // Toggle checkbox
+    else if (target.classList.contains('checkbox')) {
+        toggleTodo(todoId);
     }
-}
+    // Click vào text (toggle)
+    else if (target.classList.contains('todo-text')) {
+        toggleTodo(todoId);
+        // Update checkbox
+        const checkbox = todoItem.querySelector('.checkbox');
+        const todo = todos.find(t => t.id === todoId);
+        checkbox.checked = todo.completed;
+    }
+});
 
-function handleFilterClick(e) {
-    if (e.target.classList.contains('filter-btn')) {
-        // Update active filter button
+// 3. Filter buttons
+document.querySelector('.filters').addEventListener('click', (e) => {
+    if (!e.target.classList.contains('filter-btn')) return;
+    
+    // Update active state
         filterButtons.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
         
         // Set current filter
         currentFilter = e.target.dataset.filter;
         
-        // Re-render todos
+    // Re-render
         renderTodos();
-    }
-}
+});
 
-function toggleComplete(id) {
-    todos = todos.map(todo => {
-        if (todo.id === id) {
-            return { ...todo, completed: !todo.completed };
-        }
-        return todo;
-    });
-    
-    saveToLocalStorage();
-    renderTodos();
-}
-
-function removeTodo(id) {
-    todos = todos.filter(todo => todo.id !== id);
-    saveToLocalStorage();
-    renderTodos();
-}
-
-function saveToLocalStorage() {
-    localStorage.setItem('todos', JSON.stringify(todos));
-}
+// ============================================
+// FUNCTIONS
+// ============================================
 
 function renderTodos() {
-    // Filter todos based on current filter
+    // Filter todos
     let filteredTodos = todos;
     
     if (currentFilter === 'active') {
@@ -657,115 +1361,214 @@ function renderTodos() {
     }
     
     // Clear list
-    while (todoList.firstChild) {
-        todoList.removeChild(todoList.firstChild);
-    }
+    todoList.innerHTML = '';
     
-    // Show empty message if no todos
+    // Empty state
     if (filteredTodos.length === 0) {
-        const message = document.createElement('li');
-        message.className = 'empty-message';
-        message.textContent = currentFilter === 'all' 
-            ? 'Không có việc cần làm. Thêm việc mới!' 
-            : (currentFilter === 'active' 
-                ? 'Không có việc đang làm.' 
-                : 'Không có việc đã hoàn thành.');
-        todoList.appendChild(message);
-    } else {
-        // Render todo items
-        filteredTodos.forEach(todo => {
-            const todoItem = document.createElement('li');
-            todoItem.className = `todo-item ${todo.completed ? 'completed' : ''}`;
-            todoItem.setAttribute('data-id', todo.id);
-            
-            todoItem.innerHTML = `
-                <span class="todo-text">${todo.text}</span>
-                <button class="delete-btn">Xóa</button>
-            `;
-            
-            todoList.appendChild(todoItem);
-        });
-    }
-}
-```
-
-## Các kỹ thuật DOM hiệu quả
-
-### 1. Tối ưu hóa thao tác DOM
-
-```javascript
-// Tránh reflow liên tục
-function addManyItems(numItems) {
-    // Không hiệu quả - gây nhiều reflow
-    const list = document.getElementById('myList');
-    for (let i = 0; i < numItems; i++) {
-        list.innerHTML += `<li>Item ${i}</li>`;  // Gây reflow mỗi lần lặp
+        todoList.innerHTML = `
+            <li class="empty-message">
+                ${getEmptyMessage()}
+            </li>
+        `;
+        return;
     }
     
-    // Hiệu quả hơn - một reflow duy nhất
-    const list = document.getElementById('myList');
-    let html = '';
-    for (let i = 0; i < numItems; i++) {
-        html += `<li>Item ${i}</li>`;
-    }
-    list.innerHTML = html;
-    
-    // Hiệu quả nhất - sử dụng DocumentFragment
-    const list = document.getElementById('myList');
-    const fragment = document.createDocumentFragment();
-    for (let i = 0; i < numItems; i++) {
+    // Render todos
+    filteredTodos.forEach(todo => {
         const li = document.createElement('li');
-        li.textContent = `Item ${i}`;
-        fragment.appendChild(li);
+        li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+        li.dataset.id = todo.id;
+        
+        li.innerHTML = `
+            <input type="checkbox" class="checkbox" ${todo.completed ? 'checked' : ''}>
+            <span class="todo-text">${escapeHtml(todo.text)}</span>
+            <button class="delete-btn">🗑️ Xóa</button>
+        `;
+        
+        todoList.appendChild(li);
+    });
+}
+
+function toggleTodo(id) {
+    todos = todos.map(todo => {
+        if (todo.id === id) {
+            return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+    });
+    
+    saveToLocalStorage();
+    renderTodos();
+    updateStats();
+}
+
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    saveToLocalStorage();
+    renderTodos();
+    updateStats();
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function updateStats() {
+    totalCount.textContent = todos.length;
+    completedCount.textContent = todos.filter(t => t.completed).length;
+}
+
+function getEmptyMessage() {
+    if (currentFilter === 'all') {
+        return 'Chưa có việc nào. Thêm việc mới! 🎉';
+    } else if (currentFilter === 'active') {
+        return 'Không có việc đang làm! 👍';
+    } else {
+        return 'Chưa hoàn thành việc nào! 💪';
     }
-    list.appendChild(fragment); // Một reflow duy nhất
+}
+
+// XSS Protection
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 ```
 
-### 2. Tránh DOM traversal
+---
+
+## Best Practices - Quy tắc vàng
+
+### 1. ✅ Dùng querySelector thay vì getElementById
 
 ```javascript
-// Không hiệu quả - duyệt DOM nhiều lần
-function inefficientDOMTraversal() {
-    const header = document.querySelector('header');
-    const nav = document.querySelector('header nav');
-    const logo = document.querySelector('header nav .logo');
-    const menuItems = document.querySelectorAll('header nav .menu li');
+// ❌ Cũ
+const element = document.getElementById('myElement');
+
+// ✅ Mới (đồng nhất, dễ đọc)
+const element = document.querySelector('#myElement');
+```
+
+---
+
+### 2. ✅ Cache DOM queries
+
+```javascript
+// ❌ Chậm - Query nhiều lần
+function updateUI() {
+    document.querySelector('.title').textContent = 'New Title';
+    document.querySelector('.title').style.color = 'red';
+    document.querySelector('.title').classList.add('active');
 }
 
-// Hiệu quả hơn - tái sử dụng các phần tử đã tìm thấy
-function efficientDOMTraversal() {
-    const header = document.querySelector('header');
-    const nav = header.querySelector('nav');
-    const logo = nav.querySelector('.logo');
-    const menuItems = nav.querySelectorAll('.menu li');
+// ✅ Nhanh - Query 1 lần
+function updateUI() {
+    const title = document.querySelector('.title');
+    title.textContent = 'New Title';
+    title.style.color = 'red';
+    title.classList.add('active');
 }
 ```
 
-## Kết luận
+---
 
-DOM Manipulation và Event Handling là các kỹ năng cốt lõi trong phát triển web phía client với JavaScript. Hiểu và áp dụng đúng các kỹ thuật này giúp xây dựng các trang web động, tương tác và thân thiện với người dùng.
+### 3. ✅ Dùng Event Delegation
 
-Trong bài viết này, chúng ta đã tìm hiểu:
-- Cơ bản về Document Object Model (DOM)
-- Cách truy cập các phần tử DOM
-- Thao tác với nội dung, thuộc tính và kiểu CSS
-- Tạo và xóa phần tử DOM
-- Xử lý sự kiện trong JavaScript
-- Xây dựng ứng dụng Todo List thực tế
-- Các kỹ thuật tối ưu DOM
+```javascript
+// ❌ Gắn listener cho từng phần tử
+buttons.forEach(btn => {
+    btn.addEventListener('click', handleClick);
+});
 
-Hiểu biết này là nền tảng cho việc phát triển ứng dụng web hiện đại, kể cả khi sử dụng các thư viện và framework như React, Vue hoặc Angular.
+// ✅ Gắn 1 listener cho parent
+parent.addEventListener('click', (e) => {
+    if (e.target.matches('.button')) {
+        handleClick(e);
+    }
+});
+```
+
+---
+
+### 4. ✅ Batch DOM updates
+
+```javascript
+// ❌ Nhiều Reflow
+for (let i = 0; i < 100; i++) {
+    list.appendChild(createItem(i));  // 100 Reflows
+}
+
+// ✅ 1 Reflow duy nhất
+    const fragment = document.createDocumentFragment();
+for (let i = 0; i < 100; i++) {
+    fragment.appendChild(createItem(i));
+}
+list.appendChild(fragment);  // 1 Reflow
+```
+
+---
+
+### 5. ✅ Dùng classList thay vì className
+
+```javascript
+// ❌ Khó maintain
+element.className = 'active highlight';
+
+// ✅ Dễ maintain
+element.classList.add('active', 'highlight');
+element.classList.remove('active');
+element.classList.toggle('active');
+```
+
+---
+
+### 6. ✅ Tránh innerHTML với user data
+
+```javascript
+// ❌ NGUY HIỂM - XSS attack
+element.innerHTML = userInput;
+
+// ✅ AN TOÀN
+element.textContent = userInput;
+```
+
+---
+
+## Tóm tắt
+
+**DOM Manipulation:**
+1. **Tìm phần tử:** Dùng `querySelector()` và `querySelectorAll()`
+2. **Đổi nội dung:** `textContent` (text) hoặc `innerHTML` (HTML)
+3. **Đổi style:** Dùng `classList` thay vì `style` trực tiếp
+4. **Tạo/xóa:** `createElement()`, `append()`, `remove()`
+5. **Hiệu suất:** Dùng `DocumentFragment` cho nhiều phần tử
+
+**Events:**
+1. **Đăng ký:** `addEventListener()`
+2. **Event Object:** `event.target`, `event.key`, etc.
+3. **Kiểm soát:** `preventDefault()`, `stopPropagation()`
+4. **Kỹ thuật quan trọng:** **Event Delegation**
+
+**Công thức thành công:**
+```javascript
+// 1. Tìm
+const element = document.querySelector('.something');
+
+// 2. Lắng nghe
+element.addEventListener('click', (event) => {
+    // 3. Xử lý
+    console.log('Clicked!');
+});
+```
+
+Giờ bạn đã hiểu DOM và Events! Hãy thử xây dựng calculator, image slider, hoặc game tic-tac-toe của riêng bạn! 🚀
+
+---
 
 ## Tài liệu tham khảo
 
-1. [MDN Web Docs: Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-2. [MDN Web Docs: Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-3. [JavaScript.info: DOM Manipulation](https://javascript.info/document)
-4. "Eloquent JavaScript" - Marijn Haverbeke (Chapter on DOM)
-5. "JavaScript: The Definitive Guide" - David Flanagan
-
-
-
-
-
+- [MDN: Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- [MDN: Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [JavaScript.info: DOM Manipulation](https://javascript.info/document)
+- [Web.dev: JavaScript Events Deep Dive](https://web.dev/eventing-deepdive/)

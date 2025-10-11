@@ -186,6 +186,7 @@
         justify-content: center;
         gap: 1.5rem;
         padding: 2rem 1rem 1rem;
+        margin-bottom: 2.5rem;
     }
     
     .social-link {
@@ -463,6 +464,185 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         background-color: var(--accent-color);
         color: var(--global-background-color);
+    }
+    
+    /* Modern Skills Section Styling - Compact & Clean */
+    .skill-category {
+        margin-bottom: 2.5rem;
+    }
+    
+    .skill-category-title {
+        color: var(--text-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding-bottom: 0.6rem;
+    }
+    
+    .skill-category-title i {
+        font-size: 1.1rem;
+        opacity: 0.5;
+        color: var(--text-color);
+    }
+    
+    /* Skill Grid Modern - Compact */
+    .skill-grid-modern {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .skill-card-modern {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        padding: 1rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .skill-card-modern:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        border-color: var(--accent-color);
+    }
+    
+    .skill-icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: 0.75rem;
+        border-radius: 6px;
+        margin-bottom: 0.6rem;
+        transition: all 0.2s ease;
+    }
+    
+    .skill-card-modern:hover .skill-icon {
+        background: var(--accent-color);
+        color: white;
+    }
+    
+    .skill-details {
+        width: 100%;
+    }
+    
+    .skill-name-modern {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--text-color);
+        margin-bottom: 0.4rem;
+        line-height: 1.3;
+    }
+    
+    .skill-level-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 8px;
+        display: inline-block;
+        font-weight: 500;
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--text-color);
+        opacity: 0.7;
+    }
+    
+    /* Skill Tags Container - Compact */
+    .skill-tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .skill-tag {
+        padding: 0.4rem 0.85rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: default;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+    }
+    
+    .skill-tag-primary {
+        background: var(--accent-color);
+        color: white;
+        border-color: var(--accent-color);
+    }
+    
+    .skill-tag-primary:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+    
+    .skill-tag-secondary {
+        background: white;
+        color: var(--text-color);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+    
+    .skill-tag-secondary:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-1px);
+    }
+    
+    .skill-tag-tertiary {
+        background: rgba(0, 0, 0, 0.03);
+        color: var(--text-color);
+        border-color: transparent;
+    }
+    
+    .skill-tag-tertiary:hover {
+        background: rgba(0, 0, 0, 0.06);
+        transform: translateY(-1px);
+    }
+    
+    /* Responsive Design for Skills - Compact */
+    @media (max-width: 768px) {
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-grid-modern {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.6rem;
+        }
+        
+        .skill-card-modern {
+            padding: 0.85rem 0.6rem;
+        }
+        
+        .skill-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 0.7rem;
+        }
+        
+        .skill-name-modern {
+            font-size: 0.8rem;
+        }
+        
+        .skill-category-title {
+            font-size: 1rem;
+        }
+        
+        .skill-tag {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+        }
     }
 
     .date-range {
@@ -830,121 +1010,149 @@
         
         <!-- Skills Section -->
         <section id="skills" class="section" data-aos="fade-up">
-            <h2 class="section-title">Kỹ năng</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="section-content">
-                <h3 style="color: var(--accent-color); margin-top: 0;">Backend Technologies</h3>
-                <div style="margin-bottom: 2rem;" data-aos="fade-right">
-                    <div class="skill-name">
-                        <span>.NET Core</span>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-4"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>Node.js</span>
-                        <span class="skill-percent">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>Express.js</span>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>React</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-4"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>TypeScript</span>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                </div>
                 
-                <h3 style="color: var(--accent-color);">Databases & Search</h3>
-                <div style="margin-bottom: 2rem;" data-aos="fade-right" data-aos-delay="100">
-                    <div class="skill-name">
-                        <span>SQL Server</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-4"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>MySQL</span>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>Entity Framework</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-4"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>Elasticsearch</span>
-                        <span class="skill-percent">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>PostgreSQL</span>
-                        <span class="skill-percent">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-3"></div>
-                    </div>
-                    
-                    <div class="skill-name">
-                        <span>MongoDB</span>
-                        <span class="skill-percent">60%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level level-2"></div>
+                <!-- Backend Development -->
+                <div class="skill-category" data-aos="fade-up">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-server"></i>
+                        Backend Development
+                    </h3>
+                    <div class="skill-grid-modern">
+                        <div class="skill-card-modern skill-expert">
+                            <div class="skill-icon">.NET</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">.NET Core</div>
+                                <div class="skill-level-badge">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">C#</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">C# 10+</div>
+                                <div class="skill-level-badge">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">Node</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">Node.js</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">TS</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">TypeScript</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">EF</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">Entity Framework</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-intermediate">
+                            <div class="skill-icon">API</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">ASP.NET Web API</div>
+                                <div class="skill-level-badge">Intermediate</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <h3 style="color: var(--accent-color);">DevOps & Tools</h3>
-                <div class="tool-grid" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-item">Docker</div>
-                    <div class="tool-item">Git</div>
-                    <div class="tool-item">Visual Studio</div>
-                    <div class="tool-item">VS Code</div>
-                    <div class="tool-item">GitHub</div>
-                    <div class="tool-item">Gitea</div>
+
+                <!-- Database & Caching -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-database"></i>
+                        Database & Caching
+                    </h3>
+                    <div class="skill-grid-modern">
+                        <div class="skill-card-modern skill-expert">
+                            <div class="skill-icon">SQL</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">SQL Server</div>
+                                <div class="skill-level-badge">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">MySQL</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">MySQL</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">PG</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">PostgreSQL</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-intermediate">
+                            <div class="skill-icon">Mongo</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">MongoDB</div>
+                                <div class="skill-level-badge">Intermediate</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">Redis</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">Redis</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                        <div class="skill-card-modern skill-proficient">
+                            <div class="skill-icon">ES</div>
+                            <div class="skill-details">
+                                <div class="skill-name-modern">Elasticsearch</div>
+                                <div class="skill-level-badge">Proficient</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <h3 style="color: var(--accent-color); margin-top: 2rem;">Concepts & Practices</h3>
-                <div class="tool-grid" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-item">RESTful API</div>
-                    <div class="tool-item">SignalR</div>
-                    <div class="tool-item">JWT Authentication</div>
-                    <div class="tool-item">OAuth Integration</div>
-                    <div class="tool-item">Entity Framework</div>
-                    <div class="tool-item">Clean Architecture</div>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-tools"></i>
+                        DevOps & Tools
+                    </h3>
+                    <div class="skill-tags-container">
+                        <span class="skill-tag skill-tag-primary">Docker</span>
+                        <span class="skill-tag skill-tag-primary">Git/GitHub</span>
+                        <span class="skill-tag skill-tag-secondary">Visual Studio</span>
+                        <span class="skill-tag skill-tag-secondary">VS Code</span>
+                        <span class="skill-tag skill-tag-secondary">Postman</span>
+                        <span class="skill-tag skill-tag-secondary">Swagger</span>
+                        <span class="skill-tag skill-tag-tertiary">CI/CD</span>
+                    </div>
                 </div>
+
+                <!-- Architecture & Patterns -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Architecture & Practices
+                    </h3>
+                    <div class="skill-tags-container">
+                        <span class="skill-tag skill-tag-primary">Clean Architecture</span>
+                        <span class="skill-tag skill-tag-primary">RESTful API</span>
+                        <span class="skill-tag skill-tag-primary">Repository Pattern</span>
+                        <span class="skill-tag skill-tag-secondary">JWT/OAuth 2.0</span>
+                        <span class="skill-tag skill-tag-secondary">SignalR</span>
+                        <span class="skill-tag skill-tag-secondary">RabbitMQ</span>
+                        <span class="skill-tag skill-tag-tertiary">Microservices</span>
+                        <span class="skill-tag skill-tag-tertiary">Unit Testing</span>
+                        <span class="skill-tag skill-tag-tertiary">CQRS</span>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>

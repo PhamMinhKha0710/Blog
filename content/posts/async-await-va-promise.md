@@ -835,7 +835,7 @@ function hideError() {
 
 ## Các Best Practices khi sử dụng Promise và Async/Await
 
-### 1. Luôn xử lý lỗi
+#### 1. Luôn xử lý lỗi
 
 ```javascript
 // Không tốt - không xử lý lỗi
@@ -863,7 +863,7 @@ async function fetchData() {
 }
 ```
 
-### 2. Tránh await không cần thiết
+#### 2. Tránh await không cần thiết
 
 ```javascript
 // Không hiệu quả - đợi tuần tự không cần thiết
@@ -895,7 +895,7 @@ async function getResources() {
 }
 ```
 
-### 3. Tránh dùng hàm async không cần thiết
+#### 3. Tránh dùng hàm async không cần thiết
 
 ```javascript
 // Không cần thiết - chỉ return Promise.resolve
@@ -919,7 +919,7 @@ function fetchUsers() {
 }
 ```
 
-### 4. Sử dụng Promise.allSettled cho nhiều request độc lập
+#### 4. Sử dụng Promise.allSettled cho nhiều request độc lập
 
 ```javascript
 // Nếu một request fail, các request khác vẫn tiếp tục
@@ -945,7 +945,7 @@ async function fetchMultipleResources() {
 }
 ```
 
-### 5. Biến hàm callback thành Promise
+#### 5. Biến hàm callback thành Promise
 
 ```javascript
 // Chuyển hàm callback thành Promise
@@ -973,7 +973,7 @@ async function readConfig() {
 }
 ```
 
-### 6. Xử lý Promise.all kết hợp với map
+#### 6. Xử lý Promise.all kết hợp với map
 
 ```javascript
 async function fetchUserProfiles(userIds) {

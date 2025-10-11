@@ -1,68 +1,34 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>All Posts - My Blog</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>All Posts | My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Chào Mừng Đến Với Code Journey</title>
-    <link>http://localhost:1313/posts/welcome-post/</link>
-    <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/welcome-post/</guid>
-    <description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - My Blog</title><link>https://example.org/posts/</link><description>All Posts | My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor><webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml"/><item><title>Chào Mừng Đến Với Code Journey</title><link>https://example.org/posts/welcome-post/</link><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/welcome-post/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
             </div><h2 id="-chào-mừng-đến-với-code-journey" class="headerLink">
-    <a href="#-ch%c3%a0o-m%e1%bb%abng-%c4%91%e1%ba%bfn-v%e1%bb%9bi-code-journey" class="header-mark"></a>👋 Chào mừng đến với Code Journey!</h2><p>Xin chào các bạn! Mình là <strong>Phạm Minh Kha</strong>, một kỹ sư phần mềm với niềm đam mê sâu sắc về công nghệ và chia sẻ kiến thức. Blog này là nơi mình ghi lại hành trình khám phá thế giới lập trình, từ những khái niệm cơ bản đến các kỹ thuật nâng cao trong Java, JavaScript và phát triển web hiện đại.</p>]]></description>
-</item><item>
-    <title>Socket Programming trong Java: Xây dựng ứng dụng Client-Server</title>
-    <link>http://localhost:1313/posts/socket-programming-trong-java/</link>
-    <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/socket-programming-trong-java/</guid>
-    <description><![CDATA[<h2 id="socket-programming-trong-java-là-gì" class="headerLink">
-    <a href="#socket-programming-trong-java-l%c3%a0-g%c3%ac" class="header-mark"></a>Socket Programming trong Java là gì?</h2><p>Socket Programming là kỹ thuật lập trình cho phép giao tiếp giữa các máy tính khác nhau thông qua mạng. Trong Java, việc xây dựng ứng dụng client-server trở nên dễ dàng hơn nhờ vào package <code>java.net</code> cung cấp các lớp như <code>Socket</code> và <code>ServerSocket</code> để thực hiện giao tiếp mạng.</p>
-<p>Socket programming đóng vai trò quan trọng trong việc phát triển các ứng dụng phân tán, hệ thống chat, trò chơi trực tuyến hay bất kỳ ứng dụng nào yêu cầu giao tiếp qua mạng.</p>]]></description>
-</item><item>
-    <title>Multithreading và Thread Pool trong Java: Tối ưu hiệu suất ứng dụng</title>
-    <link>http://localhost:1313/posts/multithreading-va-thread-pool/</link>
-    <pubDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/multithreading-va-thread-pool/</guid>
-    <description><![CDATA[<h2 id="lập-trình-đa-luồng-trong-java-là-gì" class="headerLink">
-    <a href="#l%e1%ba%adp-tr%c3%acnh-%c4%91a-lu%e1%bb%93ng-trong-java-l%c3%a0-g%c3%ac" class="header-mark"></a>Lập trình đa luồng trong Java là gì?</h2><p>Lập trình đa luồng (Multithreading) là kỹ thuật cho phép chương trình thực hiện nhiều công việc đồng thời bằng cách sử dụng các luồng (thread) khác nhau. Trong Java, lập trình đa luồng là một tính năng quan trọng cho phép tận dụng tối đa sức mạnh của các hệ thống đa nhân hiện đại.</p>
-<p>Multithreading giúp:</p>
+    <a href="#-ch%c3%a0o-m%e1%bb%abng-%c4%91%e1%ba%bfn-v%e1%bb%9bi-code-journey" class="header-mark"></a>👋 Chào mừng đến với Code Journey!</h2><p>Xin chào các bạn! Mình là <strong>Phạm Minh Kha</strong>, một kỹ sư phần mềm với niềm đam mê sâu sắc về công nghệ và chia sẻ kiến thức. Blog này là nơi mình ghi lại hành trình khám phá thế giới lập trình, từ những khái niệm cơ bản đến các kỹ thuật nâng cao trong Java, JavaScript và phát triển web hiện đại.</p>]]></description></item><item><title>Socket Programming trong Java: Xây dựng ứng dụng Client-Server</title><link>https://example.org/posts/socket-programming-trong-java/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/socket-programming-trong-java/</guid><description><![CDATA[<h2 id="socket-là-gì-hãy-tưởng-tượng-đơn-giản" class="headerLink">
+    <a href="#socket-l%c3%a0-g%c3%ac-h%c3%a3y-t%c6%b0%e1%bb%9fng-t%c6%b0%e1%bb%a3ng-%c4%91%c6%a1n-gi%e1%ba%a3n" class="header-mark"></a>Socket là gì? Hãy tưởng tượng đơn giản!</h2><p>Bạn có bao giờ nghĩ <strong>hai máy tính nói chuyện với nhau</strong> giống như hai người gọi điện thoại không? Socket chính là &ldquo;chiếc điện thoại&rdquo; đó!</p>
+<p><strong>Hình dung đơn giản:</strong></p>
 <ul>
-<li>Tối ưu hóa việc sử dụng tài nguyên CPU</li>
-<li>Tăng tốc độ thực thi chương trình</li>
-<li>Cải thiện trải nghiệm người dùng với UI phản hồi nhanh</li>
-<li>Xử lý nhiều tác vụ cùng lúc mà không bị chặn</li>
+<li><strong>Socket</strong> = Ổ cắm điện thoại 🔌</li>
+<li><strong>IP Address</strong> = Số nhà của bạn 🏠</li>
+<li><strong>Port</strong> = Số phòng trong nhà (cổng 80 = phòng web, cổng 8080 = phòng server của bạn)</li>
+<li><strong>Kết nối</strong> = Dây điện thoại nối hai bên lại</li>
 </ul>
-<p>Tuy nhiên, lập trình đa luồng cũng đi kèm với các thách thức như race condition, deadlock, và phức tạp trong thiết kế.</p>]]></description>
-</item><item>
-    <title>JDBC và Database Connection trong Java: Từ cơ bản đến nâng cao</title>
-    <link>http://localhost:1313/posts/jdbc-va-database-connection/</link>
-    <pubDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/jdbc-va-database-connection/</guid>
-    <description><![CDATA[<h2 id="jdbc-là-gì" class="headerLink">
-    <a href="#jdbc-l%c3%a0-g%c3%ac" class="header-mark"></a>JDBC là gì?</h2><p>JDBC (Java Database Connectivity) là một API chuẩn trong Java cho phép kết nối và tương tác với các hệ quản trị cơ sở dữ liệu khác nhau. JDBC cung cấp một bộ các lớp và giao diện giúp lập trình viên thực hiện các thao tác cơ bản với cơ sở dữ liệu như kết nối, truy vấn, cập nhật dữ liệu mà không cần quan tâm đến chi tiết cài đặt của từng hệ quản trị cụ thể.</p>]]></description>
-</item><item>
-    <title>Java Servlet cơ bản: Xây dựng ứng dụng web động</title>
-    <link>http://localhost:1313/posts/java-servlet-co-ban/</link>
-    <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/java-servlet-co-ban/</guid>
-    <description><![CDATA[<h2 id="java-servlet-là-gì" class="headerLink">
+<p>Khi bạn vào Facebook:</p>]]></description></item><item><title>Multithreading và Thread Pool trong Java: Từ Zero đến Hero</title><link>https://example.org/posts/multithreading-va-thread-pool/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/multithreading-va-thread-pool/</guid><description><![CDATA[<h2 id="thread-là-gì-tưởng-tượng-bạn-là-chủ-nhà-hàng" class="headerLink">
+    <a href="#thread-l%c3%a0-g%c3%ac-t%c6%b0%e1%bb%9fng-t%c6%b0%e1%bb%a3ng-b%e1%ba%a1n-l%c3%a0-ch%e1%bb%a7-nh%c3%a0-h%c3%a0ng" class="header-mark"></a>Thread là gì? Tưởng tượng bạn là chủ nhà hàng!</h2><p>Bạn mở một quán cơm:</p>
+<p><strong>Cách 1: Không có thread (Single-threaded)</strong></p>
+<ul>
+<li>Khách A đến → Nấu cơm → Phục vụ → Khách A về</li>
+<li>Khách B đến → Nấu cơm → Phục vụ → Khách B về</li>
+<li>Khách C đến → <strong>(phải đợi 30 phút!)</strong> 😤</li>
+</ul>
+<p><strong>Cách 2: Có nhiều thread (Multi-threaded)</strong></p>
+<ul>
+<li>Khách A đến → Đầu bếp 1 nấu</li>
+<li>Khách B đến → Đầu bếp 2 nấu  } <strong>Cùng lúc!</strong></li>
+<li>Khách C đến → Đầu bếp 3 nấu</li>
+<li>→ <strong>Tất cả được phục vụ nhanh!</strong> 🎉</li>
+</ul>
+<p><strong>Trong Java:</strong></p>]]></description></item><item><title>JDBC và Database Connection trong Java: Từ cơ bản đến nâng cao</title><link>https://example.org/posts/jdbc-va-database-connection/</link><pubDate>Tue, 23 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/jdbc-va-database-connection/</guid><description><![CDATA[<h2 id="jdbc-là-gì" class="headerLink">
+    <a href="#jdbc-l%c3%a0-g%c3%ac" class="header-mark"></a>JDBC là gì?</h2><p>JDBC (Java Database Connectivity) là một API chuẩn trong Java cho phép kết nối và tương tác với các hệ quản trị cơ sở dữ liệu khác nhau. JDBC cung cấp một bộ các lớp và giao diện giúp lập trình viên thực hiện các thao tác cơ bản với cơ sở dữ liệu như kết nối, truy vấn, cập nhật dữ liệu mà không cần quan tâm đến chi tiết cài đặt của từng hệ quản trị cụ thể.</p>]]></description></item><item><title>Java Servlet cơ bản: Xây dựng ứng dụng web động</title><link>https://example.org/posts/java-servlet-co-ban/</link><pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/java-servlet-co-ban/</guid><description><![CDATA[<h2 id="java-servlet-là-gì" class="headerLink">
     <a href="#java-servlet-l%c3%a0-g%c3%ac" class="header-mark"></a>Java Servlet là gì?</h2><p>Java Servlet là một công nghệ cho phép mở rộng khả năng của máy chủ web để phục vụ các yêu cầu HTTP động. Servlet là các chương trình Java chạy trên máy chủ web (như Apache Tomcat, Jetty, WildFly), xử lý các request và tạo ra response gửi về cho client.</p>
-<p>Servlet hoạt động như một lớp trung gian giữa yêu cầu từ browser và cơ sở dữ liệu hoặc ứng dụng trên máy chủ web. Chúng đóng vai trò quan trọng trong việc phát triển các ứng dụng web động.</p>]]></description>
-</item><item>
-    <title>REST API với Spring Boot: Xây dựng backend hiện đại</title>
-    <link>http://localhost:1313/posts/rest-api-voi-spring-boot/</link>
-    <pubDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/rest-api-voi-spring-boot/</guid>
-    <description><![CDATA[<h2 id="rest-api-là-gì" class="headerLink">
+<p>Servlet hoạt động như một lớp trung gian giữa yêu cầu từ browser và cơ sở dữ liệu hoặc ứng dụng trên máy chủ web. Chúng đóng vai trò quan trọng trong việc phát triển các ứng dụng web động.</p>]]></description></item><item><title>REST API với Spring Boot: Xây dựng backend hiện đại</title><link>https://example.org/posts/rest-api-voi-spring-boot/</link><pubDate>Sun, 21 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/rest-api-voi-spring-boot/</guid><description><![CDATA[<h2 id="rest-api-là-gì" class="headerLink">
     <a href="#rest-api-l%c3%a0-g%c3%ac" class="header-mark"></a>REST API là gì?</h2><p>REST (Representational State Transfer) là một kiểu kiến trúc phần mềm cho các ứng dụng phân tán, được đề xuất bởi Roy Fielding năm 2000. REST không phụ thuộc vào bất kỳ giao thức cụ thể nào, nhưng hầu hết các triển khai REST đều sử dụng HTTP.</p>
 <p>RESTful API là API tuân theo các nguyên tắc của REST:</p>
 <ul>
@@ -74,23 +40,29 @@
 <li><strong>Code on Demand</strong> (tùy chọn): Server có thể gửi code cho client thực thi</li>
 </ul>
 <h2 id="spring-boot-nền-tảng-phát-triển-rest-api-hiệu-quả" class="headerLink">
-    <a href="#spring-boot-n%e1%bb%81n-t%e1%ba%a3ng-ph%c3%a1t-tri%e1%bb%83n-rest-api-hi%e1%bb%87u-qu%e1%ba%a3" class="header-mark"></a>Spring Boot: Nền tảng phát triển REST API hiệu quả</h2><p>Spring Boot là một framework mạnh mẽ cho phép phát triển các ứng dụng Java nhanh chóng và dễ dàng. Spring Boot cung cấp nhiều tính năng để xây dựng REST API:</p>]]></description>
-</item><item>
-    <title>DOM Manipulation và Events trong JavaScript: Tạo trang web động</title>
-    <link>http://localhost:1313/posts/dom-manipulation-va-events/</link>
-    <pubDate>Sat, 20 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/dom-manipulation-va-events/</guid>
-    <description><![CDATA[<h2 id="document-object-model-dom-là-gì" class="headerLink">
-    <a href="#document-object-model-dom-l%c3%a0-g%c3%ac" class="header-mark"></a>Document Object Model (DOM) là gì?</h2><p>Document Object Model (DOM) là một API cho HTML và XML, cung cấp cấu trúc dạng cây của tài liệu, cho phép ngôn ngữ như JavaScript truy cập và thay đổi cấu trúc, nội dung và kiểu của tài liệu web.</p>
-<p>Khi một trang web được tải, trình duyệt tạo ra một mô hình DOM của trang đó. DOM đại diện cho HTML như một cấu trúc cây với các nút (nodes), trong đó mỗi thẻ HTML là một nút phần tử (element node), và văn bản bên trong thẻ là nút văn bản (text node).</p>]]></description>
-</item><item>
-    <title>Fetch API và AJAX: Giao tiếp hiệu quả với server</title>
-    <link>http://localhost:1313/posts/fetch-api-va-ajax/</link>
-    <pubDate>Fri, 19 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/fetch-api-va-ajax/</guid>
-    <description><![CDATA[<h2 id="ajax-là-gì" class="headerLink">
+    <a href="#spring-boot-n%e1%bb%81n-t%e1%ba%a3ng-ph%c3%a1t-tri%e1%bb%83n-rest-api-hi%e1%bb%87u-qu%e1%ba%a3" class="header-mark"></a>Spring Boot: Nền tảng phát triển REST API hiệu quả</h2><p>Spring Boot là một framework mạnh mẽ cho phép phát triển các ứng dụng Java nhanh chóng và dễ dàng. Spring Boot cung cấp nhiều tính năng để xây dựng REST API:</p>]]></description></item><item><title>DOM Manipulation và Events trong JavaScript: Từ Zero đến Hero</title><link>https://example.org/posts/dom-manipulation-va-events/</link><pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/dom-manipulation-va-events/</guid><description><![CDATA[<h2 id="dom-là-gì-hãy-tưởng-tượng-html-như-một-ngôi-nhà" class="headerLink">
+    <a href="#dom-l%c3%a0-g%c3%ac-h%c3%a3y-t%c6%b0%e1%bb%9fng-t%c6%b0%e1%bb%a3ng-html-nh%c6%b0-m%e1%bb%99t-ng%c3%b4i-nh%c3%a0" class="header-mark"></a>DOM là gì? Hãy tưởng tượng HTML như một ngôi nhà!</h2><p>Khi bạn viết HTML, trình duyệt không hiểu HTML dưới dạng text. Nó chuyển HTML thành một <strong>cây đối tượng</strong> gọi là <strong>DOM (Document Object Model)</strong> - như bản thiết kế ngôi nhà!</p>
+<p><strong>Hình dung:</strong></p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">html</p>]]></description></item><item><title>Fetch API và AJAX: Giao tiếp hiệu quả với server</title><link>https://example.org/posts/fetch-api-va-ajax/</link><pubDate>Fri, 19 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/fetch-api-va-ajax/</guid><description><![CDATA[<h2 id="ajax-là-gì" class="headerLink">
     <a href="#ajax-l%c3%a0-g%c3%ac" class="header-mark"></a>AJAX là gì?</h2><p>AJAX (Asynchronous JavaScript and XML) là một kỹ thuật phát triển web cho phép gửi và nhận dữ liệu từ server mà không cần tải lại trang. AJAX kết hợp:</p>
 <ul>
 <li>JavaScript và DOM để hiển thị và tương tác với dữ liệu</li>
@@ -98,14 +70,7 @@
 <li>HTML, CSS để hiển thị và định kiểu thông tin</li>
 <li>XML, JSON hoặc text để truyền dữ liệu (JSON được sử dụng phổ biến nhất hiện nay)</li>
 </ul>
-<p>AJAX đã cách mạng hóa trải nghiệm web bằng cách cho phép cập nhật từng phần của trang thay vì tải lại toàn bộ, tạo ra các ứng dụng web mượt mà và phản hồi nhanh hơn.</p>]]></description>
-</item><item>
-    <title>Async/Await và Promise trong JavaScript: Lập trình bất đồng bộ hiện đại</title>
-    <link>http://localhost:1313/posts/async-await-va-promise/</link>
-    <pubDate>Thu, 18 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/async-await-va-promise/</guid>
-    <description><![CDATA[<h2 id="tại-sao-cần-lập-trình-bất-đồng-bộ" class="headerLink">
+<p>AJAX đã cách mạng hóa trải nghiệm web bằng cách cho phép cập nhật từng phần của trang thay vì tải lại toàn bộ, tạo ra các ứng dụng web mượt mà và phản hồi nhanh hơn.</p>]]></description></item><item><title>Async/Await và Promise trong JavaScript: Lập trình bất đồng bộ hiện đại</title><link>https://example.org/posts/async-await-va-promise/</link><pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/async-await-va-promise/</guid><description><![CDATA[<h2 id="tại-sao-cần-lập-trình-bất-đồng-bộ" class="headerLink">
     <a href="#t%e1%ba%a1i-sao-c%e1%ba%a7n-l%e1%ba%adp-tr%c3%acnh-b%e1%ba%a5t-%c4%91%e1%bb%93ng-b%e1%bb%99" class="header-mark"></a>Tại sao cần Lập trình bất đồng bộ?</h2><p>JavaScript vốn là một ngôn ngữ đơn luồng (single-threaded), nghĩa là tại một thời điểm chỉ có thể thực thi một lệnh. Tuy nhiên, nhiều hoạt động trong web có thể mất thời gian như:</p>
 <ul>
 <li>Gọi API từ server</li>
@@ -114,14 +79,5 @@
 <li>Tải tài nguyên (hình ảnh, video, script&hellip;)</li>
 <li>Thiết lập hẹn giờ</li>
 </ul>
-<p>Nếu JavaScript thực hiện các tác vụ này một cách đồng bộ (synchronous), trình duyệt sẽ bị &ldquo;đóng băng&rdquo; cho đến khi tác vụ hoàn thành. Lập trình bất đồng bộ (asynchronous) giải quyết vấn đề này bằng cách cho phép code tiếp tục chạy trong khi đợi các tác vụ dài hoàn thành.</p>]]></description>
-</item><item>
-    <title>JavaScript Event Loop: Cốt lõi của JavaScript bất đồng bộ</title>
-    <link>http://localhost:1313/posts/javascript-event-loop/</link>
-    <pubDate>Wed, 17 Sep 2025 00:00:00 &#43;0000</pubDate><author>
-        <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/javascript-event-loop/</guid>
-    <description><![CDATA[<h2 id="javascript-ngôn-ngữ-đơn-luồng-với-nhiều-khả-năng-bất-đồng-bộ" class="headerLink">
-    <a href="#javascript-ng%c3%b4n-ng%e1%bb%af-%c4%91%c6%a1n-lu%e1%bb%93ng-v%e1%bb%9bi-nhi%e1%bb%81u-kh%e1%ba%a3-n%c4%83ng-b%e1%ba%a5t-%c4%91%e1%bb%93ng-b%e1%bb%99" class="header-mark"></a>JavaScript: Ngôn ngữ đơn luồng với nhiều khả năng bất đồng bộ</h2><p>JavaScript là một ngôn ngữ lập trình đơn luồng (single-threaded), nghĩa là tại một thời điểm, nó chỉ có thể thực thi một tác vụ trong một luồng duy nhất. Tuy nhiên, JavaScript vẫn có khả năng thực hiện các tác vụ bất đồng bộ như gọi API, đọc file, hoặc xử lý sự kiện người dùng mà không làm chương trình bị &ldquo;đóng băng&rdquo;.</p>]]></description>
-</item></channel>
-</rss>
+<p>Nếu JavaScript thực hiện các tác vụ này một cách đồng bộ (synchronous), trình duyệt sẽ bị &ldquo;đóng băng&rdquo; cho đến khi tác vụ hoàn thành. Lập trình bất đồng bộ (asynchronous) giải quyết vấn đề này bằng cách cho phép code tiếp tục chạy trong khi đợi các tác vụ dài hoàn thành.</p>]]></description></item><item><title>JavaScript Event Loop: Cốt lõi của JavaScript bất đồng bộ</title><link>https://example.org/posts/javascript-event-loop/</link><pubDate>Wed, 17 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/javascript-event-loop/</guid><description><![CDATA[<h2 id="javascript-ngôn-ngữ-đơn-luồng-với-nhiều-khả-năng-bất-đồng-bộ" class="headerLink">
+    <a href="#javascript-ng%c3%b4n-ng%e1%bb%af-%c4%91%c6%a1n-lu%e1%bb%93ng-v%e1%bb%9bi-nhi%e1%bb%81u-kh%e1%ba%a3-n%c4%83ng-b%e1%ba%a5t-%c4%91%e1%bb%93ng-b%e1%bb%99" class="header-mark"></a>JavaScript: Ngôn ngữ đơn luồng với nhiều khả năng bất đồng bộ</h2><p>JavaScript là một ngôn ngữ lập trình đơn luồng (single-threaded), nghĩa là tại một thời điểm, nó chỉ có thể thực thi một tác vụ trong một luồng duy nhất. Tuy nhiên, JavaScript vẫn có khả năng thực hiện các tác vụ bất đồng bộ như gọi API, đọc file, hoặc xử lý sự kiện người dùng mà không làm chương trình bị &ldquo;đóng băng&rdquo;.</p>]]></description></item></channel></rss>
