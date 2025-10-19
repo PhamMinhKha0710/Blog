@@ -10,7 +10,7 @@ greeting = "Hello, I'm"
 position = "Backend Developer • 4th Year Student"
 heroTagline = "Passionate about building scalable backend systems with high performance and clear architecture."
 githubUsername = "PhamMinhKha0710"
-resumeLink = ""
+resumeLink = "/cv/Pham_Minh_Kha_CV.pdf"
 status = "Student"
 
 # Stats
@@ -142,6 +142,25 @@ name = "JavaScript"
 logo = "💛"
 
 [[techCategories]]
+category = "🛠 Tools & Workflow"
+categoryIcon = "🛠"
+[[techCategories.technologies]]
+name = "Visual Studio"
+logo = "💜"
+[[techCategories.technologies]]
+name = "VS Code"
+logo = "💙"
+[[techCategories.technologies]]
+name = "Postman"
+logo = "📮"
+[[techCategories.technologies]]
+name = "Git"
+logo = "📦"
+[[techCategories.technologies]]
+name = "Swagger"
+logo = "📋"
+
+[[techCategories]]
 category = "☁️ DevOps & Infra"
 categoryIcon = "☁️"
 [[techCategories.technologies]]
@@ -176,26 +195,23 @@ logo = "🌲"
 name = "Elasticsearch"
 logo = "🔍"
 
-[[techCategories]]
-category = "🛠 Tools & Workflow"
-categoryIcon = "🛠"
-[[techCategories.technologies]]
-name = "Visual Studio"
-logo = "💜"
-[[techCategories.technologies]]
-name = "VS Code"
-logo = "💙"
-[[techCategories.technologies]]
-name = "Postman"
-logo = "📮"
-[[techCategories.technologies]]
-name = "Git"
-logo = "📦"
-[[techCategories.technologies]]
-name = "Swagger"
-logo = "📋"
-
 # Projects
+[[projects]]
+title = "EnglishVocabApp - Vocabulary Learning Application"
+description = "English vocabulary learning app with Spaced Repetition method. Backend built with .NET 9 applying Clean Architecture with CQRS, Domain-Driven Design, and multi-layer architecture. React frontend with TypeScript, featuring flashcards, quizzes, progress tracking, and JWT authentication."
+image = "/images/posts/english-vocab-app.jpg"
+stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
+github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
+demo = ""
+
+[[projects]]
+title = "MKLingo - Next.js Language Learning Platform"
+description = "Language learning platform built with Next.js 15, React 19, and TypeScript. Utilizes App Router, Server Components, Tailwind CSS 4, and Radix UI for modern and performant component library."
+image = "/images/posts/mklingo-app.jpg"
+stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
+github = "https://github.com/PhamMinhKha0710"
+demo = ""
+
 [[projects]]
 title = "E-Commerce Backend API"
 description = "Monolithic e-commerce backend built with .NET 9, CQRS, and Redis caching for real-time performance. Includes product management, shopping cart, orders, and JWT authentication."
@@ -240,6 +256,19 @@ architecturePoints = [
 
 # Experience
 [[experiences]]
+period = "2024 — 2025"
+role = "Backend Developer"
+company = "HLogistics Project (Team)"
+achievements = [
+  "Developed logistics management system with .NET Core 6 and Clean Architecture",
+  "Built APIs for order management, shipping, warehouse, and realtime tracking",
+  "Implemented CQRS pattern with MediatR, FluentValidation, and AutoMapper",
+  "Optimized database queries and applied Repository Pattern with Unit of Work",
+  "Worked with Agile methodology, code review, and git workflow in 3-4 person team",
+  "Used Entity Framework Core, JWT authentication, and Serilog logging"
+]
+
+[[experiences]]
 period = "2022 — Present"
 role = "Computer Science Student"
 company = "University of Technology, HCMC (K22)"
@@ -279,35 +308,21 @@ icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><pat
 
 +++
 
-Hey there! 👋 I'm **Pham Minh Kha** - a final-year **Computer Science** student with a strong passion for **Backend Development**. My journey started from curiosity about how web applications work, and now I'm constantly learning to become a professional Backend Developer.
+I'm **Pham Minh Kha**, a final-year Computer Science student specializing in **Backend Development** with .NET Core and Node.js.
 
-### 🎯 **Learning Journey & Growth**
+### Experience
 
-Throughout my 4 years in college, I've not only accumulated knowledge from lectures but also actively learned through **12+ personal and group projects**. From simple APIs at the beginning to more complex systems with **Clean Architecture**, **Microservices**, and **Event-Driven Design** - each project has been a valuable lesson in software engineering.
+Through 12+ personal and group projects, I have:
+- Built RESTful APIs handling thousands of requests with authentication/authorization
+- Designed and optimized databases (SQL Server, MongoDB) from schema design to query optimization
+- Implemented caching with Redis reducing 60% database load
+- Applied Clean Architecture and SOLID principles for maintainable code
+- Deployed with Docker and CI/CD pipelines
 
-I started with **.NET Core** and quickly fell in love with how this framework helps build **enterprise-grade** applications with high performance. Later, I expanded to **Node.js** to deepen my understanding of **asynchronous programming** and **microservices architecture**. Through projects, I've also worked with various databases like **SQL Server**, **MongoDB**, **Redis**, and learned how to optimize queries for the best performance.
+### Approach
 
-### 💡 **Philosophy & Approach**
+I focus on code quality, scalability, and best practices. Always analyze requirements before coding, implement comprehensive error handling, and document clearly. Fast learner through documentation and hands-on practice.
 
-I believe that **code quality** is just as important as features. In every project I work on, I always:
+### Goal
 
-- **Apply SOLID principles** and appropriate **Design Patterns**
-- **Write clean, self-documenting code** with clear naming conventions
-- **Design RESTful APIs** following best practices
-- **Implement proper error handling** and logging
-- **Write unit tests** and integration tests when possible
-- **Document APIs** with Swagger/OpenAPI
-
-I'm also particularly interested in **system architecture** - how to separate layers, dependency injection, caching strategies, and database optimization. Learning about **Clean Architecture** completely changed how I approach a new project.
-
-### 🚀 **Goals & Aspirations**
-
-I'm seeking an **internship** or **junior backend developer position** where I can:
-
-- **Learn from senior developers** and receive mentoring
-- **Contribute to real-world projects** at scale
-- **Work in Agile/Scrum environments**
-- **Enhance both technical skills** and **soft skills**
-- **Become a professional Backend Engineer**
-
-I'm ready to learn new technologies, face challenges, and continuously improve myself every day! 💪
+Seeking Backend Developer Intern or Junior position to work with senior engineers, contribute to production systems, and grow in an environment with code review culture and modern tech stack.

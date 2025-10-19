@@ -54,99 +54,58 @@
       </div>
     </section>
 
-    <!-- 2. ABOUT ME SECTION -->
+    <!-- 2. ABOUT ME SECTION - COMPACT -->
     <section class="about-section" id="about">
       <div class="section-header">
         <span class="section-number">01</span>
         <h2 class="section-title">About Me</h2>
       </div>
       
-      <div class="about-layout">
-        <!-- Left: Profile Card -->
-        <div class="about-profile">
-          <div class="profile-card">
-            <div class="profile-image-wrapper">
-              <img src="/images/avatar.png" alt="{{ .Site.Params.author.name }}" class="profile-image">
-              <div class="status-badge">
-                <span class="status-dot"></span>
-                <span class="status-text">{{ .Params.status | default "Sinh viên" }}</span>
-              </div>
-            </div>
-            
-            <div class="profile-info">
-              <h3 class="profile-name">{{ .Site.Params.author.name }}</h3>
-              <p class="profile-title">{{ .Params.position | default "Backend Developer" }}</p>
-              
-              {{ if .Params.stats }}
-              <div class="profile-stats">
-                {{ range .Params.stats }}
-                <div class="stat-box">
-                  <div class="stat-value">{{ .value }}</div>
-                  <div class="stat-label">{{ .label }}</div>
-                </div>
-                {{ end }}
-              </div>
-              {{ end }}
-              
-              {{ if .Params.quickFacts }}
-              <div class="quick-facts">
-                {{ range .Params.quickFacts }}
-                <div class="fact-item">
-                  <span class="fact-icon">{{ .icon | safeHTML }}</span>
-                  <div class="fact-content">
-                    <span class="fact-label">{{ .label }}</span>
-                    <span class="fact-value">{{ .value }}</span>
-                  </div>
-                </div>
-                {{ end }}
-              </div>
-              {{ end }}
-            </div>
+      <div class="about-compact">
+        <!-- Profile Info Bar -->
+        <div class="profile-bar">
+          <div class="profile-avatar-mini">
+            <img src="/images/avatar.png" alt="{{ .Site.Params.author.name }}">
+            <span class="status-dot-mini"></span>
           </div>
-        </div>
-        
-        <!-- Right: Content -->
-        <div class="about-content">
-          <div class="about-intro">
-            {{ .Content }}
+          <div class="profile-identity">
+            <h3>{{ .Site.Params.author.name }}</h3>
+            <p>{{ .Params.position | default "Backend Developer" }}</p>
           </div>
-          
-          {{ if .Params.highlights }}
-          <div class="highlights-section">
-            <h3 class="content-heading">
-              <span class="heading-icon">⚡</span>
-              What I Do Best
-            </h3>
-            <div class="highlights-grid">
-              {{ range .Params.highlights }}
-              <div class="highlight-item">
-                <div class="highlight-icon">{{ .icon | safeHTML }}</div>
-                <h4>{{ .title }}</h4>
-                <p>{{ .description }}</p>
-              </div>
-              {{ end }}
+          {{ if .Params.stats }}
+          <div class="stats-inline">
+            {{ range .Params.stats }}
+            <div class="stat-inline">
+              <strong>{{ .value }}</strong>
+              <span>{{ .label }}</span>
             </div>
+            {{ end }}
           </div>
           {{ end }}
+        </div>
+        
+        <!-- Main Content -->
+        <div class="about-main">
+          {{ .Content }}
           
-          {{ if .Params.expertise }}
-          <div class="expertise-section">
-            <h3 class="content-heading">
-              <span class="heading-icon">🛠️</span>
-              Core Expertise
-            </h3>
-            <div class="expertise-tags">
-              {{ range .Params.expertise }}
-              <span class="expertise-tag">{{ . }}</span>
-              {{ end }}
-            </div>
+          <!-- Download CV Button -->
+          {{ if .Params.resumeLink }}
+          <div class="cv-download">
+            <a href="{{ .Params.resumeLink }}" class="btn-download-cv" target="_blank" download>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download CV</span>
+            </a>
           </div>
           {{ end }}
         </div>
       </div>
     </section>
 
-    <!-- 3. TECH STACK SECTION -->
+    <!-- 3. TECH STACK SECTION - 2 COLUMN LAYOUT -->
     <section class="tech-stack-section" id="tech-stack">
       <div class="section-header">
         <span class="section-number">02</span>
@@ -154,25 +113,27 @@
       </div>
       
       {{ if .Params.techCategories }}
-      {{ range .Params.techCategories }}
-      <div class="tech-category">
-        <h3 class="tech-category-title">{{ .category }}</h3>
-        <div class="tech-grid">
-          {{ range .technologies }}
-          <div class="tech-card">
-            <div class="tech-icon">
-              {{ if hasPrefix .logo "/" }}
-                <img src="{{ .logo }}" alt="{{ .name }}" />
-              {{ else }}
-                {{ .logo | safeHTML }}
-              {{ end }}
+      <div class="tech-stack-grid">
+        {{ range .Params.techCategories }}
+        <div class="tech-category-box{{ if eq .category "🧠 AI & Tools" }} tech-category-wide{{ end }}">
+          <h3 class="tech-category-title">{{ .category }}</h3>
+          <div class="tech-badges">
+            {{ range .technologies }}
+            <div class="tech-badge">
+              <div class="tech-badge-icon">
+                {{ if hasPrefix .logo "/" }}
+                  <img src="{{ .logo }}" alt="{{ .name }}" />
+                {{ else }}
+                  {{ .logo | safeHTML }}
+                {{ end }}
+              </div>
+              <span class="tech-badge-name">{{ .name }}</span>
             </div>
-            <div class="tech-name">{{ .name }}</div>
+            {{ end }}
           </div>
-          {{ end }}
         </div>
+        {{ end }}
       </div>
-      {{ end }}
       {{ end }}
     </section>
 
@@ -234,26 +195,90 @@
       <p class="architecture-intro">{{ .Params.architectureIntro }}</p>
       {{ end }}
       
-      <div class="architecture-diagram">
-        <div class="diagram-placeholder">
-          <div class="flow-item">Client Request</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-item">API Gateway</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-item">Business Logic</div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-item">Data Layer</div>
+      <!-- Modern Architecture Diagram -->
+      <div class="architecture-diagram-modern">
+        <div class="arch-layer-container">
+          <!-- Layer 1: Client -->
+          <div class="arch-layer">
+            <div class="layer-icon">🌐</div>
+            <div class="layer-content">
+              <h4 class="layer-title">Client Layer</h4>
+              <p class="layer-desc">Web, Mobile, Desktop Apps</p>
+            </div>
+            <div class="layer-tech">React • Next.js • TypeScript</div>
+          </div>
+          
+          <div class="arch-connector">
+            <div class="connector-line"></div>
+            <div class="connector-label">HTTP/HTTPS</div>
+          </div>
+          
+          <!-- Layer 2: API Gateway -->
+          <div class="arch-layer">
+            <div class="layer-icon">🚪</div>
+            <div class="layer-content">
+              <h4 class="layer-title">API Gateway</h4>
+              <p class="layer-desc">Authentication, Rate Limiting, Routing</p>
+            </div>
+            <div class="layer-tech">JWT • OAuth2 • API Versioning</div>
+          </div>
+          
+          <div class="arch-connector">
+            <div class="connector-line"></div>
+            <div class="connector-label">REST/GraphQL</div>
+          </div>
+          
+          <!-- Layer 3: Application Layer -->
+          <div class="arch-layer featured">
+            <div class="layer-icon">⚡</div>
+            <div class="layer-content">
+              <h4 class="layer-title">Application Layer</h4>
+              <p class="layer-desc">Business Logic, CQRS, Clean Architecture</p>
+            </div>
+            <div class="layer-tech">.NET Core • MediatR • FluentValidation</div>
+          </div>
+          
+          <div class="arch-connector-split">
+            <div class="connector-branch">
+              <div class="connector-line"></div>
+              <div class="connector-label">Cache</div>
+            </div>
+            <div class="connector-branch">
+              <div class="connector-line"></div>
+              <div class="connector-label">Storage</div>
+            </div>
+          </div>
+          
+          <!-- Layer 4: Data Layer -->
+          <div class="arch-layer-group">
+            <div class="arch-layer-small">
+              <div class="layer-icon-small">⚡</div>
+              <h5>Cache Layer</h5>
+              <span>Redis • Memory</span>
+            </div>
+            <div class="arch-layer-small">
+              <div class="layer-icon-small">🗄️</div>
+              <h5>Data Layer</h5>
+              <span>SQL • NoSQL</span>
+            </div>
+          </div>
         </div>
       </div>
       
+      <!-- Architecture Principles -->
       {{ if .Params.architecturePoints }}
-      <div class="architecture-points">
-        {{ range $index, $point := .Params.architecturePoints }}
-        <div class="arch-point">
-          <div class="point-icon">{{ add $index 1 }}</div>
-          <div class="point-text">{{ $point }}</div>
+      <div class="architecture-principles">
+        <h3 class="principles-title">Architecture Principles</h3>
+        <div class="principles-grid">
+          {{ range $index, $point := .Params.architecturePoints }}
+          <div class="principle-card">
+            <div class="principle-number">{{ add $index 1 }}</div>
+            <div class="principle-content">
+              <p>{{ $point }}</p>
+            </div>
+          </div>
+          {{ end }}
         </div>
-        {{ end }}
       </div>
       {{ end }}
     </section>
@@ -284,31 +309,46 @@
       </div>
     </section>
 
-    <!-- 7. CONTACT SECTION -->
-    <section class="contact-section" id="contact">
-      <div class="section-header">
-        <span class="section-number">06</span>
-        <h2 class="section-title">Get In Touch</h2>
-      </div>
-      
-      {{ if .Params.contactIntro }}
-      <p class="contact-intro">{{ .Params.contactIntro }}</p>
-      {{ end }}
-      
-      <div class="contact-grid">
-        {{ range .Params.contacts }}
-        <a href="{{ .url }}" class="contact-card" target="_blank">
-          <div class="contact-icon">
-            {{ .icon | safeHTML }}
+    <!-- 7. CONTACT SECTION - COMPACT DESIGN -->
+    <section class="contact-section-modern" id="contact">
+      <div class="contact-container-compact">
+        <div class="contact-header-compact">
+          <span class="contact-badge">Let's Connect</span>
+          <h2 class="contact-title-modern">Get In Touch</h2>
+          {{ if .Params.contactIntro }}
+          <p class="contact-subtitle">{{ .Params.contactIntro }}</p>
+          {{ end }}
+        </div>
+        
+        <!-- Compact Contact Methods -->
+        <div class="contact-methods-compact">
+          {{ range .Params.contacts }}
+          <a href="{{ .url }}" class="contact-item-compact" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon-compact">
+              {{ .icon | safeHTML }}
+            </div>
+            <div class="contact-details-compact">
+              <span class="contact-label-compact">{{ .label }}</span>
+              <span class="contact-value-compact">{{ .value }}</span>
+            </div>
+            <div class="contact-arrow">→</div>
+          </a>
+          {{ end }}
+        </div>
+        
+        <!-- Quick CTA -->
+        <div class="contact-cta-compact">
+          <p class="cta-text">Available for opportunities and collaborations</p>
+          <div class="availability-badge">
+            <span class="status-dot"></span>
+            <span>Open to work</span>
           </div>
-          <div class="contact-info">
-            <h4>{{ .label }}</h4>
-            <p>{{ .value }}</p>
-          </div>
-        </a>
-        {{ end }}
+        </div>
       </div>
     </section>
+
+    <!-- 8. FOOTER -->
+
   </div>
 </div>
 {{ end }}

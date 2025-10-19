@@ -10,7 +10,7 @@ greeting = "Xin chào, tôi là"
 position = "Backend Developer • Sinh viên năm 4"
 heroTagline = "Đam mê xây dựng các hệ thống backend scalable với hiệu suất cao và kiến trúc rõ ràng."
 githubUsername = "PhamMinhKha0710"
-resumeLink = ""
+resumeLink = "/cv/Pham_Minh_Kha_CV.pdf"
 status = "Sinh viên"
 
 # Stats
@@ -142,13 +142,32 @@ name = "JavaScript"
 logo = "💛"
 
 [[techCategories]]
+category = "🛠 Tools & Workflow"
+categoryIcon = "🛠"
+[[techCategories.technologies]]
+name = "Visual Studio"
+logo = "/images/tech/vstim.png"
+[[techCategories.technologies]]
+name = "VS Code"
+logo = "/images/tech/vscode.png"
+[[techCategories.technologies]]
+name = "Postman"
+logo = "📮"
+[[techCategories.technologies]]
+name = "Git"
+logo = "/images/tech/git.png"
+[[techCategories.technologies]]
+name = "Swagger"
+logo = "/images/tech/icons8-swagger-48.png"
+
+[[techCategories]]
 category = "☁️ DevOps & Infra"
 categoryIcon = "☁️"
 [[techCategories.technologies]]
 name = "Docker"
 logo = "🐳"
 [[techCategories.technologies]]
-name = "Git"
+name = "GitHub Actions"
 logo = "/images/tech/git.png"
 [[techCategories.technologies]]
 name = "Nginx"
@@ -176,26 +195,23 @@ logo = "🌲"
 name = "Elasticsearch"
 logo = "🔍"
 
-[[techCategories]]
-category = "🛠 Tools & Workflow"
-categoryIcon = "🛠"
-[[techCategories.technologies]]
-name = "Visual Studio"
-logo = "/images/tech/vstim.png"
-[[techCategories.technologies]]
-name = "VS Code"
-logo = "/images/tech/vscode.png"
-[[techCategories.technologies]]
-name = "Postman"
-logo = "📮"
-[[techCategories.technologies]]
-name = "Git"
-logo = "/images/tech/git.png"
-[[techCategories.technologies]]
-name = "Swagger"
-logo = "/images/tech/icons8-swagger-48.png"
-
 # Projects
+[[projects]]
+title = "EnglishVocabApp - Ứng dụng Học Từ Vựng"
+description = "Ứng dụng học từ vựng tiếng Anh với phương pháp Spaced Repetition. Backend .NET 9 áp dụng Clean Architecture với CQRS, Domain-Driven Design và multi-layer architecture. Frontend React với TypeScript, bao gồm flashcard, quiz, tracking tiến độ và JWT authentication."
+image = "/images/posts/english-vocab-app.png"
+stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
+github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
+demo = ""
+
+[[projects]]
+title = "MKLingo - Next.js Language Learning Platform"
+description = "Nền tảng học ngôn ngữ được xây dựng với Next.js 15, React 19 và TypeScript. Sử dụng App Router, Server Components, Tailwind CSS 4 và Radix UI cho component library hiện đại và performant."
+image = "/images/posts/mklingo-app.jpg"
+stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
+github = "https://github.com/PhamMinhKha0710"
+demo = ""
+
 [[projects]]
 title = "E-Commerce Backend API"
 description = "Hệ thống backend thương mại điện tử monolithic được xây dựng với .NET 9, CQRS, và Redis caching để đạt hiệu suất real-time. Bao gồm quản lý sản phẩm, giỏ hàng, đơn hàng, và xác thực JWT."
@@ -240,6 +256,19 @@ architecturePoints = [
 
 # Experience
 [[experiences]]
+period = "2024 — 2025"
+role = "Backend Developer"
+company = "HLogistics Project (Team)"
+achievements = [
+  "Phát triển hệ thống quản lý logistics với .NET Core 6 và Clean Architecture",
+  "Xây dựng APIs cho quản lý đơn hàng, vận chuyển, kho và tracking realtime",
+  "Implement CQRS pattern với MediatR, FluentValidation và AutoMapper",
+  "Tối ưu database queries và áp dụng Repository Pattern với Unit of Work",
+  "Làm việc theo Agile, code review và git workflow trong team 3-4 người",
+  "Sử dụng Entity Framework Core, JWT authentication và Serilog logging"
+]
+
+[[experiences]]
 period = "2022 — Hiện tại"
 role = "Sinh viên Công nghệ Thông tin"
 company = "Đại học Công nghệ TP.HCM (K22)"
@@ -279,35 +308,21 @@ icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><pat
 
 +++
 
-Xin chào! 👋 Tôi là **Phạm Minh Kha** - sinh viên năm cuối ngành **Công nghệ Thông tin** với niềm đam mê mãnh liệt về **Backend Development**. Hành trình của tôi bắt đầu từ sự tò mò về cách các ứng dụng web hoạt động, và giờ đây tôi đang không ngừng học hỏi để trở thành một Backend Developer chuyên nghiệp.
+Tôi là **Phạm Minh Kha**, sinh viên năm cuối chuyên về **Backend Development** với .NET Core và Node.js.
 
-### 🎯 **Hành Trình Học Tập & Phát Triển**
+### Experience
 
-Suốt 4 năm học, tôi không chỉ tích lũy kiến thức từ giảng đường mà còn chủ động học hỏi qua **12+ dự án cá nhân và nhóm**. Từ những API đơn giản ban đầu đến các hệ thống phức tạp hơn với **Clean Architecture**, **Microservices**, và **Event-Driven Design** - mỗi dự án là một bài học quý giá về software engineering.
+Qua 12+ dự án cá nhân và nhóm, tôi đã:
+- Xây dựng RESTful APIs xử lý hàng nghìn requests với authentication/authorization
+- Thiết kế và optimize databases (SQL Server, MongoDB) từ schema design đến query optimization
+- Implement caching với Redis giảm 60% database load
+- Apply Clean Architecture và SOLID principles để code maintainable
+- Deploy với Docker và CI/CD pipelines
 
-Tôi bắt đầu với **.NET Core** và nhanh chóng yêu thích cách framework này giúp xây dựng các ứng dụng **enterprise-grade** với hiệu suất cao. Sau đó, tôi mở rộng sang **Node.js** để hiểu sâu hơn về **asynchronous programming** và **microservices architecture**. Qua các dự án, tôi cũng làm việc với nhiều database như **SQL Server**, **MongoDB**, **Redis**, và học cách optimize queries để đạt performance tốt nhất.
+### Approach
 
-### 💡 **Triết Lý & Cách Tiếp Cận**
+Tôi focus vào code quality, scalability, và best practices. Luôn phân tích requirements trước khi code, implement error handling đầy đủ, và document rõ ràng. Tự học nhanh qua documentation và thực hành trên projects.
 
-Tôi tin rằng **code quality** quan trọng không kém gì features. Mỗi dự án tôi làm, tôi luôn:
+### Goal
 
-- **Áp dụng SOLID principles** và **Design Patterns** phù hợp
-- **Viết code clean, self-documenting** với naming conventions rõ ràng
-- **Thiết kế API RESTful** tuân theo best practices
-- **Implement proper error handling** và logging
-- **Viết unit tests** và integration tests khi có thể
-- **Document API** với Swagger/OpenAPI
-
-Tôi cũng đặc biệt quan tâm đến **system architecture** - cách chia tách layers, dependency injection, caching strategies, và database optimization. Học về **Clean Architecture** đã thay đổi hoàn toàn cách tôi approach một dự án mới.
-
-### 🚀 **Định Hướng & Mục Tiêu**
-
-Tôi đang tìm kiếm cơ hội **thực tập** hoặc **vị trí junior backend developer** nơi tôi có thể:
-
-- **Học hỏi từ senior developers** và được mentoring
-- **Đóng góp vào các dự án thực tế** với quy mô lớn
-- **Làm việc trong môi trường Agile/Scrum**
-- **Nâng cao kỹ năng technical** và **soft skills**
-- **Trở thành một Backend Engineer chuyên nghiệp**
-
-Tôi sẵn sàng học những công nghệ mới, đối mặt với thử thách, và không ngừng cải thiện bản thân mỗi ngày! 💪
+Đang tìm vị trí Backend Developer Intern hoặc Junior position để work với senior engineers, contribute vào production systems, và grow trong môi trường có code review culture và tech stack hiện đại.
