@@ -1,0 +1,146 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tutorial - Category - Pham Minh Kha Site</title>
+        <link>http://localhost:63027/categories/tutorial/</link>
+        <description>Tutorial - Category - Pham Minh Kha Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Sun, 12 Oct 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:63027/categories/tutorial/" rel="self" type="application/rss+xml" /><item>
+    <title>Demo: Enhanced Code Blocks - Cách Trình Bày Code Đẹp Mắt</title>
+    <link>http://localhost:63027/posts/demo-enhanced-code/</link>
+    <pubDate>Sun, 12 Oct 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Phạm Minh Kha</name>
+    </author><guid>http://localhost:63027/posts/demo-enhanced-code/</guid>
+    <description><![CDATA[<h2 id="giới-thiệu" class="headerLink">
+    <a href="#gi%e1%bb%9bi-thi%e1%bb%87u" class="header-mark"></a>Giới Thiệu</h2><p>Blog này giờ có hệ thống <strong>Enhanced Code Blocks</strong> với nhiều tính năng tuyệt vời! 🎉</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>📋 Copy code một cú click</li>
+<li>🔼 Expand/collapse code dài</li>
+<li>🔄 Language selector</li>
+<li>⚙️ Options menu (download, full screen)</li>
+<li>😊 Hỗ trợ emoji trong code</li>
+<li>🎨 Beautiful gradient header</li>
+<li>🌙 Dark mode support</li>
+</ul>
+<hr>
+<h2 id="demo-1-socket-programming---client--server" class="headerLink">
+    <a href="#demo-1-socket-programming---client--server" class="header-mark"></a>Demo 1: Socket Programming - Client &amp; Server</h2><h3 id="code-client" class="headerLink">
+    <a href="#code-client" class="header-mark"></a>Code Client</h3><div class="enhanced-code-block" data-lang="java">
+  <div class="code-header">
+    <div class="code-title">
+      <span class="title-icon">👨‍💻</span>
+      <span class="title-text">Code Client:</span>
+    </div>
+    <div class="code-controls">
+      <div class="language-selector">
+        <select class="language-select"><option value="java" selected>java</option><option value="javascript" >javascript</option><option value="typescript" >typescript</option><option value="python" >python</option><option value="go" >go</option><option value="rust" >rust</option><option value="html" >html</option><option value="css" >css</option><option value="bash" >bash</option><option value="sql" >sql</option><option value="json" >json</option></select>
+      </div>
+      <button class="code-action-btn copy-btn" data-tooltip="Copy">
+        <i class="far fa-copy"></i>
+      </button>
+      <button class="code-action-btn expand-btn" data-tooltip="Expand">
+        <i class="fas fa-expand-alt"></i>
+      </button>
+    </div>
+  </div>
+  <div class="code-content">
+    <pre><code class="language-java">
+import java.io.*;
+import java.net.*;
+
+public class SimpleClient {
+    public static void main(String[] args) {
+        String serverAddress = &#34;localhost&#34;;
+        int port = 8080;
+        
+        try (Socket socket = new Socket(serverAddress, port)) {
+            System.out.println(&#34;✅ Đã kết nối đến server!&#34;);
+            
+            // Gửi tin nhắn
+            PrintWriter out = new PrintWriter(
+                socket.getOutputStream(), true);
+            String message = &#34;Xin chào từ Client!&#34;;
+            out.println(message);
+            System.out.println(&#34;🔥 Đã gửi: &#34; &#43; message);
+            
+            // Nhận phản hồi
+            BufferedReader in = new BufferedReader(
+                new InputStreamReader(socket.getInputStream()));
+            String response = in.readLine();
+            System.out.println(&#34;👋 Server trả lời: &#34; &#43; response);
+            
+        } catch (IOException e) {
+            System.err.println(&#34;❌ Không kết nối được: &#34; &#43; e.getMessage());
+        }
+    }
+}
+</code></pre>
+  </div>
+</div>
+
+
+<h3 id="code-server" class="headerLink">
+    <a href="#code-server" class="header-mark"></a>Code Server</h3><div class="enhanced-code-block" data-lang="java">
+  <div class="code-header">
+    <div class="code-title">
+      <span class="title-icon">🖥️</span>
+      <span class="title-text">Code Server:</span>
+    </div>
+    <div class="code-controls">
+      <div class="language-selector">
+        <select class="language-select"><option value="java" selected>java</option><option value="javascript" >javascript</option><option value="typescript" >typescript</option><option value="python" >python</option><option value="go" >go</option><option value="rust" >rust</option><option value="html" >html</option><option value="css" >css</option><option value="bash" >bash</option><option value="sql" >sql</option><option value="json" >json</option></select>
+      </div>
+      <button class="code-action-btn copy-btn" data-tooltip="Copy">
+        <i class="far fa-copy"></i>
+      </button>
+      <button class="code-action-btn expand-btn" data-tooltip="Expand">
+        <i class="fas fa-expand-alt"></i>
+      </button>
+    </div>
+  </div>
+  <div class="code-content">
+    <pre><code class="language-java">
+import java.io.*;
+import java.net.*;
+
+public class SimpleServer {
+    public static void main(String[] args) {
+        int port = 8080;
+        
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
+            System.out.println(&#34;🚀 Server đang chờ kết nối tại cổng &#34; &#43; port);
+            
+            while (true) {
+                // Chờ client gọi đến (BLOCKING tại đây)
+                Socket clientSocket = serverSocket.accept();
+                System.out.println(&#34;✅ Client vừa kết nối: &#34; &#43; 
+                    clientSocket.getInetAddress().getHostAddress());
+                
+                // Đọc tin nhắn từ client
+                BufferedReader in = new BufferedReader(
+                    new InputStreamReader(clientSocket.getInputStream()));
+                String message = in.readLine();
+                System.out.println(&#34;📩 Nhận được: &#34; &#43; message);
+                
+                // Trả lời client
+                PrintWriter out = new PrintWriter(
+                    clientSocket.getOutputStream(), true);
+                out.println(&#34;Server đã nhận: &#34; &#43; message);
+                
+                // Đóng kết nối
+                clientSocket.close();
+                System.out.println(&#34;👋 Client đã ngắt kết nối\n&#34;);
+            }
+        } catch (IOException e) {
+            System.err.println(&#34;❌ Lỗi server: &#34; &#43; e.getMessage());
+        }
+    }
+}
+</code></pre>
+  </div>
+</div>
+
+
+<p><strong>Lưu ý:</strong> Thử click các nút:</p>]]></description>
+</item></channel>
+</rss>

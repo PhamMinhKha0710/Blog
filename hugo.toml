@@ -1,6 +1,5 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My Blog'
+title = 'Pham Minh Kha Blog'
 
 # Theme configuration
 theme = 'DoIt'
@@ -9,42 +8,82 @@ theme = 'DoIt'
 enableRobotsTXT = true
 enableEmoji = true
 
-# Menu configuration
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
+# Default language
+defaultContentLanguage = 'vi'
+defaultContentLanguageInSubdir = false
+
+# Language configuration
+[languages]
+  [languages.vi]
+    languageCode = 'vi'
+    languageName = 'Tiếng Việt'
     weight = 1
-  [[menu.main]]
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
+    title = 'Blog của Phạm Minh Kha'
+    [languages.vi.params]
+      description = 'Blog chia sẻ kiến thức về Java, Programming và Technology'
+  
+  [languages.en]
+    languageCode = 'en'
+    languageName = 'English'
     weight = 2
-  [[menu.main]]
+    title = 'Pham Minh Kha Blog'
+    [languages.en.params]
+      description = 'Blog about Java, Programming and Technology'
+
+# Menu configuration cho tiếng Việt
+[languages.vi.menu]
+  [[languages.vi.menu.main]]
+    identifier = "home"
+    name = "Trang chủ"
+    url = "/"
+    weight = 0
+  [[languages.vi.menu.main]]
+    identifier = "posts"
+    name = "Bài viết"
+    url = "/posts/"
+    weight = 1
+  [[languages.vi.menu.main]]
+    identifier = "tags"
+    name = "Thẻ"
+    url = "/tags/"
+    weight = 2
+  [[languages.vi.menu.main]]
     identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
+    name = "Danh mục"
     url = "/categories/"
-    title = ""
     weight = 3
-  [[menu.main]]
+  [[languages.vi.menu.main]]
     identifier = "about"
-    pre = ""
-    post = ""
-    name = "About"
+    name = "Giới thiệu"
     url = "/about/"
-    title = ""
+    weight = 4
+
+# Menu configuration cho tiếng Anh
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/en/"
+    weight = 0
+  [[languages.en.menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/en/posts/"
+    weight = 1
+  [[languages.en.menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/en/tags/"
+    weight = 2
+  [[languages.en.menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/en/categories/"
+    weight = 3
+  [[languages.en.menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/en/about/"
     weight = 4
 
 # Params configuration
@@ -70,7 +109,7 @@ enableEmoji = true
     # Gravatar Email for preferred avatar in home page
     gravatarEmail = ""
     # URL of avatar shown in home page
-    avatarURL = "/images/posts/avatar.jpg"
+    avatarURL = "/images/avatar.png"
     # title shown in home page (HTML format is supported)
     title = ""
     # subtitle shown in home page (HTML format is supported)
@@ -92,3 +131,9 @@ enableEmoji = true
       keepStatic = false
       # whether to make the table of contents in the sidebar automatically collapsed
       auto = true
+    
+    # Mermaid diagram support
+    [params.page.mermaid]
+      enable = true
+      # Mermaid theme: "default", "dark", "forest", "neutral"
+      theme = "default"

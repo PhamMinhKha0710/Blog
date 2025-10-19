@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Networking - Tag - Pham Minh Kha Blog</title>
+        <link>http://localhost:59059/en/tags/networking/</link>
+        <description>Networking - Tag - Pham Minh Kha Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/networking/" rel="self" type="application/rss+xml" /><item>
+    <title>Socket Programming in Java: Building Client-Server Applications</title>
+    <link>http://localhost:59059/en/posts/socket-programming-trong-java/</link>
+    <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/socket-programming-trong-java/</guid>
+    <description><![CDATA[<h2 id="what-is-a-socket-lets-imagine-simply" class="headerLink">
+    <a href="#what-is-a-socket-lets-imagine-simply" class="header-mark"></a>What is a Socket? Let&rsquo;s Imagine Simply!</h2><p>Have you ever thought about <strong>two computers talking to each other</strong> like two people on a phone call? A socket is that &ldquo;phone&rdquo;!</p>
+<p><strong>Simple visualization:</strong></p>
+<ul>
+<li><strong>Socket</strong> = Phone jack 🔌</li>
+<li><strong>IP Address</strong> = Your house number 🏠</li>
+<li><strong>Port</strong> = Room number in house (port 80 = web room, port 8080 = your server room)</li>
+<li><strong>Connection</strong> = Phone line connecting both sides</li>
+</ul>
+<p>When you visit Facebook:</p>]]></description>
+</item></channel>
+</rss>

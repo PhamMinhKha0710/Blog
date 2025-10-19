@@ -1,0 +1,276 @@
+// Enhanced Code Block Styles
+.enhanced-code-block {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  // Code header
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .code-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+
+      .title-icon {
+        font-size: 16px;
+      }
+    }
+
+    .code-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .language-selector {
+        position: relative;
+        
+        select {
+          appearance: none;
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          color: #ffffff;
+          padding: 6px 32px 6px 12px;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s;
+          outline: none;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.25);
+          }
+
+          option {
+            background: var(--card-background-color);
+            color: var(--text-color);
+          }
+        }
+
+        &::after {
+          content: '▼';
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 10px;
+          color: rgba(255, 255, 255, 0.8);
+          pointer-events: none;
+        }
+      }
+
+      .code-action-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+
+        &.copied {
+          background: rgba(76, 175, 80, 0.3);
+          border-color: rgba(76, 175, 80, 0.5);
+        }
+      }
+    }
+  }
+
+  // Code content
+  .code-content {
+    position: relative;
+    max-height: 500px;
+    overflow-y: auto;
+    background: var(--code-background-color);
+    
+    &.expanded {
+      max-height: none;
+    }
+
+    pre {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'Consolas', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: auto;
+
+      code {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        font-family: inherit;
+        color: var(--text-color);
+        
+        // Line numbers
+        .line-number {
+          display: inline-block;
+          width: 40px;
+          text-align: right;
+          padding-right: 16px;
+          user-select: none;
+          opacity: 0.4;
+        }
+      }
+    }
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--secondary-background-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+
+      &:hover {
+        background: var(--text-secondary-color);
+      }
+    }
+  }
+
+  // Gradient overlay when scrollable
+  &.has-overflow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--code-background-color));
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  &.expanded::after {
+    display: none;
+  }
+}
+
+// Dark mode adjustments
+[theme=dark] {
+  .enhanced-code-block {
+    background: #1e1e1e;
+    border-color: #333;
+
+    .code-content {
+      background: #1e1e1e;
+    }
+  }
+}
+
+// Simple code blocks (inline)
+p code {
+  background: var(--code-background-color);
+  color: var(--code-text-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Source Code Pro', 'Consolas', monospace;
+  font-size: 0.9em;
+  border: 1px solid var(--border-color);
+}
+
+// Code animation
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enhanced-code-block {
+  animation: slideIn 0.3s ease-out;
+}
+
+// Tooltip
+.code-action-btn {
+  position: relative;
+
+  &[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 10;
+  }
+
+  &[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  &:hover[data-tooltip]::before,
+  &:hover[data-tooltip]::after {
+    opacity: 1;
+  }
+}
+
+// Language badge colors
+.language-java { color: #f89820; }
+.language-javascript { color: #f7df1e; }
+.language-python { color: #3776ab; }
+.language-html { color: #e34c26; }
+.language-css { color: #1572b6; }
+.language-bash { color: #4eaa25; }
+
+

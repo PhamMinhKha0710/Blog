@@ -1,0 +1,90 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Web - Tag - Pham Minh Kha Blog</title>
+        <link>http://localhost:59059/en/tags/web/</link>
+        <description>Web - Tag - Pham Minh Kha Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/web/" rel="self" type="application/rss+xml" /><item>
+    <title>Java Servlet Basics: Building Dynamic Web Applications</title>
+    <link>http://localhost:59059/en/posts/java-servlet-co-ban/</link>
+    <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/java-servlet-co-ban/</guid>
+    <description><![CDATA[<h2 id="what-is-java-servlet" class="headerLink">
+    <a href="#what-is-java-servlet" class="header-mark"></a>What is Java Servlet?</h2><p>Java Servlet is a technology that extends the capabilities of web servers to serve dynamic HTTP requests. Servlets are Java programs that run on web servers (such as Apache Tomcat, Jetty, WildFly), processing requests and creating responses to send back to clients.</p>
+<p>Servlets act as an intermediary layer between browser requests and databases or applications on web servers. They play a crucial role in developing dynamic web applications.</p>]]></description>
+</item><item>
+    <title>REST API with Spring Boot: Building Modern Backend</title>
+    <link>http://localhost:59059/en/posts/rest-api-voi-spring-boot/</link>
+    <pubDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/rest-api-voi-spring-boot/</guid>
+    <description><![CDATA[<h2 id="what-is-rest-api" class="headerLink">
+    <a href="#what-is-rest-api" class="header-mark"></a>What is REST API?</h2><p>REST (Representational State Transfer) is a software architecture style for distributed applications, proposed by Roy Fielding in 2000. REST is not dependent on any specific protocol, but most REST implementations use HTTP.</p>
+<p>RESTful API is an API that follows REST principles:</p>
+<ul>
+<li><strong>Client-Server</strong>: Separates user interface and data storage</li>
+<li><strong>Stateless</strong>: Each request from client must contain all necessary information</li>
+<li><strong>Cacheable</strong>: Responses can be cached</li>
+<li><strong>Uniform Interface</strong>: Uniform interface between components</li>
+<li><strong>Layered System</strong>: Layered architecture</li>
+<li><strong>Code on Demand</strong> (optional): Server can send code for client to execute</li>
+</ul>
+<h2 id="spring-boot-efficient-rest-api-development-platform" class="headerLink">
+    <a href="#spring-boot-efficient-rest-api-development-platform" class="header-mark"></a>Spring Boot: Efficient REST API Development Platform</h2><p>Spring Boot is a powerful framework that enables rapid and easy development of Java applications. Spring Boot provides many features for building REST APIs:</p>]]></description>
+</item><item>
+    <title>DOM Manipulation and Events in JavaScript: From Zero to Hero</title>
+    <link>http://localhost:59059/en/posts/dom-manipulation-va-events/</link>
+    <pubDate>Sat, 20 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/dom-manipulation-va-events/</guid>
+    <description><![CDATA[<h2 id="what-is-dom-imagine-html-as-a-house" class="headerLink">
+    <a href="#what-is-dom-imagine-html-as-a-house" class="header-mark"></a>What is DOM? Imagine HTML as a House!</h2><p>When you write HTML, the browser doesn&rsquo;t understand HTML as text. It converts HTML into an <strong>object tree</strong> called the <strong>DOM (Document Object Model)</strong> - like a house blueprint!</p>
+<p><strong>Visualization:</strong></p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">html</p>]]></description>
+</item><item>
+    <title>Async/Await and Promise in JavaScript: Modern Asynchronous Programming</title>
+    <link>http://localhost:59059/en/posts/async-await-va-promise/</link>
+    <pubDate>Thu, 18 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/async-await-va-promise/</guid>
+    <description><![CDATA[<h2 id="why-do-we-need-asynchronous-programming" class="headerLink">
+    <a href="#why-do-we-need-asynchronous-programming" class="header-mark"></a>Why Do We Need Asynchronous Programming?</h2><p>JavaScript is inherently a single-threaded language, meaning it can only execute one command at a time. However, many web operations can be time-consuming, such as:</p>
+<ul>
+<li>Making API calls to a server</li>
+<li>Accessing databases</li>
+<li>Reading/writing files (in Node.js)</li>
+<li>Loading resources (images, videos, scripts&hellip;)</li>
+<li>Setting timers</li>
+</ul>
+<p>If JavaScript executes these tasks synchronously, the browser would &ldquo;freeze&rdquo; until the task completes. Asynchronous programming solves this problem by allowing code to continue running while waiting for long tasks to complete.</p>]]></description>
+</item><item>
+    <title>JavaScript Event Loop: The Core of Asynchronous JavaScript</title>
+    <link>http://localhost:59059/en/posts/javascript-event-loop/</link>
+    <pubDate>Wed, 17 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/javascript-event-loop/</guid>
+    <description><![CDATA[<h2 id="javascript-a-single-threaded-language-with-powerful-asynchronous-capabilities" class="headerLink">
+    <a href="#javascript-a-single-threaded-language-with-powerful-asynchronous-capabilities" class="header-mark"></a>JavaScript: A Single-Threaded Language with Powerful Asynchronous Capabilities</h2><p>JavaScript is a single-threaded programming language, meaning that at any given time, it can only execute one task in a single thread. However, JavaScript is still capable of performing asynchronous tasks such as API calls, reading files, or handling user events without &ldquo;freezing&rdquo; the program.</p>
+<p>What enables JavaScript to achieve this capability? The answer lies in the <strong>Event Loop</strong> - the core mechanism that allows JavaScript to execute asynchronous tasks despite having only one execution thread.</p>]]></description>
+</item></channel>
+</rss>

@@ -1,4 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Concurrency - Tag - My Blog</title><link>https://example.org/tags/concurrency/</link><description>Concurrency - Tag - My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor><webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/tags/concurrency/" rel="self" type="application/rss+xml"/><item><title>Multithreading và Thread Pool trong Java: Từ Zero đến Hero</title><link>https://example.org/posts/multithreading-va-thread-pool/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><author><name>Phạm Minh Kha</name></author><guid>https://example.org/posts/multithreading-va-thread-pool/</guid><description><![CDATA[<h2 id="thread-là-gì-tưởng-tượng-bạn-là-chủ-nhà-hàng" class="headerLink">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Concurrency - Nhãn - Blog của Phạm Minh Kha</title>
+        <link>http://localhost:59059/tags/concurrency/</link>
+        <description>Concurrency - Nhãn - Blog của Phạm Minh Kha</description>
+        <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/tags/concurrency/" rel="self" type="application/rss+xml" /><item>
+    <title>Multithreading và Thread Pool trong Java: Từ Zero đến Hero</title>
+    <link>http://localhost:59059/posts/multithreading-va-thread-pool/</link>
+    <pubDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Phạm Minh Kha</name>
+    </author><guid>http://localhost:59059/posts/multithreading-va-thread-pool/</guid>
+    <description><![CDATA[<h2 id="thread-là-gì-tưởng-tượng-bạn-là-chủ-nhà-hàng" class="headerLink">
     <a href="#thread-l%c3%a0-g%c3%ac-t%c6%b0%e1%bb%9fng-t%c6%b0%e1%bb%a3ng-b%e1%ba%a1n-l%c3%a0-ch%e1%bb%a7-nh%c3%a0-h%c3%a0ng" class="header-mark"></a>Thread là gì? Tưởng tượng bạn là chủ nhà hàng!</h2><p>Bạn mở một quán cơm:</p>
 <p><strong>Cách 1: Không có thread (Single-threaded)</strong></p>
 <ul>
@@ -13,4 +25,6 @@
 <li>Khách C đến → Đầu bếp 3 nấu</li>
 <li>→ <strong>Tất cả được phục vụ nhanh!</strong> 🎉</li>
 </ul>
-<p><strong>Trong Java:</strong></p>]]></description></item></channel></rss>
+<p><strong>Trong Java:</strong></p>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,97 @@
+# English
+
+[home]
+other = "Home"
+
+[posts]
+other = "Posts"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categories"
+
+[about]
+other = "About"
+
+[readMore]
+other = "Read more"
+
+[readingTime]
+one = "{{ .Count }} min read"
+other = "{{ .Count }} min read"
+
+[words]
+one = "{{ .Count }} word"
+other = "{{ .Count }} words"
+
+[author]
+other = "Author"
+
+[publishedOn]
+other = "Published on"
+
+[lastModified]
+other = "Last modified"
+
+[toc]
+other = "Table of Contents"
+
+[share]
+other = "Share"
+
+[relatedPosts]
+other = "Related Posts"
+
+[newer]
+other = "Newer"
+
+[older]
+other = "Older"
+
+[backToTop]
+other = "Back to top"
+
+[searchPlaceholder]
+other = "Search..."
+
+[noResults]
+other = "No results found"
+
+[allCategories]
+other = "All Categories"
+
+[allTags]
+other = "All Tags"
+
+[seeAll]
+other = "See all"
+
+[translation]
+other = "Translation"
+
+[translationNotAvailable]
+other = "Translation not available"
+
+# About Page
+[aboutWhoIAm]
+other = "Who I Am"
+
+[aboutWhatIDo]
+other = "What I Do"
+
+[aboutTechStack]
+other = "Tech Stack"
+
+[aboutGetInTouch]
+other = "Get In Touch"
+
+[downloadCV]
+other = "Download CV"
+
+[myJourney]
+other = "My Journey"
+
+
+

@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Concurrency - Tag - Pham Minh Kha Blog</title>
+        <link>http://localhost:59059/en/tags/concurrency/</link>
+        <description>Concurrency - Tag - Pham Minh Kha Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/concurrency/" rel="self" type="application/rss+xml" /><item>
+    <title>Multithreading and Thread Pool in Java: From Zero to Hero</title>
+    <link>http://localhost:59059/en/posts/multithreading-va-thread-pool/</link>
+    <pubDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/multithreading-va-thread-pool/</guid>
+    <description><![CDATA[<h2 id="what-is-a-thread-imagine-you-own-a-restaurant" class="headerLink">
+    <a href="#what-is-a-thread-imagine-you-own-a-restaurant" class="header-mark"></a>What is a Thread? Imagine You Own a Restaurant!</h2><p>You open a food stall:</p>
+<p><strong>Method 1: No threads (Single-threaded)</strong></p>
+<ul>
+<li>Customer A arrives → Cook rice → Serve → Customer A leaves</li>
+<li>Customer B arrives → Cook rice → Serve → Customer B leaves</li>
+<li>Customer C arrives → <strong>(must wait 30 minutes!)</strong> 😤</li>
+</ul>
+<p><strong>Method 2: Multiple threads (Multi-threaded)</strong></p>
+<ul>
+<li>Customer A arrives → Chef 1 cooks</li>
+<li>Customer B arrives → Chef 2 cooks  } <strong>At the same time!</strong></li>
+<li>Customer C arrives → Chef 3 cooks</li>
+<li>→ <strong>Everyone is served quickly!</strong> 🎉</li>
+</ul>
+<p><strong>In Java:</strong></p>]]></description>
+</item></channel>
+</rss>

@@ -1,1255 +1,314 @@
-{{- define "content" -}}
-<style>
-    :root {
-        --bg-color: var(--global-background-color);
-        --text-color: var(--global-font-color);
-        --accent-color: var(--global-link-color);
-        --secondary-bg: var(--header-background-color);
-        --card-bg: var(--global-background-color);
-        --sidebar-width: 240px;
-    }
-    
-    .portfolio-container {
-        display: flex;
-        min-height: calc(100vh - 200px);
-        background: linear-gradient(135deg, var(--bg-color) 0%, #f8f9fa 100%);
-        color: var(--text-color);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        margin-bottom: 2rem;
-        position: relative;
-        z-index: 1;
-    }
-    
-    /* Ensure footer is visible */
-    .page {
-        position: relative;
-        z-index: 0;
-    }
-    
-    .sidebar {
-        width: var(--sidebar-width);
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        position: fixed;
-        height: 100%;
-        border-right: 1px solid rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-        padding: 2rem 0;
-        z-index: 100;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    }
-    
-    .main-content {
-        margin-left: var(--sidebar-width);
-        padding: 3rem 2rem;
-        width: calc(100% - var(--sidebar-width));
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        border-radius: 20px 0 0 20px;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
-    }
-    
-    .profile-header {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 0 1.5rem;
-    }
-    
-    .avatar {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--accent-color);
-        position: relative;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 8px 32px rgba(45, 128, 154, 0.2);
-        margin: 0 auto 1.5rem;
-    }
-    
-    .avatar:hover {
-        transform: scale(1.05) translateY(-2px);
-        box-shadow: 0 12px 40px rgba(45, 128, 154, 0.3);
-    }
-    
-    .avatar::after {
-        content: '';
-        position: absolute;
-        bottom: 5px;
-        right: 10px;
-        width: 12px;
-        height: 12px;
-        background-color: var(--global-link-hover-color);
-        border-radius: 50%;
-        border: 2px solid var(--bg-color);
-        animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(239, 57, 130, 0.7);
-        }
-        
-        70% {
-            transform: scale(1);
-            box-shadow: 0 0 0 10px rgba(239, 57, 130, 0);
-        }
-        
-        100% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(239, 57, 130, 0);
-        }
-    }
-    
-    .name {
-        color: var(--accent-color);
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 0.5rem 0 0;
-        letter-spacing: -0.02em;
-    }
-    
-    .title {
-        color: var(--text-color);
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin: 0.5rem 0 0.25rem;
-        letter-spacing: 0.01em;
-    }
-    
-    .subtitle {
-        font-size: 0.9rem;
-        opacity: 0.8;
-        margin: 0.5rem 0 2rem;
-        line-height: 1.5;
-        color: var(--global-font-secondary-color);
-    }
-    
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        margin: 2rem 0;
-        padding: 0 1rem;
-    }
-    
-    .nav-item {
-        padding: 1rem 1.5rem;
-        margin: 0.5rem 0;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-radius: 12px;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        color: var(--text-color);
-        text-decoration: none;
-        position: relative;
-        overflow: hidden;
-        background: transparent;
-    }
-    
-    .nav-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(45, 128, 154, 0.1);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: -1;
-        opacity: 0;
-        border-radius: 12px;
-    }
-    
-    .nav-item:hover::before {
-        opacity: 1;
-    }
-    
-    .nav-item.active {
-        background: var(--accent-color);
-        color: var(--global-background-color);
-        box-shadow: 0 4px 12px rgba(45, 128, 154, 0.3);
-    }
-    
-    .nav-item:hover {
-        transform: translateX(8px);
-        color: var(--accent-color);
-    }
-    
-    .social-links {
-        margin-top: auto;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        padding: 2rem 1rem 1rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .social-link {
-        color: var(--text-color);
-        font-size: 1.4rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        padding: 0.5rem;
-        border-radius: 50%;
-        background: rgba(45, 128, 154, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .social-link:hover {
-        color: white;
-        transform: translateY(-4px) scale(1.1);
-        box-shadow: 0 8px 20px rgba(45, 128, 154, 0.3);
-        background: var(--accent-color);
-    }
-    
-    h2.section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--text-color);
-        margin-bottom: 3rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-    }
-    
-    .section {
-        margin-bottom: 3rem;
-        padding-bottom: 1rem;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease;
-    }
-    
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+{{ define "content" }}
+<div class="portfolio-page">
+  <!-- Particles Background -->
+  <div class="particles-bg">
+    {{ range seq 30 }}
+    <div class="particle" style="left: {{ mul (index (slice 5 15 25 35 45 55 65 75 85 95) (mod . 10)) 1 }}%; top: {{ mul (index (slice 10 30 50 70 90) (mod . 5)) 1 }}%; animation-delay: {{ mul . 0.5 }}s;"></div>
+    {{ end }}
+  </div>
 
-    .section-content {
-        max-width: 900px;
-    }
-    
-    .intro {
-        margin-bottom: 2rem;
-    }
-    
-    .intro p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-    }
-    
-    .highlight {
-        color: var(--accent-color);
-    }
-    
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .skill-card {
-        background-color: var(--card-bg);
-        border-radius: 8px;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skill-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .skill-card h4 {
-        font-size: 1rem;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: var(--accent-color);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .skill-card h4 i {
-        transition: transform 0.3s ease;
-    }
-    
-    .skill-card:hover h4 i {
-        transform: rotate(10deg);
-    }
-    
-    .skill-bar {
-        height: 6px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
-        margin: 8px 0;
-        overflow: hidden;
-    }
-    
-    .skill-level {
-        height: 100%;
-        border-radius: 3px;
-        width: 0;
-        transition: width 1.5s ease-in-out;
-    }
-    
-    .level-1.animate { width: 25%; background-color: #ff5252; }
-    .level-2.animate { width: 50%; background-color: #ffb142; }
-    .level-3.animate { width: 75%; background-color: var(--global-link-color); }
-    .level-4.animate { width: 90%; background-color: var(--global-link-hover-color); }
-    
-    .skill-name {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-    }
-    
-    .skill-percent {
-        opacity: 0.7;
-    }
-    
-    .project-card {
-        background-color: var(--card-bg);
-        border-radius: 12px;
-        padding: 1.5rem;
-        display: flex;
-        margin-bottom: 1.5rem;
-        gap: 1.5rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transform: translateY(0);
-        text-decoration: none;
-        color: inherit;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .project-link {
-        cursor: pointer;
-    }
-    
-    .project-link:hover {
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        border-color: var(--accent-color);
-    }
-    
-    .project-image {
-        width: 120px;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .project-card:hover .project-image {
-        transform: scale(1.05);
-    }
-    
-    .project-image img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    
-    .project-details {
-        flex: 1;
-        position: relative;
-    }
-    
-    .project-title {
-        font-size: 1.25rem;
-        margin: 0 0 0.5rem;
-        color: var(--accent-color);
-        transition: all 0.3s ease;
-    }
-    
-    .project-card:hover .project-title {
-        transform: translateX(5px);
-    }
-    
-    .project-link-icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        background: var(--accent-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    
-    .project-card:hover .project-link-icon {
-        opacity: 1;
-        transform: scale(1);
-    }
-    
-    .project-link-icon:hover {
-        background: var(--global-link-hover-color);
-        transform: scale(1.1);
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-    
-    .tech-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-    
-    .tag {
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
-        font-size: 0.75rem;
-        background-color: rgba(45, 128, 154, 0.15);
-        color: var(--accent-color);
-        transition: all 0.3s ease;
-    }
-    
-    .tag:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .tag-nodejs { background-color: rgba(104, 159, 56, 0.15); color: #8bc34a; }
-    .tag-express { background-color: rgba(66, 66, 66, 0.15); color: #666; }
-    .tag-mysql { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    .tag-docker { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    .tag-net { background-color: rgba(239, 57, 130, 0.15); color: var(--global-link-hover-color); }
-    .tag-signalr { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    .tag-sql-server { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    .tag-elasticsearch { background-color: rgba(239, 57, 130, 0.15); color: var(--global-link-hover-color); }
-    .tag-rabbitmq { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    .tag-kubernetes { background-color: rgba(45, 128, 154, 0.15); color: var(--accent-color); }
-    
-    .tool-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-    
-    .tool-item {
-        background-color: var(--secondary-bg);
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-    
-    .tool-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: var(--accent-color);
-        color: var(--global-background-color);
-    }
-    
-    /* Modern Skills Section Styling - Compact & Clean */
-    .skill-category {
-        margin-bottom: 2.5rem;
-    }
-    
-    .skill-category-title {
-        color: var(--text-color);
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        padding-bottom: 0.6rem;
-    }
-    
-    .skill-category-title i {
-        font-size: 1.1rem;
-        opacity: 0.5;
-        color: var(--text-color);
-    }
-    
-    /* Skill Grid Modern - Compact */
-    .skill-grid-modern {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-        gap: 0.75rem;
-        margin-bottom: 1rem;
-    }
-    
-    .skill-card-modern {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 6px;
-        padding: 1rem 0.75rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: all 0.2s ease;
-    }
-    
-    .skill-card-modern:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        border-color: var(--accent-color);
-    }
-    
-    .skill-icon {
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.04);
-        color: var(--text-color);
-        font-weight: 700;
-        font-size: 0.75rem;
-        border-radius: 6px;
-        margin-bottom: 0.6rem;
-        transition: all 0.2s ease;
-    }
-    
-    .skill-card-modern:hover .skill-icon {
-        background: var(--accent-color);
-        color: white;
-    }
-    
-    .skill-details {
-        width: 100%;
-    }
-    
-    .skill-name-modern {
-        font-weight: 600;
-        font-size: 0.85rem;
-        color: var(--text-color);
-        margin-bottom: 0.4rem;
-        line-height: 1.3;
-    }
-    
-    .skill-level-badge {
-        font-size: 0.65rem;
-        padding: 0.15rem 0.5rem;
-        border-radius: 8px;
-        display: inline-block;
-        font-weight: 500;
-        background: rgba(0, 0, 0, 0.05);
-        color: var(--text-color);
-        opacity: 0.7;
-    }
-    
-    /* Skill Tags Container - Compact */
-    .skill-tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-    
-    .skill-tag {
-        padding: 0.4rem 0.85rem;
-        border-radius: 5px;
-        font-size: 0.8rem;
-        font-weight: 500;
-        transition: all 0.2s ease;
-        cursor: default;
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        color: var(--text-color);
-    }
-    
-    .skill-tag-primary {
-        background: var(--accent-color);
-        color: white;
-        border-color: var(--accent-color);
-    }
-    
-    .skill-tag-primary:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
-    }
-    
-    .skill-tag-secondary {
-        background: white;
-        color: var(--text-color);
-        border-color: rgba(0, 0, 0, 0.15);
-    }
-    
-    .skill-tag-secondary:hover {
-        border-color: var(--accent-color);
-        transform: translateY(-1px);
-    }
-    
-    .skill-tag-tertiary {
-        background: rgba(0, 0, 0, 0.03);
-        color: var(--text-color);
-        border-color: transparent;
-    }
-    
-    .skill-tag-tertiary:hover {
-        background: rgba(0, 0, 0, 0.06);
-        transform: translateY(-1px);
-    }
-    
-    /* Responsive Design for Skills - Compact */
-    @media (max-width: 768px) {
-        .skill-category {
-            margin-bottom: 2rem;
-        }
-        
-        .skill-grid-modern {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 0.6rem;
-        }
-        
-        .skill-card-modern {
-            padding: 0.85rem 0.6rem;
-        }
-        
-        .skill-icon {
-            width: 38px;
-            height: 38px;
-            font-size: 0.7rem;
-        }
-        
-        .skill-name-modern {
-            font-size: 0.8rem;
-        }
-        
-        .skill-category-title {
-            font-size: 1rem;
-        }
-        
-        .skill-tag {
-            padding: 0.35rem 0.75rem;
-            font-size: 0.75rem;
-        }
-    }
-
-    .date-range {
-        font-size: 0.8rem;
-        opacity: 0.7;
-        margin-bottom: 0.5rem;
-    }
-
-    .experience-item {
-        margin-bottom: 2rem;
-        position: relative;
-        padding-left: 20px;
-    }
-    
-    .experience-item::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: var(--accent-color);
-    }
-    
-    .experience-item::after {
-        content: '';
-        position: absolute;
-        left: 5px;
-        top: 18px;
-        width: 1px;
-        height: calc(100% - 18px);
-        background-color: var(--accent-color);
-        opacity: 0.5;
-    }
-
-    .job-title {
-        font-size: 1.2rem;
-        margin: 0 0 0.5rem;
-        color: var(--accent-color);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .view-more a {
-        transition: all 0.3s ease;
-    }
-    
-    .view-more a:hover {
-        letter-spacing: 1px;
-    }
-    
-    .view-more a i {
-        transition: all 0.3s ease;
-    }
-    
-    .view-more a:hover i {
-        transform: translateX(5px);
-    }
-
-    @media (max-width: 768px) {
-        .portfolio-container {
-            flex-direction: column;
-        }
-        
-        .sidebar {
-            width: 100%;
-            height: auto;
-            position: relative;
-            border-right: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 1.5rem 0;
-            backdrop-filter: none;
-            background: var(--bg-color);
-        }
-        
-        .main-content {
-            margin-left: 0;
-            padding: 2rem 1rem;
-            width: 100%;
-            border-radius: 0;
-            box-shadow: none;
-            background: var(--bg-color);
-        }
-        
-        .profile-header {
-            margin-bottom: 2rem;
-            padding: 0 1rem;
-        }
-        
-        .avatar {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1rem;
-        }
-        
-        .name {
-            font-size: 1.6rem;
-        }
-        
-        .nav-menu {
-            margin: 1.5rem 0;
-            padding: 0 1rem;
-        }
-        
-        .nav-item {
-            padding: 0.75rem 1rem;
-            margin: 0.25rem 0;
-            font-size: 0.8rem;
-        }
-        
-        .nav-item:hover {
-            transform: translateX(4px);
-        }
-        
-        .social-links {
-            padding: 1.5rem 1rem 1rem;
-            gap: 1rem;
-        }
-        
-        .social-link {
-            font-size: 1.2rem;
-            padding: 0.4rem;
-        }
-        
-        h2.section-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .project-card {
-            flex-direction: column;
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-        }
-    }
-    
-    /* Typing animation */
-    .typing::after {
-        content: '|';
-        display: inline-block;
-        animation: blink 0.7s infinite;
-    }
-    
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-    
-    /* Fade-in animation for elements */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    /* Parallax effect */
-    .parallax {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .parallax-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        transform: translateZ(0);
-        z-index: -1;
-    }
-</style>
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- AOS Animation Library -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<div class="page single special portfolio-container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="profile-header">
-            <img src="/images/avatar.webp" alt="Phạm Minh Kha" class="avatar">
-            <h1 class="name typing-effect" data-text="Phạm Minh Kha">Phạm Minh Kha</h1>
-            <p class="title">Backend Developer</p>
-            <p class="subtitle">Sinh viên năm 4 chuyên ngành<br>Backend Development</p>
+  <div class="portfolio-container">
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="greeting">{{ .Params.greeting | default "Hello, I'm" }}</span>
+            <span class="name">{{ .Site.Params.author.name }}</span>
+          </h1>
+          <h2 class="hero-position">{{ .Params.position | default "Backend Developer" }}</h2>
+          <p class="hero-tagline">{{ .Params.heroTagline | default "I design scalable backend systems with performance and precision." }}</p>
+          
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              View Projects
+            </a>
+            {{ if .Params.resumeLink }}
+            <a href="{{ .Params.resumeLink }}" class="btn-secondary" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Resume
+            </a>
+            {{ end }}
+            <a href="https://github.com/{{ .Params.githubUsername | default "PhamMinhKha0710" }}" class="btn-icon" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.115 2.502.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.099 2.65.64.7 1.028 1.592 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
         </div>
         
-        <div class="nav-menu">
-            <a href="#about" class="nav-item active">About</a>
-            <a href="#experience" class="nav-item">Experience</a>
-            <a href="#projects" class="nav-item">Projects</a>
-            <a href="#skills" class="nav-item">Skills</a>
+        <div class="hero-avatar">
+          <div class="avatar-wrapper">
+            {{ $avatar := "/images/avatar.png" }}
+            <img src="{{ $avatar }}" alt="{{ .Site.Params.author.name }}" loading="eager">
+          </div>
         </div>
-        
-        <div class="social-links">
-            <a href="https://github.com/PhamMinhKha0710" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/your-linkedin" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:phamminhkha19091710@gmail.com" class="social-link"><i class="far fa-envelope"></i></a>
-        </div>
-    </div>
-    
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- About Section -->
-        <section id="about" class="section" data-aos="fade-up">
-            <h2 class="section-title">Giới thiệu</h2>
-            <div class="section-content intro">
-                <p data-aos="fade-up" data-aos-delay="100">Xin chào! Tôi là <span class="highlight">Phạm Minh Kha</span>, một backend developer đam mê xây dựng các hệ thống backend hiệu suất cao, thiết kế API RESTful và làm việc với database. Công việc yêu thích của tôi nằm ở giao điểm giữa thiết kế kiến trúc và implementation, tạo ra những hệ thống không chỉ hoạt động tốt mà còn được xây dựng một cách tối ưu và có khả năng mở rộng.</p>
-                
-                <p data-aos="fade-up" data-aos-delay="200">Hiện tại, tôi đang là sinh viên năm 4 chuyên ngành Backend Development, chuyên về <span class="highlight">.NET, Node.js, Docker, Elasticsearch</span>, và <span class="highlight">Database Systems</span>. Tôi đóng góp vào việc xây dựng và maintain các API services, đảm bảo hệ thống đáp ứng các best practices về performance, security và scalability.</p>
-                
-                <p data-aos="fade-up" data-aos-delay="300">Trong quá khứ, tôi đã có cơ hội phát triển phần mềm qua nhiều dự án khác nhau — từ <span class="highlight">e-commerce platforms</span> và <span class="highlight">task management systems</span> đến <span class="highlight">search engines</span> với Elasticsearch. Tôi cũng có kinh nghiệm với <span class="highlight">microservices architecture</span> và <span class="highlight">containerization</span> với Docker.</p>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section class="about-section" id="about">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      
+      <div class="about-layout">
+        <!-- Left: Profile Card -->
+        <div class="about-profile">
+          <div class="profile-card">
+            <div class="profile-image-wrapper">
+              <img src="/images/avatar.png" alt="{{ .Site.Params.author.name }}" class="profile-image">
+              <div class="status-badge">
+                <span class="status-dot"></span>
+                <span class="status-text">{{ .Params.status | default "Sinh viên" }}</span>
+              </div>
             </div>
             
-            <div class="card-grid">
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-                    <h4><i class="fas fa-code"></i> Backend</h4>
-                    <p>NET & Node.js</p>
+            <div class="profile-info">
+              <h3 class="profile-name">{{ .Site.Params.author.name }}</h3>
+              <p class="profile-title">{{ .Params.position | default "Backend Developer" }}</p>
+              
+              {{ if .Params.stats }}
+              <div class="profile-stats">
+                {{ range .Params.stats }}
+                <div class="stat-box">
+                  <div class="stat-value">{{ .value }}</div>
+                  <div class="stat-label">{{ .label }}</div>
                 </div>
-                
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-                    <h4><i class="fas fa-database"></i> Database</h4>
-                    <p>SQL & NoSQL</p>
+                {{ end }}
+              </div>
+              {{ end }}
+              
+              {{ if .Params.quickFacts }}
+              <div class="quick-facts">
+                {{ range .Params.quickFacts }}
+                <div class="fact-item">
+                  <span class="fact-icon">{{ .icon | safeHTML }}</span>
+                  <div class="fact-content">
+                    <span class="fact-label">{{ .label }}</span>
+                    <span class="fact-value">{{ .value }}</span>
+                  </div>
                 </div>
-                
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-                    <h4><i class="fas fa-server"></i> DevOps</h4>
-                    <p>Docker & K8s</p>
-                </div>
-                
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-                    <h4><i class="fas fa-search"></i> Search</h4>
-                    <p>Elasticsearch</p>
-                </div>
+                {{ end }}
+              </div>
+              {{ end }}
             </div>
-        </section>
+          </div>
+        </div>
         
-        <!-- Experience Section -->
-        <section id="experience" class="section" data-aos="fade-up">
-            <h2 class="section-title">Experience</h2>
-            <div class="section-content">
-                <div class="experience-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="date-range">06/2024 — 09/2024</div>
-                    <h3 class="job-title">Backend Developer Intern - Tech Company</h3>
-                    <p>Phát triển và maintain RESTful APIs cho hệ thống quản lý nội bộ. Tối ưu database queries, cải thiện response time 40%. Viết unit tests và integration tests. Làm việc với team theo Agile/Scrum methodology.</p>
-                    <div class="tech-tags">
-                        <span class="tag tag-nodejs">Node.js</span>
-                        <span class="tag tag-express">Express.js</span>
-                        <span class="tag tag-mysql">MySQL</span>
-                        <span class="tag tag-docker">Docker</span>
-                    </div>
-                </div>
-                
-                <div class="experience-item" data-aos="fade-right" data-aos-delay="200">
-                    <div class="date-range">2023 — PRESENT</div>
-                    <h3 class="job-title">Freelance Backend Developer</h3>
-                    <p>Xây dựng APIs cho 5+ dự án web applications. Thiết kế database schema và implement business logic. Deploy applications lên cloud platforms. Tích hợp third-party services: payment gateways, email services, cloud storage.</p>
-                    <div class="tech-tags">
-                        <span class="tag tag-net">.NET</span>
-                        <span class="tag tag-nodejs">Node.js</span>
-                        <span class="tag tag-mysql">MySQL</span>
-                        <span class="tag tag-elasticsearch">Elasticsearch</span>
-                    </div>
-                </div>
+        <!-- Right: Content -->
+        <div class="about-content">
+          <div class="about-intro">
+            {{ .Content }}
+          </div>
+          
+          {{ if .Params.highlights }}
+          <div class="highlights-section">
+            <h3 class="content-heading">
+              <span class="heading-icon">⚡</span>
+              What I Do Best
+            </h3>
+            <div class="highlights-grid">
+              {{ range .Params.highlights }}
+              <div class="highlight-item">
+                <div class="highlight-icon">{{ .icon | safeHTML }}</div>
+                <h4>{{ .title }}</h4>
+                <p>{{ .description }}</p>
+              </div>
+              {{ end }}
             </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="section" data-aos="fade-up">
-            <h2 class="section-title">Projects</h2>
-            <div class="section-content">
-                <a href="https://github.com/PhamMinhKha0710/ecommerce-api" target="_blank" class="project-card project-link" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="/images/posts/API-Restaurant.png" alt="E-Commerce REST API">
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">E-Commerce REST API</h3>
-                        <p class="project-description">RESTful API cho website thương mại điện tử với đầy đủ chức năng: quản lý sản phẩm, giỏ hàng, đơn hàng, xác thực người dùng với JWT. Áp dụng pagination, filtering và caching với Redis để tối ưu performance.</p>
-                        <div class="tech-tags">
-                            <span class="tag tag-nodejs">Node.js</span>
-                            <span class="tag tag-express">Express.js</span>
-                            <span class="tag tag-mysql">MySQL</span>
-                            <span class="tag tag-docker">Docker</span>
-                        </div>
-                        <div class="project-link-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/PhamMinhKha0710/DoAnWeb" target="_blank" class="project-card project-link" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="/images/posts/post1.png" alt="DevCommunity - Developer Community Platform">
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">DevCommunity - Developer Platform</h3>
-                        <p class="project-description">Nền tảng cộng đồng dành cho developers với đầy đủ tính năng: quản lý mã nguồn với Gitea, hệ thống điểm uy tín, thông báo real-time với SignalR, và tích hợp OAuth. Hỗ trợ đăng bài, bình luận, vote và quản lý repository.</p>
-                        <div class="tech-tags">
-                            <span class="tag tag-net">.NET 9</span>
-                            <span class="tag tag-signalr">SignalR</span>
-                            <span class="tag tag-sql-server">SQL Server</span>
-                            <span class="tag tag-docker">Docker</span>
-                        </div>
-                        <div class="project-link-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/PhamMinhKha0710/EnglishVocab" target="_blank" class="project-card project-link" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="/images/posts/post-api-node.png" alt="FlashLearn - English Vocabulary App">
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">FlashLearn - English Vocabulary App</h3>
-                        <p class="project-description">Ứng dụng học từ vựng tiếng Anh hiện đại với phương pháp Spaced Repetition. Bao gồm flashcards, bài tập đa dạng, theo dõi tiến độ và hệ thống thành tích. Hỗ trợ offline và có giao diện thân thiện.</p>
-                        <div class="tech-tags">
-                            <span class="tag tag-net">.NET 9</span>
-                            <span class="tag tag-nodejs">React</span>
-                            <span class="tag tag-mysql">SQL Server</span>
-                            <span class="tag tag-docker">Docker</span>
-                        </div>
-                        <div class="project-link-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/PhamMinhKha0710/microservices-architecture" target="_blank" class="project-card project-link" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <img src="/images/posts/hero-bg.jpg" alt="Microservices Architecture">
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">Microservices Architecture</h3>
-                        <p class="project-description">Thiết kế và implement microservices architecture với .NET Core. Sử dụng message queue (RabbitMQ) cho inter-service communication. Deploy với Docker Compose và orchestration với Kubernetes.</p>
-                        <div class="tech-tags">
-                            <span class="tag tag-net">.NET Core</span>
-                            <span class="tag tag-rabbitmq">RabbitMQ</span>
-                            <span class="tag tag-docker">Docker</span>
-                            <span class="tag tag-kubernetes">Kubernetes</span>
-                        </div>
-                        <div class="project-link-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                </a>
+          </div>
+          {{ end }}
+          
+          {{ if .Params.expertise }}
+          <div class="expertise-section">
+            <h3 class="content-heading">
+              <span class="heading-icon">🛠️</span>
+              Core Expertise
+            </h3>
+            <div class="expertise-tags">
+              {{ range .Params.expertise }}
+              <span class="expertise-tag">{{ . }}</span>
+              {{ end }}
             </div>
-            
-            <div class="view-more" data-aos="fade-up">
-                <a href="#" style="color: var(--accent-color); text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-                    View Full Project Archive <i class="fas fa-arrow-right"></i>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TECH STACK SECTION -->
+    <section class="tech-stack-section" id="tech-stack">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Tech Stack</h2>
+      </div>
+      
+      {{ if .Params.techCategories }}
+      {{ range .Params.techCategories }}
+      <div class="tech-category">
+        <h3 class="tech-category-title">{{ .category }}</h3>
+        <div class="tech-grid">
+          {{ range .technologies }}
+          <div class="tech-card">
+            <div class="tech-icon">
+              {{ if hasPrefix .logo "/" }}
+                <img src="{{ .logo }}" alt="{{ .name }}" />
+              {{ else }}
+                {{ .logo | safeHTML }}
+              {{ end }}
+            </div>
+            <div class="tech-name">{{ .name }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </section>
+
+    <!-- 4. PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      
+      <div class="projects-grid">
+        {{ range .Params.projects }}
+        <div class="project-card">
+          <div class="project-image">
+            <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-links">
+                {{ if .github }}
+                <a href="{{ .github }}" target="_blank" class="project-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
                 </a>
+                {{ end }}
+                {{ if .demo }}
+                <a href="{{ .demo }}" target="_blank" class="project-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                {{ end }}
+              </div>
             </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="section" data-aos="fade-up">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="section-content">
-                
-                <!-- Backend Development -->
-                <div class="skill-category" data-aos="fade-up">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-server"></i>
-                        Backend Development
-                    </h3>
-                    <div class="skill-grid-modern">
-                        <div class="skill-card-modern skill-expert">
-                            <div class="skill-icon">.NET</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">.NET Core</div>
-                                <div class="skill-level-badge">Advanced</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">C#</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">C# 10+</div>
-                                <div class="skill-level-badge">Advanced</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">Node</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">Node.js</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">TS</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">TypeScript</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">EF</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">Entity Framework</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-intermediate">
-                            <div class="skill-icon">API</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">ASP.NET Web API</div>
-                                <div class="skill-level-badge">Intermediate</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database & Caching -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-database"></i>
-                        Database & Caching
-                    </h3>
-                    <div class="skill-grid-modern">
-                        <div class="skill-card-modern skill-expert">
-                            <div class="skill-icon">SQL</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">SQL Server</div>
-                                <div class="skill-level-badge">Advanced</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">MySQL</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">MySQL</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">PG</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">PostgreSQL</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-intermediate">
-                            <div class="skill-icon">Mongo</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">MongoDB</div>
-                                <div class="skill-level-badge">Intermediate</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">Redis</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">Redis</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                        <div class="skill-card-modern skill-proficient">
-                            <div class="skill-icon">ES</div>
-                            <div class="skill-details">
-                                <div class="skill-name-modern">Elasticsearch</div>
-                                <div class="skill-level-badge">Proficient</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DevOps & Tools -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-tools"></i>
-                        DevOps & Tools
-                    </h3>
-                    <div class="skill-tags-container">
-                        <span class="skill-tag skill-tag-primary">Docker</span>
-                        <span class="skill-tag skill-tag-primary">Git/GitHub</span>
-                        <span class="skill-tag skill-tag-secondary">Visual Studio</span>
-                        <span class="skill-tag skill-tag-secondary">VS Code</span>
-                        <span class="skill-tag skill-tag-secondary">Postman</span>
-                        <span class="skill-tag skill-tag-secondary">Swagger</span>
-                        <span class="skill-tag skill-tag-tertiary">CI/CD</span>
-                    </div>
-                </div>
-
-                <!-- Architecture & Patterns -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-project-diagram"></i>
-                        Architecture & Practices
-                    </h3>
-                    <div class="skill-tags-container">
-                        <span class="skill-tag skill-tag-primary">Clean Architecture</span>
-                        <span class="skill-tag skill-tag-primary">RESTful API</span>
-                        <span class="skill-tag skill-tag-primary">Repository Pattern</span>
-                        <span class="skill-tag skill-tag-secondary">JWT/OAuth 2.0</span>
-                        <span class="skill-tag skill-tag-secondary">SignalR</span>
-                        <span class="skill-tag skill-tag-secondary">RabbitMQ</span>
-                        <span class="skill-tag skill-tag-tertiary">Microservices</span>
-                        <span class="skill-tag skill-tag-tertiary">Unit Testing</span>
-                        <span class="skill-tag skill-tag-tertiary">CQRS</span>
-                    </div>
-                </div>
-
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">{{ .title }}</h3>
+            <p class="project-description">{{ .description }}</p>
+            <div class="project-stack">
+              {{ range .stack }}
+              <span class="stack-tag">{{ . }}</span>
+              {{ end }}
             </div>
-        </section>
-    </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <!-- 5. SYSTEM DESIGN / ARCHITECTURE SECTION -->
+    <section class="architecture-section" id="architecture">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">System Architecture</h2>
+      </div>
+      
+      {{ if .Params.architectureIntro }}
+      <p class="architecture-intro">{{ .Params.architectureIntro }}</p>
+      {{ end }}
+      
+      <div class="architecture-diagram">
+        <div class="diagram-placeholder">
+          <div class="flow-item">Client Request</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-item">API Gateway</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-item">Business Logic</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-item">Data Layer</div>
+        </div>
+      </div>
+      
+      {{ if .Params.architecturePoints }}
+      <div class="architecture-points">
+        {{ range $index, $point := .Params.architecturePoints }}
+        <div class="arch-point">
+          <div class="point-icon">{{ add $index 1 }}</div>
+          <div class="point-text">{{ $point }}</div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+
+    <!-- 6. EXPERIENCE SECTION -->
+    <section class="experience-section" id="experience">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Experience & Education</h2>
+      </div>
+      
+      <div class="timeline">
+        {{ range .Params.experiences }}
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">{{ .period }}</span>
+            <h3 class="timeline-role">{{ .role }}</h3>
+            <p class="timeline-company">{{ .company }}</p>
+            <ul class="timeline-achievements">
+              {{ range .achievements }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      
+      {{ if .Params.contactIntro }}
+      <p class="contact-intro">{{ .Params.contactIntro }}</p>
+      {{ end }}
+      
+      <div class="contact-grid">
+        {{ range .Params.contacts }}
+        <a href="{{ .url }}" class="contact-card" target="_blank">
+          <div class="contact-icon">
+            {{ .icon | safeHTML }}
+          </div>
+          <div class="contact-info">
+            <h4>{{ .label }}</h4>
+            <p>{{ .value }}</p>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+  </div>
 </div>
-
-<!-- AOS Library -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-<script>
-    // Initialize animations when DOM is fully loaded
-    document.addEventListener("DOMContentLoaded", function() {
-        // Initialize AOS library
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: false
-        });
-        
-        // Typing animation for name
-        if(document.querySelector('.typing-effect')) {
-            let typed = new Typed('.typing-effect', {
-                strings: ["Phạm Minh Kha", "Backend Developer", "Full Stack Developer"],
-                typeSpeed: 150,
-                backSpeed: 80,
-                backDelay: 3000,
-                loop: true
-            });
-        }
-        
-        // Animate skill bars
-        const skillLevels = document.querySelectorAll('.skill-level');
-        setTimeout(() => {
-            skillLevels.forEach(level => {
-                level.classList.add('animate');
-            });
-        }, 600);
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.nav-item').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 20,
-                    behavior: 'smooth'
-                });
-                
-                // Update active state
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-        
-        // Update active state based on scroll position
-        window.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    const currentId = section.getAttribute('id');
-                    document.querySelectorAll('.nav-item').forEach(item => {
-                        item.classList.remove('active');
-                        if (item.getAttribute('href') === '#' + currentId) {
-                            item.classList.add('active');
-                        }
-                    });
-                }
-            });
-            
-            // Trigger AOS animations on scroll
-            AOS.refresh();
-        });
-        
-        // Parallax effect for project images
-        window.addEventListener('mousemove', function(e) {
-            document.querySelectorAll('.project-image').forEach(image => {
-                const moving_value = image.getAttribute('data-value');
-                const x = (e.clientX * moving_value) / 250;
-                const y = (e.clientY * moving_value) / 250;
-                
-                image.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            });
-        });
-        
-        // Add hover effect to skill cards
-        document.querySelectorAll('.skill-card').forEach(card => {
-            card.setAttribute('data-value', Math.floor(Math.random() * 5) + 1);
-        });
-    });
-</script>
-{{- end -}}
+{{ end }}

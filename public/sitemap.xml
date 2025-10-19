@@ -1,1 +1,18 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://example.org/tags/blog/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/categories/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/welcome-post/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/doit/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/categories/general/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/hugo/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/about/</loc><lastmod>2025-09-26T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/socket/</loc><lastmod>2025-09-25T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/socket-programming-trong-java/</loc><lastmod>2025-09-25T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/concurrency/</loc><lastmod>2025-09-24T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/multithreading/</loc><lastmod>2025-09-24T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/multithreading-va-thread-pool/</loc><lastmod>2025-09-24T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/database/</loc><lastmod>2025-09-23T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/jdbc/</loc><lastmod>2025-09-23T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/jdbc-va-database-connection/</loc><lastmod>2025-09-23T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/java-servlet-co-ban/</loc><lastmod>2025-09-22T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/servlet/</loc><lastmod>2025-09-22T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/rest-api-voi-spring-boot/</loc><lastmod>2025-09-21T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/dom-manipulation-va-events/</loc><lastmod>2025-09-20T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/fetch-api-va-ajax/</loc><lastmod>2025-09-19T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/async-await-va-promise/</loc><lastmod>2025-09-18T00:00:00+00:00</lastmod></url><url><loc>https://example.org/posts/javascript-event-loop/</loc><lastmod>2025-09-17T00:00:00+00:00</lastmod></url><url><loc>https://example.org/tags/api/</loc></url><url><loc>https://example.org/categories/java/</loc></url><url><loc>https://example.org/tags/java/</loc></url><url><loc>https://example.org/categories/javascript/</loc></url><url><loc>https://example.org/tags/javascript/</loc></url><url><loc>https://example.org/tags/networking/</loc></url><url><loc>https://example.org/search/</loc></url><url><loc>https://example.org/tags/web/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:59059/vi/sitemap.xml</loc>
+    
+      <lastmod>2025-10-19T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:59059/en/sitemap.xml</loc>
+    
+      <lastmod>2025-10-19T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

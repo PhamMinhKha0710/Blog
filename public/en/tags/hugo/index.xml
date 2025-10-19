@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Hugo - Tag - Pham Minh Kha Blog</title>
+        <link>http://localhost:59059/en/tags/hugo/</link>
+        <description>Hugo - Tag - Pham Minh Kha Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>Welcome to Code Journey</title>
+    <link>http://localhost:59059/en/posts/welcome-post/</link>
+    <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
+        <name>Pham Minh Kha</name>
+    </author><guid>http://localhost:59059/en/posts/welcome-post/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="-welcome-to-code-journey" class="headerLink">
+    <a href="#-welcome-to-code-journey" class="header-mark"></a>👋 Welcome to Code Journey!</h2><p>Hello everyone! I&rsquo;m <strong>Pham Minh Kha</strong>, a software engineer with a deep passion for technology and knowledge sharing. This blog is where I document my journey exploring the programming world, from basic concepts to advanced techniques in Java, JavaScript, and modern web development.</p>
+<h3 id="-vision-and-mission" class="headerLink">
+    <a href="#-vision-and-mission" class="header-mark"></a>🚀 Vision and Mission</h3><ul>
+<li><strong>Share Practical Knowledge</strong>: Not just theory, but real-world experience from actual projects</li>
+<li><strong>Simplify Complexity</strong>: Transform difficult concepts into accessible content for everyone</li>
+<li><strong>Stay Current with Tech Trends</strong>: Leading the way in introducing and analyzing new technologies</li>
+<li><strong>Build a Learning Community</strong>: Create an environment for exchange and mutual support among tech enthusiasts</li>
+</ul>
+<h3 id="-unique-experience" class="headerLink">
+    <a href="#-unique-experience" class="header-mark"></a>💡 Unique Experience</h3><p>The blog is designed with modern features:</p>]]></description>
+</item></channel>
+</rss>

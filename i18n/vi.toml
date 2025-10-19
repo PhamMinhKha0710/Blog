@@ -1,0 +1,97 @@
+# Tiếng Việt (Vietnamese)
+
+[home]
+other = "Trang chủ"
+
+[posts]
+other = "Bài viết"
+
+[tags]
+other = "Thẻ"
+
+[categories]
+other = "Danh mục"
+
+[about]
+other = "Giới thiệu"
+
+[readMore]
+other = "Đọc thêm"
+
+[readingTime]
+one = "{{ .Count }} phút đọc"
+other = "{{ .Count }} phút đọc"
+
+[words]
+one = "{{ .Count }} từ"
+other = "{{ .Count }} từ"
+
+[author]
+other = "Tác giả"
+
+[publishedOn]
+other = "Xuất bản vào"
+
+[lastModified]
+other = "Cập nhật lần cuối"
+
+[toc]
+other = "Mục lục"
+
+[share]
+other = "Chia sẻ"
+
+[relatedPosts]
+other = "Bài viết liên quan"
+
+[newer]
+other = "Mới hơn"
+
+[older]
+other = "Cũ hơn"
+
+[backToTop]
+other = "Về đầu trang"
+
+[searchPlaceholder]
+other = "Tìm kiếm..."
+
+[noResults]
+other = "Không tìm thấy kết quả"
+
+[allCategories]
+other = "Tất cả danh mục"
+
+[allTags]
+other = "Tất cả thẻ"
+
+[seeAll]
+other = "Xem tất cả"
+
+[translation]
+other = "Bản dịch"
+
+[translationNotAvailable]
+other = "Bản dịch chưa có sẵn"
+
+# Trang Giới thiệu
+[aboutWhoIAm]
+other = "Tôi Là Ai"
+
+[aboutWhatIDo]
+other = "Tôi Làm Gì"
+
+[aboutTechStack]
+other = "Công Nghệ"
+
+[aboutGetInTouch]
+other = "Liên Hệ"
+
+[downloadCV]
+other = "Tải CV"
+
+[myJourney]
+other = "Hành Trình Của Tôi"
+
+
+
