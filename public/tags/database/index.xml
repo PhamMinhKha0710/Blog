@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Database - Nhãn - Blog của Phạm Minh Kha</title>
-        <link>http://localhost:59059/tags/database/</link>
+        <link>http://localhost:1313/tags/database/</link>
         <description>Database - Nhãn - Blog của Phạm Minh Kha</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/tags/database/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/database/" rel="self" type="application/rss+xml" /><item>
     <title>JDBC và Database Connection trong Java: Từ cơ bản đến nâng cao</title>
-    <link>http://localhost:59059/posts/jdbc-va-database-connection/</link>
+    <link>http://localhost:1313/posts/jdbc-va-database-connection/</link>
     <pubDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:59059/posts/jdbc-va-database-connection/</guid>
+    </author><guid>http://localhost:1313/posts/jdbc-va-database-connection/</guid>
     <description><![CDATA[<h2 id="jdbc-là-gì" class="headerLink">
     <a href="#jdbc-l%c3%a0-g%c3%ac" class="header-mark"></a>JDBC là gì?</h2><p>JDBC (Java Database Connectivity) là một API chuẩn trong Java cho phép kết nối và tương tác với các hệ quản trị cơ sở dữ liệu khác nhau. JDBC cung cấp một bộ các lớp và giao diện giúp lập trình viên thực hiện các thao tác cơ bản với cơ sở dữ liệu như kết nối, truy vấn, cập nhật dữ liệu mà không cần quan tâm đến chi tiết cài đặt của từng hệ quản trị cụ thể.</p>]]></description>
 </item></channel>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59059&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" /><title>JDBC and Java Database Connectivity: From First Principles to Advanced Mastery - Pham Minh Kha Blog</title><meta name="Description" content="A comprehensive journey through JDBC - from basic concepts with simple analogies to advanced techniques on security, performance, and its role in the modern Java ecosystem"><meta property="og:url" content="http://localhost:59059/en/posts/jdbc-va-database-connection/">
+    <meta name="robots" content="noodp" /><title>JDBC and Java Database Connectivity: From First Principles to Advanced Mastery - Pham Minh Kha Blog</title><meta name="Description" content="A comprehensive journey through JDBC - from basic concepts with simple analogies to advanced techniques on security, performance, and its role in the modern Java ecosystem"><meta property="og:url" content="http://localhost:1313/en/posts/jdbc-va-database-connection/">
   <meta property="og:site_name" content="Pham Minh Kha Blog">
   <meta property="og:title" content="JDBC and Java Database Connectivity: From First Principles to Advanced Mastery">
   <meta property="og:description" content="A comprehensive journey through JDBC - from basic concepts with simple analogies to advanced techniques on security, performance, and its role in the modern Java ecosystem">
@@ -27,15 +27,15 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="canonical" href="http://localhost:59059/en/posts/jdbc-va-database-connection/" /><link rel="prev" href="http://localhost:59059/en/posts/java-servlet-co-ban/" /><link rel="next" href="http://localhost:59059/en/posts/multithreading-va-thread-pool/" />
+<link rel="canonical" href="http://localhost:1313/en/posts/jdbc-va-database-connection/" /><link rel="prev" href="http://localhost:1313/en/posts/java-servlet-co-ban/" /><link rel="next" href="http://localhost:1313/en/posts/multithreading-va-thread-pool/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "JDBC and Java Database Connectivity: From First Principles to Advanced Mastery",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:59059/en/posts/jdbc-va-database-connection/"
+            "@id": "http://localhost:1313/en/posts/jdbc-va-database-connection/"
         },"genre": "posts","keywords":["Java","Database","JDBC"],"wordcount":  5571 ,
-        "url": "http://localhost:59059/en/posts/jdbc-va-database-connection/","datePublished": "2025-09-23T00:00:00+00:00","dateModified": "2025-09-23T00:00:00+00:00","publisher": {
+        "url": "http://localhost:1313/en/posts/jdbc-va-database-connection/","datePublished": "2025-09-23T00:00:00+00:00","dateModified": "2025-09-23T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Pham Minh Kha"},"author": {
                 "@type": "Person",
@@ -145,7 +145,7 @@
     <a href="#part-i-jdbc-foundations" class="header-mark"></a>Part I: JDBC Foundations</h2><h3 id="1-jdbc-architecture-the-complete-picture" class="headerLink">
     <a href="#1-jdbc-architecture-the-complete-picture" class="header-mark"></a>1. JDBC Architecture: The Complete Picture</h3><p>To understand how JDBC works, imagine it as an <strong>international mail delivery system</strong>:</p>
 <h4 id="the-four-layers-of-jdbc" class="headerLink">
-    <a href="#the-four-layers-of-jdbc" class="header-mark"></a>The Four Layers of JDBC</h4><!-- raw HTML omitted -->
+    <a href="#the-four-layers-of-jdbc" class="header-mark"></a>The Four Layers of JDBC</h4><div style="text-align: center;">
 <pre class="mermaid">
 graph TD
     A[Layer 1: Java Application<br/>Your Java Application<br/>- Write Java code<br/>- Create SQL queries] 
@@ -166,7 +166,7 @@ graph TD
     style F fill:#fce4ec,stroke:#880e4f,stroke-width:2px
 
 </pre>
-<!-- raw HTML omitted -->
+</div>
 <p><strong>Details of Each Layer:</strong></p>
 <ol>
 <li>
@@ -2342,7 +2342,7 @@ PreparedStatement:
 </div>
 <h4 id="transaction-control-in-jdbc" class="headerLink">
     <a href="#transaction-control-in-jdbc" class="header-mark"></a>Transaction Control in JDBC</h4><p><strong>Visualization: Transaction Flow</strong></p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
 <pre class="mermaid">
 graph TD
     Start[Start Transaction<br/>setAutoCommit false] --> Step1[Step 1: Deduct 1000 from Account A<br/>UPDATE accounts SET balance = balance - 1000]
@@ -2361,7 +2361,7 @@ graph TD
     style Rollback2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
 
 </pre>
-<!-- raw HTML omitted -->
+</div>
 <p><strong>Code implementation:</strong></p>
 <div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -3378,7 +3378,7 @@ Total: 36ms | Requests/second: 5000+
   </table>
 </div>
 <p><strong>Visualization: Layer Architecture</strong></p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
 <pre class="mermaid">
 graph TD
     App[Your Application]
@@ -3405,7 +3405,7 @@ graph TD
     style DB fill:#fce4ec,stroke:#880e4f,stroke-width:3px
 
 </pre>
-<!-- raw HTML omitted -->
+</div>
 <p><strong>Code Comparison: Find User by ID</strong></p>
 <h4 id="jdbc-verbose---15-20-lines" class="headerLink">
     <a href="#jdbc-verbose---15-20-lines" class="header-mark"></a>JDBC (Verbose - 15-20 lines)</h4><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
@@ -4746,7 +4746,7 @@ graph TD
 </ol>
 <h3 id="next-steps" class="headerLink">
     <a href="#next-steps" class="header-mark"></a>Next Steps</h3><p><strong>Learning roadmap:</strong></p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
 <pre class="mermaid">
 graph TD
     Start([Start learning Java Database]) --> L1[Level 1: FOUNDATION]
@@ -4775,9 +4775,9 @@ graph TD
     style Expert fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
 
 </pre>
-<!-- raw HTML omitted -->
+</div>
 <p><strong>Practical advice:</strong></p>
-<!-- raw HTML omitted -->
+<div style="text-align: center;">
 <pre class="mermaid">
 graph LR
     Project[Your Project] --> Decision{Choose technology}
@@ -4793,7 +4793,7 @@ graph LR
     style JDBC fill:#fff3e0,stroke:#e65100,stroke-width:2px
 
 </pre>
-<!-- raw HTML omitted -->
+</div>
 <p><strong>Specific steps:</strong></p>
 <ol>
 <li><strong>Learn Spring Data JPA</strong> - Modern framework built on JDBC</li>
@@ -4823,7 +4823,7 @@ graph LR
     <span class="share-title"><i class="fas fa-share-alt fa-fw"></i> Chia sẻ:</span>
     <div class="share-links" id="share-buttons">
         
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f" 
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn facebook" 
            aria-label="Chia sẻ lên Facebook"
@@ -4832,7 +4832,7 @@ graph LR
         </a>
         
         
-        <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f&text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
+        <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f&text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn twitter" 
            aria-label="Chia sẻ lên X"
@@ -4841,7 +4841,7 @@ graph LR
         </a>
         
         
-        <a href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f&title=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
+        <a href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f&title=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn linkedin" 
            aria-label="Chia sẻ lên LinkedIn"
@@ -4850,7 +4850,7 @@ graph LR
         </a>
 
         
-        <a href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f&description=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
+        <a href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f&description=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn pinterest" 
            aria-label="Chia sẻ lên Pinterest"
@@ -4859,7 +4859,7 @@ graph LR
         </a>
         
         
-        <a href="https://zalo.me/share?u=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f" 
+        <a href="https://zalo.me/share?u=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn zalo" 
            aria-label="Chia sẻ lên Zalo"
@@ -4868,7 +4868,7 @@ graph LR
         </a>
         
         
-        <a href="https://wa.me/?text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery%20http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f" 
+        <a href="https://wa.me/?text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery%20http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn whatsapp" 
            aria-label="Chia sẻ qua WhatsApp"
@@ -4877,7 +4877,7 @@ graph LR
         </a>
         
         
-        <a href="https://telegram.me/share/url?url=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f&text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
+        <a href="https://telegram.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f&text=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn telegram" 
            aria-label="Chia sẻ qua Telegram"
@@ -4886,7 +4886,7 @@ graph LR
         </a>
         
         
-        <a href="mailto:?subject=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery&body=http%3a%2f%2flocalhost%3a59059%2fen%2fposts%2fjdbc-va-database-connection%2f" 
+        <a href="mailto:?subject=JDBC%20and%20Java%20Database%20Connectivity%3a%20From%20First%20Principles%20to%20Advanced%20Mastery&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fjdbc-va-database-connection%2f" 
            target="_blank" rel="noopener noreferrer" 
            class="share-btn email" 
            aria-label="Chia sẻ qua Email"

@@ -2,210 +2,210 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:59059/en/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/"
+                        href="http://localhost:1313/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/"
+                    href="http://localhost:1313/en/"
                     /></url><url>
-            <loc>http://localhost:59059/en/about/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/about/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/about/"
+                        href="http://localhost:1313/about/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/about/"
+                    href="http://localhost:1313/en/about/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/blog/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/blog/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/blog/"
+                        href="http://localhost:1313/tags/blog/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/blog/"
+                    href="http://localhost:1313/en/tags/blog/"
                     /></url><url>
-            <loc>http://localhost:59059/en/categories/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/categories/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/categories/"
+                        href="http://localhost:1313/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/categories/"
+                    href="http://localhost:1313/en/categories/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/doit/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/doit/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/doit/"
+                        href="http://localhost:1313/tags/doit/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/doit/"
+                    href="http://localhost:1313/en/tags/doit/"
                     /></url><url>
-            <loc>http://localhost:59059/en/categories/general/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/categories/general/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/categories/general/"
+                        href="http://localhost:1313/categories/general/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/categories/general/"
+                    href="http://localhost:1313/en/categories/general/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/hugo/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/hugo/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/hugo/"
+                        href="http://localhost:1313/tags/hugo/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/hugo/"
+                    href="http://localhost:1313/en/tags/hugo/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/posts/"
+                        href="http://localhost:1313/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/posts/"
+                    href="http://localhost:1313/en/posts/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/"
+                        href="http://localhost:1313/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/"
+                    href="http://localhost:1313/en/tags/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/welcome-post/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/categories/java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/welcome-post/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/categories/java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/categories/java/"
+                        href="http://localhost:1313/categories/java/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/categories/java/"
+                    href="http://localhost:1313/en/categories/java/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/java/"
+                        href="http://localhost:1313/tags/java/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/java/"
+                    href="http://localhost:1313/en/tags/java/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/networking/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/networking/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/networking/"
+                        href="http://localhost:1313/tags/networking/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/networking/"
+                    href="http://localhost:1313/en/tags/networking/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/socket/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/socket/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/socket/"
+                        href="http://localhost:1313/tags/socket/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/socket/"
+                    href="http://localhost:1313/en/tags/socket/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/socket-programming-trong-java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/tags/concurrency/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/socket-programming-trong-java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/tags/concurrency/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/concurrency/"
+                        href="http://localhost:1313/tags/concurrency/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/concurrency/"
+                    href="http://localhost:1313/en/tags/concurrency/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/multithreading/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/multithreading/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/multithreading/"
+                        href="http://localhost:1313/tags/multithreading/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/multithreading/"
+                    href="http://localhost:1313/en/tags/multithreading/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/multithreading-va-thread-pool/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/tags/database/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/multithreading-va-thread-pool/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/tags/database/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/database/"
+                        href="http://localhost:1313/tags/database/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/database/"
+                    href="http://localhost:1313/en/tags/database/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/jdbc/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/jdbc/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/jdbc/"
+                        href="http://localhost:1313/tags/jdbc/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/jdbc/"
+                    href="http://localhost:1313/en/tags/jdbc/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/jdbc-va-database-connection/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/posts/java-servlet-co-ban/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/tags/servlet/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/jdbc-va-database-connection/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/posts/java-servlet-co-ban/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/tags/servlet/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/servlet/"
+                        href="http://localhost:1313/tags/servlet/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/servlet/"
+                    href="http://localhost:1313/en/tags/servlet/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/web/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/web/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/web/"
+                        href="http://localhost:1313/tags/web/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/web/"
+                    href="http://localhost:1313/en/tags/web/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/api/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/api/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/api/"
+                        href="http://localhost:1313/tags/api/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/api/"
+                    href="http://localhost:1313/en/tags/api/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/rest-api-voi-spring-boot/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/posts/dom-manipulation-va-events/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/categories/javascript/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/posts/dom-manipulation-va-events/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/categories/javascript/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/categories/javascript/"
+                        href="http://localhost:1313/categories/javascript/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/categories/javascript/"
+                    href="http://localhost:1313/en/categories/javascript/"
                     /></url><url>
-            <loc>http://localhost:59059/en/tags/javascript/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/en/tags/javascript/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="vi"
-                        href="http://localhost:59059/tags/javascript/"
+                        href="http://localhost:1313/tags/javascript/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:59059/en/tags/javascript/"
+                    href="http://localhost:1313/en/tags/javascript/"
                     /></url><url>
-            <loc>http://localhost:59059/en/posts/async-await-va-promise/</loc><lastmod>2025-09-18T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:59059/en/posts/javascript-event-loop/</loc><lastmod>2025-09-17T00:00:00&#43;00:00</lastmod></url></urlset>
+            <loc>http://localhost:1313/en/posts/async-await-va-promise/</loc><lastmod>2025-09-18T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/en/posts/javascript-event-loop/</loc><lastmod>2025-09-17T00:00:00&#43;00:00</lastmod></url></urlset>

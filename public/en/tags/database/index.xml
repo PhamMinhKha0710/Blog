@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Database - Tag - Pham Minh Kha Blog</title>
-        <link>http://localhost:59059/en/tags/database/</link>
+        <link>http://localhost:1313/en/tags/database/</link>
         <description>Database - Tag - Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/database/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/database/" rel="self" type="application/rss+xml" /><item>
     <title>JDBC and Java Database Connectivity: From First Principles to Advanced Mastery</title>
-    <link>http://localhost:59059/en/posts/jdbc-va-database-connection/</link>
+    <link>http://localhost:1313/en/posts/jdbc-va-database-connection/</link>
     <pubDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/jdbc-va-database-connection/</guid>
+    </author><guid>http://localhost:1313/en/posts/jdbc-va-database-connection/</guid>
     <description><![CDATA[<h2 id="introduction-the-universal-translator-for-java-and-databases" class="headerLink">
     <a href="#introduction-the-universal-translator-for-java-and-databases" class="header-mark"></a>Introduction: The Universal Translator for Java and Databases</h2><p>Imagine you&rsquo;re trying to negotiate a complex business deal between parties speaking different languages. One party speaks Java, while the others speak their own dialects—MySQL, PostgreSQL, Oracle. Without a skilled translator, communication would be chaotic, inefficient, and error-prone.</p>
 <p>In the software development world, this universal translator role is fulfilled by <strong>JDBC</strong> (Java Database Connectivity).</p>

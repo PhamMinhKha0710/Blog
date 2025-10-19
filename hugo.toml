@@ -137,3 +137,12 @@ defaultContentLanguageInSubdir = false
       enable = true
       # Mermaid theme: "default", "dark", "forest", "neutral"
       theme = "default"
+
+# Markup configuration to allow raw HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Suppress raw HTML warnings
+ignoreLogs = ['warning-goldmark-raw-html']

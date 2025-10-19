@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>DoIt - Tag - Pham Minh Kha Blog</title>
-        <link>http://localhost:59059/en/tags/doit/</link>
+        <link>http://localhost:1313/en/tags/doit/</link>
         <description>DoIt - Tag - Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/tags/doit/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/doit/" rel="self" type="application/rss+xml" /><item>
     <title>Welcome to Code Journey</title>
-    <link>http://localhost:59059/en/posts/welcome-post/</link>
+    <link>http://localhost:1313/en/posts/welcome-post/</link>
     <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/welcome-post/</guid>
+    </author><guid>http://localhost:1313/en/posts/welcome-post/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
             </div><h2 id="-welcome-to-code-journey" class="headerLink">

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Pham Minh Kha Blog</title>
-        <link>http://localhost:59059/en/posts/</link>
+        <link>http://localhost:1313/en/posts/</link>
         <description>All Posts | Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:59059/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Welcome to Code Journey</title>
-    <link>http://localhost:59059/en/posts/welcome-post/</link>
+    <link>http://localhost:1313/en/posts/welcome-post/</link>
     <pubDate>Fri, 26 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/welcome-post/</guid>
+    </author><guid>http://localhost:1313/en/posts/welcome-post/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/hero-bg.jpg" referrerpolicy="no-referrer">
             </div><h2 id="-welcome-to-code-journey" class="headerLink">
@@ -25,10 +25,10 @@
     <a href="#-unique-experience" class="header-mark"></a>💡 Unique Experience</h3><p>The blog is designed with modern features:</p>]]></description>
 </item><item>
     <title>Socket Programming in Java: Building Client-Server Applications</title>
-    <link>http://localhost:59059/en/posts/socket-programming-trong-java/</link>
+    <link>http://localhost:1313/en/posts/socket-programming-trong-java/</link>
     <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/socket-programming-trong-java/</guid>
+    </author><guid>http://localhost:1313/en/posts/socket-programming-trong-java/</guid>
     <description><![CDATA[<h2 id="what-is-a-socket-lets-imagine-simply" class="headerLink">
     <a href="#what-is-a-socket-lets-imagine-simply" class="header-mark"></a>What is a Socket? Let&rsquo;s Imagine Simply!</h2><p>Have you ever thought about <strong>two computers talking to each other</strong> like two people on a phone call? A socket is that &ldquo;phone&rdquo;!</p>
 <p><strong>Simple visualization:</strong></p>
@@ -41,10 +41,10 @@
 <p>When you visit Facebook:</p>]]></description>
 </item><item>
     <title>Multithreading and Thread Pool in Java: From Zero to Hero</title>
-    <link>http://localhost:59059/en/posts/multithreading-va-thread-pool/</link>
+    <link>http://localhost:1313/en/posts/multithreading-va-thread-pool/</link>
     <pubDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/multithreading-va-thread-pool/</guid>
+    </author><guid>http://localhost:1313/en/posts/multithreading-va-thread-pool/</guid>
     <description><![CDATA[<h2 id="what-is-a-thread-imagine-you-own-a-restaurant" class="headerLink">
     <a href="#what-is-a-thread-imagine-you-own-a-restaurant" class="header-mark"></a>What is a Thread? Imagine You Own a Restaurant!</h2><p>You open a food stall:</p>
 <p><strong>Method 1: No threads (Single-threaded)</strong></p>
@@ -63,10 +63,10 @@
 <p><strong>In Java:</strong></p>]]></description>
 </item><item>
     <title>JDBC and Java Database Connectivity: From First Principles to Advanced Mastery</title>
-    <link>http://localhost:59059/en/posts/jdbc-va-database-connection/</link>
+    <link>http://localhost:1313/en/posts/jdbc-va-database-connection/</link>
     <pubDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/jdbc-va-database-connection/</guid>
+    </author><guid>http://localhost:1313/en/posts/jdbc-va-database-connection/</guid>
     <description><![CDATA[<h2 id="introduction-the-universal-translator-for-java-and-databases" class="headerLink">
     <a href="#introduction-the-universal-translator-for-java-and-databases" class="header-mark"></a>Introduction: The Universal Translator for Java and Databases</h2><p>Imagine you&rsquo;re trying to negotiate a complex business deal between parties speaking different languages. One party speaks Java, while the others speak their own dialects—MySQL, PostgreSQL, Oracle. Without a skilled translator, communication would be chaotic, inefficient, and error-prone.</p>
 <p>In the software development world, this universal translator role is fulfilled by <strong>JDBC</strong> (Java Database Connectivity).</p>
@@ -74,19 +74,19 @@
     <a href="#what-is-jdbc" class="header-mark"></a>What is JDBC?</h3><p>JDBC is an API (Application Programming Interface) that acts as a <strong>diplomat</strong> or <strong>translator</strong> between a Java application and a relational database.</p>]]></description>
 </item><item>
     <title>Java Servlet Basics: Building Dynamic Web Applications</title>
-    <link>http://localhost:59059/en/posts/java-servlet-co-ban/</link>
+    <link>http://localhost:1313/en/posts/java-servlet-co-ban/</link>
     <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/java-servlet-co-ban/</guid>
+    </author><guid>http://localhost:1313/en/posts/java-servlet-co-ban/</guid>
     <description><![CDATA[<h2 id="what-is-java-servlet" class="headerLink">
     <a href="#what-is-java-servlet" class="header-mark"></a>What is Java Servlet?</h2><p>Java Servlet is a technology that extends the capabilities of web servers to serve dynamic HTTP requests. Servlets are Java programs that run on web servers (such as Apache Tomcat, Jetty, WildFly), processing requests and creating responses to send back to clients.</p>
 <p>Servlets act as an intermediary layer between browser requests and databases or applications on web servers. They play a crucial role in developing dynamic web applications.</p>]]></description>
 </item><item>
     <title>REST API with Spring Boot: Building Modern Backend</title>
-    <link>http://localhost:59059/en/posts/rest-api-voi-spring-boot/</link>
+    <link>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</link>
     <pubDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/rest-api-voi-spring-boot/</guid>
+    </author><guid>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</guid>
     <description><![CDATA[<h2 id="what-is-rest-api" class="headerLink">
     <a href="#what-is-rest-api" class="header-mark"></a>What is REST API?</h2><p>REST (Representational State Transfer) is a software architecture style for distributed applications, proposed by Roy Fielding in 2000. REST is not dependent on any specific protocol, but most REST implementations use HTTP.</p>
 <p>RESTful API is an API that follows REST principles:</p>
@@ -102,10 +102,10 @@
     <a href="#spring-boot-efficient-rest-api-development-platform" class="header-mark"></a>Spring Boot: Efficient REST API Development Platform</h2><p>Spring Boot is a powerful framework that enables rapid and easy development of Java applications. Spring Boot provides many features for building REST APIs:</p>]]></description>
 </item><item>
     <title>DOM Manipulation and Events in JavaScript: From Zero to Hero</title>
-    <link>http://localhost:59059/en/posts/dom-manipulation-va-events/</link>
+    <link>http://localhost:1313/en/posts/dom-manipulation-va-events/</link>
     <pubDate>Sat, 20 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/dom-manipulation-va-events/</guid>
+    </author><guid>http://localhost:1313/en/posts/dom-manipulation-va-events/</guid>
     <description><![CDATA[<h2 id="what-is-dom-imagine-html-as-a-house" class="headerLink">
     <a href="#what-is-dom-imagine-html-as-a-house" class="header-mark"></a>What is DOM? Imagine HTML as a House!</h2><p>When you write HTML, the browser doesn&rsquo;t understand HTML as text. It converts HTML into an <strong>object tree</strong> called the <strong>DOM (Document Object Model)</strong> - like a house blueprint!</p>
 <p><strong>Visualization:</strong></p>
@@ -131,10 +131,10 @@
           <p class="tw-select-none !tw-my-1">html</p>]]></description>
 </item><item>
     <title>Async/Await and Promise in JavaScript: Modern Asynchronous Programming</title>
-    <link>http://localhost:59059/en/posts/async-await-va-promise/</link>
+    <link>http://localhost:1313/en/posts/async-await-va-promise/</link>
     <pubDate>Thu, 18 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/async-await-va-promise/</guid>
+    </author><guid>http://localhost:1313/en/posts/async-await-va-promise/</guid>
     <description><![CDATA[<h2 id="why-do-we-need-asynchronous-programming" class="headerLink">
     <a href="#why-do-we-need-asynchronous-programming" class="header-mark"></a>Why Do We Need Asynchronous Programming?</h2><p>JavaScript is inherently a single-threaded language, meaning it can only execute one command at a time. However, many web operations can be time-consuming, such as:</p>
 <ul>
@@ -147,10 +147,10 @@
 <p>If JavaScript executes these tasks synchronously, the browser would &ldquo;freeze&rdquo; until the task completes. Asynchronous programming solves this problem by allowing code to continue running while waiting for long tasks to complete.</p>]]></description>
 </item><item>
     <title>JavaScript Event Loop: The Core of Asynchronous JavaScript</title>
-    <link>http://localhost:59059/en/posts/javascript-event-loop/</link>
+    <link>http://localhost:1313/en/posts/javascript-event-loop/</link>
     <pubDate>Wed, 17 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:59059/en/posts/javascript-event-loop/</guid>
+    </author><guid>http://localhost:1313/en/posts/javascript-event-loop/</guid>
     <description><![CDATA[<h2 id="javascript-a-single-threaded-language-with-powerful-asynchronous-capabilities" class="headerLink">
     <a href="#javascript-a-single-threaded-language-with-powerful-asynchronous-capabilities" class="header-mark"></a>JavaScript: A Single-Threaded Language with Powerful Asynchronous Capabilities</h2><p>JavaScript is a single-threaded programming language, meaning that at any given time, it can only execute one task in a single thread. However, JavaScript is still capable of performing asynchronous tasks such as API calls, reading files, or handling user events without &ldquo;freezing&rdquo; the program.</p>
 <p>What enables JavaScript to achieve this capability? The answer lies in the <strong>Event Loop</strong> - the core mechanism that allows JavaScript to execute asynchronous tasks despite having only one execution thread.</p>]]></description>
