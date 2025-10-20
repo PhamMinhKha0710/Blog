@@ -11,6 +11,16 @@ author = "Phạm Minh Kha"
 
 REST (Representational State Transfer) là một kiểu kiến trúc phần mềm cho các ứng dụng phân tán, được đề xuất bởi Roy Fielding năm 2000. REST không phụ thuộc vào bất kỳ giao thức cụ thể nào, nhưng hầu hết các triển khai REST đều sử dụng HTTP.
 
+### Khái niệm API
+
+API (Application Programming Interface) hoạt động như một "người phục vụ" (waiter) trung gian giữa ứng dụng khách (customer) và server (kitchen):
+
+![API Concept - Restaurant Analogy](/images/posts/api-concept.png)
+
+- **Application/Customer**: Ứng dụng khách gửi yêu cầu (order)
+- **Waiter/API**: API nhận yêu cầu, chuyển đến server và trả về kết quả
+- **Kitchen/Server**: Server xử lý logic và trả về dữ liệu
+
 RESTful API là API tuân theo các nguyên tắc của REST:
 - **Client-Server**: Tách biệt giao diện người dùng và lưu trữ dữ liệu
 - **Stateless**: Mỗi request từ client phải chứa tất cả thông tin cần thiết

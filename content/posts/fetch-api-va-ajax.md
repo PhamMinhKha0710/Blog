@@ -7,6 +7,14 @@ tags = ["JavaScript", "Web", "API"]
 author = "Phạm Minh Kha"
 +++
 
+## API là gì?
+
+Trước khi tìm hiểu về AJAX và Fetch API, hãy hiểu khái niệm API:
+
+![API Concept - Restaurant Analogy](/images/posts/api-concept.png)
+
+API (Application Programming Interface) giống như một "người phục vụ" kết nối giữa ứng dụng (customer) và server (kitchen). API nhận yêu cầu từ ứng dụng, chuyển đến server xử lý, và trả về kết quả.
+
 ## AJAX là gì?
 
 AJAX (Asynchronous JavaScript and XML) là một kỹ thuật phát triển web cho phép gửi và nhận dữ liệu từ server mà không cần tải lại trang. AJAX kết hợp:

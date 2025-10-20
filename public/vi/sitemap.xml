@@ -2,275 +2,275 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://example.org/about/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/about/</loc><lastmod>2025-10-19T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/about/"
+                        href="http://localhost:1313/en/about/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/about/"
+                    href="http://localhost:1313/about/"
                     /></url><url>
-            <loc>https://example.org/tags/blog/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/blog/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/blog/"
+                        href="http://localhost:1313/en/tags/blog/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/blog/"
+                    href="http://localhost:1313/tags/blog/"
                     /></url><url>
-            <loc>https://example.org/categories/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/categories/"
+                        href="http://localhost:1313/en/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/categories/"
+                    href="http://localhost:1313/categories/"
                     /></url><url>
-            <loc>https://example.org/posts/welcome-post/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/welcome-post/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/welcome-post/"
+                        href="http://localhost:1313/en/posts/welcome-post/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/welcome-post/"
+                    href="http://localhost:1313/posts/welcome-post/"
                     /></url><url>
-            <loc>https://example.org/tags/doit/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/doit/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/doit/"
+                        href="http://localhost:1313/en/tags/doit/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/doit/"
+                    href="http://localhost:1313/tags/doit/"
                     /></url><url>
-            <loc>https://example.org/categories/general/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/categories/general/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/categories/general/"
+                        href="http://localhost:1313/en/categories/general/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/categories/general/"
+                    href="http://localhost:1313/categories/general/"
                     /></url><url>
-            <loc>https://example.org/tags/hugo/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/hugo/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/hugo/"
+                        href="http://localhost:1313/en/tags/hugo/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/hugo/"
+                    href="http://localhost:1313/tags/hugo/"
                     /></url><url>
-            <loc>https://example.org/posts/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/"
+                        href="http://localhost:1313/en/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/"
+                    href="http://localhost:1313/posts/"
                     /></url><url>
-            <loc>https://example.org/tags/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-09-26T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/"
+                        href="http://localhost:1313/en/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/"
+                    href="http://localhost:1313/tags/"
                     /></url><url>
-            <loc>https://example.org/tags/socket/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/socket/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/socket/"
+                        href="http://localhost:1313/en/tags/socket/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/socket/"
+                    href="http://localhost:1313/tags/socket/"
                     /></url><url>
-            <loc>https://example.org/posts/socket-programming-trong-java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/socket-programming-trong-java/</loc><lastmod>2025-09-25T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/socket-programming-trong-java/"
+                        href="http://localhost:1313/en/posts/socket-programming-trong-java/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/socket-programming-trong-java/"
+                    href="http://localhost:1313/posts/socket-programming-trong-java/"
                     /></url><url>
-            <loc>https://example.org/tags/concurrency/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/concurrency/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/concurrency/"
+                        href="http://localhost:1313/en/tags/concurrency/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/concurrency/"
+                    href="http://localhost:1313/tags/concurrency/"
                     /></url><url>
-            <loc>https://example.org/tags/multithreading/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/multithreading/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/multithreading/"
+                        href="http://localhost:1313/en/tags/multithreading/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/multithreading/"
+                    href="http://localhost:1313/tags/multithreading/"
                     /></url><url>
-            <loc>https://example.org/posts/multithreading-va-thread-pool/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/multithreading-va-thread-pool/</loc><lastmod>2025-09-24T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/multithreading-va-thread-pool/"
+                        href="http://localhost:1313/en/posts/multithreading-va-thread-pool/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/multithreading-va-thread-pool/"
+                    href="http://localhost:1313/posts/multithreading-va-thread-pool/"
                     /></url><url>
-            <loc>https://example.org/tags/database/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/database/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/database/"
+                        href="http://localhost:1313/en/tags/database/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/database/"
+                    href="http://localhost:1313/tags/database/"
                     /></url><url>
-            <loc>https://example.org/tags/jdbc/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/jdbc/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/jdbc/"
+                        href="http://localhost:1313/en/tags/jdbc/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/jdbc/"
+                    href="http://localhost:1313/tags/jdbc/"
                     /></url><url>
-            <loc>https://example.org/posts/jdbc-va-database-connection/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/jdbc-va-database-connection/</loc><lastmod>2025-09-23T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/jdbc-va-database-connection/"
+                        href="http://localhost:1313/en/posts/jdbc-va-database-connection/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/jdbc-va-database-connection/"
+                    href="http://localhost:1313/posts/jdbc-va-database-connection/"
                     /></url><url>
-            <loc>https://example.org/posts/java-servlet-co-ban/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/java-servlet-co-ban/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/java-servlet-co-ban/"
+                        href="http://localhost:1313/en/posts/java-servlet-co-ban/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/java-servlet-co-ban/"
+                    href="http://localhost:1313/posts/java-servlet-co-ban/"
                     /></url><url>
-            <loc>https://example.org/tags/servlet/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/servlet/</loc><lastmod>2025-09-22T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/servlet/"
+                        href="http://localhost:1313/en/tags/servlet/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/servlet/"
+                    href="http://localhost:1313/tags/servlet/"
                     /></url><url>
-            <loc>https://example.org/posts/rest-api-voi-spring-boot/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/rest-api-voi-spring-boot/</loc><lastmod>2025-09-21T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/rest-api-voi-spring-boot/"
+                        href="http://localhost:1313/en/posts/rest-api-voi-spring-boot/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/rest-api-voi-spring-boot/"
+                    href="http://localhost:1313/posts/rest-api-voi-spring-boot/"
                     /></url><url>
-            <loc>https://example.org/posts/dom-manipulation-va-events/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/dom-manipulation-va-events/</loc><lastmod>2025-09-20T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/dom-manipulation-va-events/"
+                        href="http://localhost:1313/en/posts/dom-manipulation-va-events/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/dom-manipulation-va-events/"
+                    href="http://localhost:1313/posts/dom-manipulation-va-events/"
                     /></url><url>
-            <loc>https://example.org/posts/fetch-api-va-ajax/</loc><lastmod>2025-09-19T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>https://example.org/posts/async-await-va-promise/</loc><lastmod>2025-09-18T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/fetch-api-va-ajax/</loc><lastmod>2025-09-19T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/async-await-va-promise/</loc><lastmod>2025-09-18T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/async-await-va-promise/"
+                        href="http://localhost:1313/en/posts/async-await-va-promise/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/async-await-va-promise/"
+                    href="http://localhost:1313/posts/async-await-va-promise/"
                     /></url><url>
-            <loc>https://example.org/posts/javascript-event-loop/</loc><lastmod>2025-09-17T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/javascript-event-loop/</loc><lastmod>2025-09-17T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/posts/javascript-event-loop/"
+                        href="http://localhost:1313/en/posts/javascript-event-loop/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/posts/javascript-event-loop/"
+                    href="http://localhost:1313/posts/javascript-event-loop/"
                     /></url><url>
-            <loc>https://example.org/tags/api/</loc><xhtml:link
+            <loc>http://localhost:1313/tags/api/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/api/"
+                        href="http://localhost:1313/en/tags/api/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/api/"
+                    href="http://localhost:1313/tags/api/"
                     /></url><url>
-            <loc>https://example.org/categories/java/</loc><xhtml:link
+            <loc>http://localhost:1313/categories/java/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/categories/java/"
+                        href="http://localhost:1313/en/categories/java/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/categories/java/"
+                    href="http://localhost:1313/categories/java/"
                     /></url><url>
-            <loc>https://example.org/tags/java/</loc><xhtml:link
+            <loc>http://localhost:1313/tags/java/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/java/"
+                        href="http://localhost:1313/en/tags/java/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/java/"
+                    href="http://localhost:1313/tags/java/"
                     /></url><url>
-            <loc>https://example.org/categories/javascript/</loc><xhtml:link
+            <loc>http://localhost:1313/categories/javascript/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/categories/javascript/"
+                        href="http://localhost:1313/en/categories/javascript/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/categories/javascript/"
+                    href="http://localhost:1313/categories/javascript/"
                     /></url><url>
-            <loc>https://example.org/tags/javascript/</loc><xhtml:link
+            <loc>http://localhost:1313/tags/javascript/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/javascript/"
+                        href="http://localhost:1313/en/tags/javascript/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/javascript/"
+                    href="http://localhost:1313/tags/javascript/"
                     /></url><url>
-            <loc>https://example.org/tags/networking/</loc><xhtml:link
+            <loc>http://localhost:1313/tags/networking/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/networking/"
+                        href="http://localhost:1313/en/tags/networking/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/networking/"
+                    href="http://localhost:1313/tags/networking/"
                     /></url><url>
-            <loc>https://example.org/search/</loc></url><url>
-            <loc>https://example.org/tags/web/</loc><xhtml:link
+            <loc>http://localhost:1313/search/</loc></url><url>
+            <loc>http://localhost:1313/tags/web/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://example.org/en/tags/web/"
+                        href="http://localhost:1313/en/tags/web/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="vi"
-                    href="https://example.org/tags/web/"
+                    href="http://localhost:1313/tags/web/"
                     /></url></urlset>

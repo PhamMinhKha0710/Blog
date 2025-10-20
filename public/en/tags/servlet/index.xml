@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Servlet - Tag - Pham Minh Kha Blog</title>
-        <link>https://example.org/en/tags/servlet/</link>
+        <link>http://localhost:1313/en/tags/servlet/</link>
         <description>Servlet - Tag - Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://example.org/en/tags/servlet/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/servlet/" rel="self" type="application/rss+xml" /><item>
     <title>Java Servlet Basics: Building Dynamic Web Applications</title>
-    <link>https://example.org/en/posts/java-servlet-co-ban/</link>
+    <link>http://localhost:1313/en/posts/java-servlet-co-ban/</link>
     <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/java-servlet-co-ban/</guid>
+    </author><guid>http://localhost:1313/en/posts/java-servlet-co-ban/</guid>
     <description><![CDATA[<h2 id="what-is-java-servlet" class="headerLink">
     <a href="#what-is-java-servlet" class="header-mark"></a>What is Java Servlet?</h2><p>Java Servlet is a technology that extends the capabilities of web servers to serve dynamic HTTP requests. Servlets are Java programs that run on web servers (such as Apache Tomcat, Jetty, WildFly), processing requests and creating responses to send back to clients.</p>
 <p>Servlets act as an intermediary layer between browser requests and databases or applications on web servers. They play a crucial role in developing dynamic web applications.</p>]]></description>

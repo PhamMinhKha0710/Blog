@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Java - Tag - Pham Minh Kha Blog</title>
-        <link>https://example.org/en/tags/java/</link>
+        <link>http://localhost:1313/en/tags/java/</link>
         <description>Java - Tag - Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://example.org/en/tags/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/java/" rel="self" type="application/rss+xml" /><item>
     <title>Socket Programming in Java: Building Client-Server Applications</title>
-    <link>https://example.org/en/posts/socket-programming-trong-java/</link>
+    <link>http://localhost:1313/en/posts/socket-programming-trong-java/</link>
     <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/socket-programming-trong-java/</guid>
+    </author><guid>http://localhost:1313/en/posts/socket-programming-trong-java/</guid>
     <description><![CDATA[<h2 id="what-is-a-socket-lets-imagine-simply" class="headerLink">
     <a href="#what-is-a-socket-lets-imagine-simply" class="header-mark"></a>What is a Socket? Let&rsquo;s Imagine Simply!</h2><p>Have you ever thought about <strong>two computers talking to each other</strong> like two people on a phone call? A socket is that &ldquo;phone&rdquo;!</p>
 <p><strong>Simple visualization:</strong></p>
@@ -22,10 +22,10 @@
 <p>When you visit Facebook:</p>]]></description>
 </item><item>
     <title>Multithreading and Thread Pool in Java: From Zero to Hero</title>
-    <link>https://example.org/en/posts/multithreading-va-thread-pool/</link>
+    <link>http://localhost:1313/en/posts/multithreading-va-thread-pool/</link>
     <pubDate>Wed, 24 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/multithreading-va-thread-pool/</guid>
+    </author><guid>http://localhost:1313/en/posts/multithreading-va-thread-pool/</guid>
     <description><![CDATA[<h2 id="what-is-a-thread-imagine-you-own-a-restaurant" class="headerLink">
     <a href="#what-is-a-thread-imagine-you-own-a-restaurant" class="header-mark"></a>What is a Thread? Imagine You Own a Restaurant!</h2><p>You open a food stall:</p>
 <p><strong>Method 1: No threads (Single-threaded)</strong></p>
@@ -44,10 +44,10 @@
 <p><strong>In Java:</strong></p>]]></description>
 </item><item>
     <title>JDBC and Java Database Connectivity: From First Principles to Advanced Mastery</title>
-    <link>https://example.org/en/posts/jdbc-va-database-connection/</link>
+    <link>http://localhost:1313/en/posts/jdbc-va-database-connection/</link>
     <pubDate>Tue, 23 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/jdbc-va-database-connection/</guid>
+    </author><guid>http://localhost:1313/en/posts/jdbc-va-database-connection/</guid>
     <description><![CDATA[<h2 id="introduction-the-universal-translator-for-java-and-databases" class="headerLink">
     <a href="#introduction-the-universal-translator-for-java-and-databases" class="header-mark"></a>Introduction: The Universal Translator for Java and Databases</h2><p>Imagine you&rsquo;re trying to negotiate a complex business deal between parties speaking different languages. One party speaks Java, while the others speak their own dialects—MySQL, PostgreSQL, Oracle. Without a skilled translator, communication would be chaotic, inefficient, and error-prone.</p>
 <p>In the software development world, this universal translator role is fulfilled by <strong>JDBC</strong> (Java Database Connectivity).</p>
@@ -55,31 +55,29 @@
     <a href="#what-is-jdbc" class="header-mark"></a>What is JDBC?</h3><p>JDBC is an API (Application Programming Interface) that acts as a <strong>diplomat</strong> or <strong>translator</strong> between a Java application and a relational database.</p>]]></description>
 </item><item>
     <title>Java Servlet Basics: Building Dynamic Web Applications</title>
-    <link>https://example.org/en/posts/java-servlet-co-ban/</link>
+    <link>http://localhost:1313/en/posts/java-servlet-co-ban/</link>
     <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/java-servlet-co-ban/</guid>
+    </author><guid>http://localhost:1313/en/posts/java-servlet-co-ban/</guid>
     <description><![CDATA[<h2 id="what-is-java-servlet" class="headerLink">
     <a href="#what-is-java-servlet" class="header-mark"></a>What is Java Servlet?</h2><p>Java Servlet is a technology that extends the capabilities of web servers to serve dynamic HTTP requests. Servlets are Java programs that run on web servers (such as Apache Tomcat, Jetty, WildFly), processing requests and creating responses to send back to clients.</p>
 <p>Servlets act as an intermediary layer between browser requests and databases or applications on web servers. They play a crucial role in developing dynamic web applications.</p>]]></description>
 </item><item>
     <title>REST API with Spring Boot: Building Modern Backend</title>
-    <link>https://example.org/en/posts/rest-api-voi-spring-boot/</link>
+    <link>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</link>
     <pubDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>https://example.org/en/posts/rest-api-voi-spring-boot/</guid>
+    </author><guid>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</guid>
     <description><![CDATA[<h2 id="what-is-rest-api" class="headerLink">
     <a href="#what-is-rest-api" class="header-mark"></a>What is REST API?</h2><p>REST (Representational State Transfer) is a software architecture style for distributed applications, proposed by Roy Fielding in 2000. REST is not dependent on any specific protocol, but most REST implementations use HTTP.</p>
-<p>RESTful API is an API that follows REST principles:</p>
+<h3 id="api-concept" class="headerLink">
+    <a href="#api-concept" class="header-mark"></a>API Concept</h3><p>API (Application Programming Interface) works like a &ldquo;waiter&rdquo; that intermediates between the client application (customer) and the server (kitchen):</p>
+<p><img class="tw-inline" loading="lazy" src='/images/posts/api-concept.png'   alt="API Concept - Restaurant Analogy"  ></p>
 <ul>
-<li><strong>Client-Server</strong>: Separates user interface and data storage</li>
-<li><strong>Stateless</strong>: Each request from client must contain all necessary information</li>
-<li><strong>Cacheable</strong>: Responses can be cached</li>
-<li><strong>Uniform Interface</strong>: Uniform interface between components</li>
-<li><strong>Layered System</strong>: Layered architecture</li>
-<li><strong>Code on Demand</strong> (optional): Server can send code for client to execute</li>
+<li><strong>Application/Customer</strong>: Client application sends requests (orders)</li>
+<li><strong>Waiter/API</strong>: API receives requests, forwards to server, and returns results</li>
+<li><strong>Kitchen/Server</strong>: Server processes logic and returns data</li>
 </ul>
-<h2 id="spring-boot-efficient-rest-api-development-platform" class="headerLink">
-    <a href="#spring-boot-efficient-rest-api-development-platform" class="header-mark"></a>Spring Boot: Efficient REST API Development Platform</h2><p>Spring Boot is a powerful framework that enables rapid and easy development of Java applications. Spring Boot provides many features for building REST APIs:</p>]]></description>
+<p>RESTful API is an API that follows REST principles:</p>]]></description>
 </item></channel>
 </rss>

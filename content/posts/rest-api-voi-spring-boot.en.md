@@ -12,6 +12,16 @@ translationKey = "rest-api"
 
 REST (Representational State Transfer) is a software architecture style for distributed applications, proposed by Roy Fielding in 2000. REST is not dependent on any specific protocol, but most REST implementations use HTTP.
 
+### API Concept
+
+API (Application Programming Interface) works like a "waiter" that intermediates between the client application (customer) and the server (kitchen):
+
+![API Concept - Restaurant Analogy](/images/posts/api-concept.png)
+
+- **Application/Customer**: Client application sends requests (orders)
+- **Waiter/API**: API receives requests, forwards to server, and returns results
+- **Kitchen/Server**: Server processes logic and returns data
+
 RESTful API is an API that follows REST principles:
 - **Client-Server**: Separates user interface and data storage
 - **Stateless**: Each request from client must contain all necessary information
