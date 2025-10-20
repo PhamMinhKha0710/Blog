@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Socket - Nhãn - Blog của Phạm Minh Kha</title>
-        <link>http://localhost:1313/tags/socket/</link>
+        <link>https://example.org/tags/socket/</link>
         <description>Socket - Nhãn - Blog của Phạm Minh Kha</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/socket/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://example.org/tags/socket/" rel="self" type="application/rss+xml" /><item>
     <title>Socket Programming trong Java: Xây dựng ứng dụng Client-Server</title>
-    <link>http://localhost:1313/posts/socket-programming-trong-java/</link>
+    <link>https://example.org/posts/socket-programming-trong-java/</link>
     <pubDate>Thu, 25 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/socket-programming-trong-java/</guid>
+    </author><guid>https://example.org/posts/socket-programming-trong-java/</guid>
     <description><![CDATA[<h2 id="socket-là-gì-hãy-tưởng-tượng-đơn-giản" class="headerLink">
     <a href="#socket-l%c3%a0-g%c3%ac-h%c3%a3y-t%c6%b0%e1%bb%9fng-t%c6%b0%e1%bb%a3ng-%c4%91%c6%a1n-gi%e1%ba%a3n" class="header-mark"></a>Socket là gì? Hãy tưởng tượng đơn giản!</h2><p>Bạn có bao giờ nghĩ <strong>hai máy tính nói chuyện với nhau</strong> giống như hai người gọi điện thoại không? Socket chính là &ldquo;chiếc điện thoại&rdquo; đó!</p>
 <p><strong>Hình dung đơn giản:</strong></p>

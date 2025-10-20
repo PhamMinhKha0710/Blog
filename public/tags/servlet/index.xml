@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Servlet - Nhãn - Blog của Phạm Minh Kha</title>
-        <link>http://localhost:1313/tags/servlet/</link>
+        <link>https://example.org/tags/servlet/</link>
         <description>Servlet - Nhãn - Blog của Phạm Minh Kha</description>
         <generator>Hugo -- gohugo.io</generator><language>vi</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/servlet/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://example.org/tags/servlet/" rel="self" type="application/rss+xml" /><item>
     <title>Java Servlet cơ bản: Xây dựng ứng dụng web động</title>
-    <link>http://localhost:1313/posts/java-servlet-co-ban/</link>
+    <link>https://example.org/posts/java-servlet-co-ban/</link>
     <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Phạm Minh Kha</name>
-    </author><guid>http://localhost:1313/posts/java-servlet-co-ban/</guid>
+    </author><guid>https://example.org/posts/java-servlet-co-ban/</guid>
     <description><![CDATA[<h2 id="java-servlet-là-gì" class="headerLink">
     <a href="#java-servlet-l%c3%a0-g%c3%ac" class="header-mark"></a>Java Servlet là gì?</h2><p>Java Servlet là một công nghệ cho phép mở rộng khả năng của máy chủ web để phục vụ các yêu cầu HTTP động. Servlet là các chương trình Java chạy trên máy chủ web (như Apache Tomcat, Jetty, WildFly), xử lý các request và tạo ra response gửi về cho client.</p>
 <p>Servlet hoạt động như một lớp trung gian giữa yêu cầu từ browser và cơ sở dữ liệu hoặc ứng dụng trên máy chủ web. Chúng đóng vai trò quan trọng trong việc phát triển các ứng dụng web động.</p>]]></description>

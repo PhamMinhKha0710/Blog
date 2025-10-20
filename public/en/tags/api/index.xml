@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>API - Tag - Pham Minh Kha Blog</title>
-        <link>http://localhost:1313/en/tags/api/</link>
+        <link>https://example.org/en/tags/api/</link>
         <description>API - Tag - Pham Minh Kha Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>phamminhkha19091710@gmail.com (Phạm Minh Kha)</managingEditor>
-            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/api/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>phamminhkha19091710@gmail.com (Phạm Minh Kha)</webMaster><lastBuildDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://example.org/en/tags/api/" rel="self" type="application/rss+xml" /><item>
     <title>REST API with Spring Boot: Building Modern Backend</title>
-    <link>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</link>
+    <link>https://example.org/en/posts/rest-api-voi-spring-boot/</link>
     <pubDate>Sun, 21 Sep 2025 00:00:00 &#43;0000</pubDate><author>
         <name>Pham Minh Kha</name>
-    </author><guid>http://localhost:1313/en/posts/rest-api-voi-spring-boot/</guid>
+    </author><guid>https://example.org/en/posts/rest-api-voi-spring-boot/</guid>
     <description><![CDATA[<h2 id="what-is-rest-api" class="headerLink">
     <a href="#what-is-rest-api" class="header-mark"></a>What is REST API?</h2><p>REST (Representational State Transfer) is a software architecture style for distributed applications, proposed by Roy Fielding in 2000. REST is not dependent on any specific protocol, but most REST implementations use HTTP.</p>
 <p>RESTful API is an API that follows REST principles:</p>
