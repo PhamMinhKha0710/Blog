@@ -312,7 +312,7 @@ Tôi là **Phạm Minh Kha**, sinh viên năm cuối chuyên về **Backend Deve
 
 ### Experience
 
-Qua 12+ dự án cá nhân và nhóm, tôi đã:
+Qua 5+ dự án cá nhân và nhóm, tôi đã:
 - Xây dựng RESTful APIs xử lý hàng nghìn requests với authentication/authorization
 - Thiết kế và optimize databases (SQL Server, MongoDB) từ schema design đến query optimization
 - Implement caching với Redis giảm 60% database load
