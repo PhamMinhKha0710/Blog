@@ -19,7 +19,7 @@ value = "4th Year"
 label = "CS Student"
 
 [[stats]]
-value = "12+"
+value = "5"
 label = "Personal Projects"
 
 [[stats]]
@@ -312,7 +312,7 @@ I'm **Pham Minh Kha**, a final-year Computer Science student specializing in **B
 
 ### Experience
 
-Through 12+ personal and group projects, I have:
+Through 5 personal and group projects, I have:
 - Built RESTful APIs handling thousands of requests with authentication/authorization
 - Designed and optimized databases (SQL Server, MongoDB) from schema design to query optimization
 - Implemented caching with Redis reducing 60% database load

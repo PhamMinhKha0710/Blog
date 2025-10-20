@@ -19,7 +19,7 @@ value = "Năm 4"
 label = "Sinh viên CNTT"
 
 [[stats]]
-value = "12+"
+value = "5"
 label = "Dự án cá nhân"
 
 [[stats]]
