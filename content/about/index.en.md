@@ -201,7 +201,7 @@ title = "EnglishVocabApp - Vocabulary Learning Application"
 description = "English vocabulary learning app with Spaced Repetition method. Backend built with .NET 9 applying Clean Architecture with CQRS, Domain-Driven Design, and multi-layer architecture. React frontend with TypeScript, featuring flashcards, quizzes, progress tracking, and JWT authentication."
 image = "/images/posts/english-vocab-app.jpg"
 stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
-github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
+github = "https://github.com/PhamMinhKha0710/EnglishVocab"
 demo = ""
 
 [[projects]]
@@ -209,7 +209,7 @@ title = "MKLingo - Next.js Language Learning Platform"
 description = "Language learning platform built with Next.js 15, React 19, and TypeScript. Utilizes App Router, Server Components, Tailwind CSS 4, and Radix UI for modern and performant component library."
 image = "/images/posts/mklingo-app.jpg"
 stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
-github = "https://github.com/PhamMinhKha0710"
+github = "https://github.com/PhamMinhKha0710/mklingo"
 demo = ""
 
 [[projects]]
@@ -217,7 +217,7 @@ title = "E-Commerce Backend API"
 description = "Monolithic e-commerce backend built with .NET 9, CQRS, and Redis caching for real-time performance. Includes product management, shopping cart, orders, and JWT authentication."
 image = "/images/posts/ecommerce-api-dashboard.jpg"
 stack = [".NET 9", "CQRS", "Redis", "SQL Server", "JWT"]
-github = "https://github.com/PhamMinhKha0710"
+github = "https://github.com/TiepBK9056/SmartMileEcommerce"
 demo = ""
 
 [[projects]]
