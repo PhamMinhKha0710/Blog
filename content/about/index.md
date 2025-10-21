@@ -201,7 +201,7 @@ title = "EnglishVocabApp - Ứng dụng Học Từ Vựng"
 description = "Ứng dụng học từ vựng tiếng Anh với phương pháp Spaced Repetition. Backend .NET 9 áp dụng Clean Architecture với CQRS, Domain-Driven Design và multi-layer architecture. Frontend React với TypeScript, bao gồm flashcard, quiz, tracking tiến độ và JWT authentication."
 image = "/images/posts/english-vocab-app.png"
 stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
-github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
+github = "https://github.com/PhamMinhKha0710/EnglishVocab"
 demo = ""
 
 [[projects]]
@@ -209,7 +209,7 @@ title = "MKLingo - Next.js Language Learning Platform"
 description = "Nền tảng học ngôn ngữ được xây dựng với Next.js 15, React 19 và TypeScript. Sử dụng App Router, Server Components, Tailwind CSS 4 và Radix UI cho component library hiện đại và performant."
 image = "/images/posts/mklingo-app.jpg"
 stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
-github = "https://github.com/PhamMinhKha0710"
+github = "https://github.com/PhamMinhKha0710/mklingo"
 demo = ""
 
 [[projects]]
@@ -217,7 +217,7 @@ title = "E-Commerce Backend API"
 description = "Hệ thống backend thương mại điện tử monolithic được xây dựng với .NET 9, CQRS, và Redis caching để đạt hiệu suất real-time. Bao gồm quản lý sản phẩm, giỏ hàng, đơn hàng, và xác thực JWT."
 image = "/images/posts/ecommerce-api-dashboard.jpg"
 stack = [".NET 9", "CQRS", "Redis", "SQL Server", "JWT"]
-github = "https://github.com/PhamMinhKha0710"
+github = "https://github.com/TiepBK9056/SmartMileEcommerce"
 demo = ""
 
 [[projects]]
