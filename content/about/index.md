@@ -7,16 +7,18 @@ translationKey = "about"
 
 # Hero Section
 greeting = "Xin chào, tôi là"
-position = "Backend Developer • Sinh viên năm 4"
-heroTagline = "Đam mê xây dựng các hệ thống backend scalable với hiệu suất cao và kiến trúc rõ ràng."
+position = "Backend Developer"
+heroTagline = """Tôi không sống để theo khuôn mẫu. Tôi sống để tạo dấu ấn.
+Không cần hoàn hảo — chỉ cần mỗi ngày tốt hơn hôm qua.
+Và trên hành trình đó, tôi đang tạo ra điều có ý nghĩa."""
 githubUsername = "PhamMinhKha0710"
 resumeLink = "/cv/Pham_Minh_Kha_CV.pdf"
-status = "Sinh viên"
+status = "Sẵn sàng cho cơ hội mới"
 
 # Stats
 [[stats]]
-value = "Năm 4"
-label = "Sinh viên CNTT"
+value = "2+"
+label = "Năm kinh nghiệm"
 
 [[stats]]
 value = "5"
@@ -201,7 +203,7 @@ title = "EnglishVocabApp - Ứng dụng Học Từ Vựng"
 description = "Ứng dụng học từ vựng tiếng Anh với phương pháp Spaced Repetition. Backend .NET 9 áp dụng Clean Architecture với CQRS, Domain-Driven Design và multi-layer architecture. Frontend React với TypeScript, bao gồm flashcard, quiz, tracking tiến độ và JWT authentication."
 image = "/images/posts/english-vocab-app.png"
 stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
-github = "https://github.com/PhamMinhKha0710/EnglishVocab"
+github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
 demo = ""
 
 [[projects]]
@@ -209,7 +211,7 @@ title = "MKLingo - Next.js Language Learning Platform"
 description = "Nền tảng học ngôn ngữ được xây dựng với Next.js 15, React 19 và TypeScript. Sử dụng App Router, Server Components, Tailwind CSS 4 và Radix UI cho component library hiện đại và performant."
 image = "/images/posts/mklingo-app.jpg"
 stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
-github = "https://github.com/PhamMinhKha0710/mklingo"
+github = "https://github.com/PhamMinhKha0710"
 demo = ""
 
 [[projects]]
@@ -217,7 +219,7 @@ title = "E-Commerce Backend API"
 description = "Hệ thống backend thương mại điện tử monolithic được xây dựng với .NET 9, CQRS, và Redis caching để đạt hiệu suất real-time. Bao gồm quản lý sản phẩm, giỏ hàng, đơn hàng, và xác thực JWT."
 image = "/images/posts/ecommerce-api-dashboard.jpg"
 stack = [".NET 9", "CQRS", "Redis", "SQL Server", "JWT"]
-github = "https://github.com/TiepBK9056/SmartMileEcommerce"
+github = "https://github.com/PhamMinhKha0710"
 demo = ""
 
 [[projects]]
@@ -270,13 +272,14 @@ achievements = [
 
 [[experiences]]
 period = "2022 — Hiện tại"
-role = "Sinh viên Công nghệ Thông tin"
-company = "Đại học Công nghệ TP.HCM (K22)"
+role = "Sinh viên Công nghệ Phần mềm • GPA 3.2/4.0"
+company = "Đại học Công Nghệ TP.HCM (K22)"
 achievements = [
-  "Chuyên ngành: Kỹ thuật Phần mềm, tập trung Backend Development",
-  "Học và thực hành: Data Structures, Algorithms, Database Design, OOP",
-  "Tham gia các project nhóm về backend development",
-  "Nghiên cứu Clean Architecture và Design Patterns, Microservices architecture"
+  "Chuyên ngành: Công nghệ Phần mềm, tập trung Backend Development",
+  "GPA: 3.2/4.0 - Điểm trung bình tích lũy",
+  "Học và thực hành: Data Structures, Algorithms, Database Design, OOP, Design Patterns",
+  "Tham gia các project nhóm về backend development với .NET và Node.js",
+  "Nghiên cứu và áp dụng Clean Architecture, SOLID principles, Microservices"
 ]
 
 # Contact
@@ -308,21 +311,26 @@ icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><pat
 
 +++
 
-Tôi là **Phạm Minh Kha**, sinh viên năm cuối chuyên về **Backend Development** với .NET Core và Node.js.
+## Xin chào! Mình là Kha 👋
 
-### Experience
+> **"Code không chỉ để chạy, mà còn để kể câu chuyện"**
 
-Qua 5+ dự án cá nhân và nhóm, tôi đã:
-- Xây dựng RESTful APIs xử lý hàng nghìn requests với authentication/authorization
-- Thiết kế và optimize databases (SQL Server, MongoDB) từ schema design đến query optimization
-- Implement caching với Redis giảm 60% database load
-- Apply Clean Architecture và SOLID principles để code maintainable
-- Deploy với Docker và CI/CD pipelines
+Mình đam mê với Backend Development - nơi mà logic và kiến trúc tốt tạo nên những hệ thống mạnh mẽ. Code là cách mình giải quyết vấn đề và tạo ra những thứ hữu ích.
 
-### Approach
+### Mình đang làm gì?
 
-Tôi focus vào code quality, scalability, và best practices. Luôn phân tích requirements trước khi code, implement error handling đầy đủ, và document rõ ràng. Tự học nhanh qua documentation và thực hành trên projects.
+Hiện tại mình đang tập trung vào .NET Core và Node.js để xây dựng các API backends. Mình thích cảm giác khi một hệ thống chạy mượt mà, xử lý được nhiều requests, và code dễ maintain khi cần thêm tính năng mới.
 
-### Goal
+Mình đã build được 5 dự án từ ứng dụng học từ vựng, e-commerce backend, đến task management với real-time updates. Mỗi dự án đều dạy mình điều gì đó mới - từ Clean Architecture, CQRS pattern, đến cách optimize database và cache với Redis.
 
-Đang tìm vị trí Backend Developer Intern hoặc Junior position để work với senior engineers, contribute vào production systems, và grow trong môi trường có code review culture và tech stack hiện đại.
+### Mình thích gì?
+
+- **Clean Code**: Mình tin rằng code tốt không chỉ chạy được mà còn phải dễ đọc, dễ hiểu
+- **Problem Solving**: Thích cảm giác debug xong một bug khó, hoặc optimize được performance
+- **Learning**: Mỗi ngày đều có thứ mới để học, và mình thích điều đó
+
+### Mình đang hướng tới đâu?
+
+Mình đang tìm cơ hội thực tập hoặc vị trí Junior Backend Developer. Muốn được làm việc với những người giỏi hơn mình, học hỏi thêm về system design, và contribute vào những sản phẩm thực tế.
+
+Nếu bạn đang tìm một người có passion với backend, sẵn sàng học hỏi và cống hiến - hãy kết nối với mình nhé! 🚀

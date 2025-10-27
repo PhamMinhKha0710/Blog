@@ -7,16 +7,18 @@ translationKey = "about"
 
 # Hero Section
 greeting = "Hello, I'm"
-position = "Backend Developer • 4th Year Student"
-heroTagline = "Passionate about building scalable backend systems with high performance and clear architecture."
+position = "Backend Developer"
+heroTagline = """I don't live to fit a mold. I live to leave a mark.
+Not to be perfect — just better than yesterday.
+And on that path, I'm creating something meaningful."""
 githubUsername = "PhamMinhKha0710"
 resumeLink = "/cv/Pham_Minh_Kha_CV.pdf"
-status = "Student"
+status = "Open to opportunities"
 
 # Stats
 [[stats]]
-value = "4th Year"
-label = "CS Student"
+value = "2+"
+label = "Years Experience"
 
 [[stats]]
 value = "5"
@@ -201,7 +203,7 @@ title = "EnglishVocabApp - Vocabulary Learning Application"
 description = "English vocabulary learning app with Spaced Repetition method. Backend built with .NET 9 applying Clean Architecture with CQRS, Domain-Driven Design, and multi-layer architecture. React frontend with TypeScript, featuring flashcards, quizzes, progress tracking, and JWT authentication."
 image = "/images/posts/english-vocab-app.jpg"
 stack = [".NET 9", "React", "TypeScript", "Clean Architecture", "CQRS", "Tailwind CSS", "JWT"]
-github = "https://github.com/PhamMinhKha0710/EnglishVocab"
+github = "https://github.com/PhamMinhKha0710/EnglishVocabApp"
 demo = ""
 
 [[projects]]
@@ -209,7 +211,7 @@ title = "MKLingo - Next.js Language Learning Platform"
 description = "Language learning platform built with Next.js 15, React 19, and TypeScript. Utilizes App Router, Server Components, Tailwind CSS 4, and Radix UI for modern and performant component library."
 image = "/images/posts/mklingo-app.jpg"
 stack = ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI"]
-github = "https://github.com/PhamMinhKha0710/mklingo"
+github = "https://github.com/PhamMinhKha0710"
 demo = ""
 
 [[projects]]
@@ -217,7 +219,7 @@ title = "E-Commerce Backend API"
 description = "Monolithic e-commerce backend built with .NET 9, CQRS, and Redis caching for real-time performance. Includes product management, shopping cart, orders, and JWT authentication."
 image = "/images/posts/ecommerce-api-dashboard.jpg"
 stack = [".NET 9", "CQRS", "Redis", "SQL Server", "JWT"]
-github = "https://github.com/TiepBK9056/SmartMileEcommerce"
+github = "https://github.com/PhamMinhKha0710"
 demo = ""
 
 [[projects]]
@@ -270,13 +272,14 @@ achievements = [
 
 [[experiences]]
 period = "2022 — Present"
-role = "Computer Science Student"
-company = "University of Technology, HCMC (K22)"
+role = "Software Engineering Student • GPA 3.2/4.0"
+company = "University of Technology, Ho Chi Minh City (K22)"
 achievements = [
-  "Major: Software Engineering, focusing on Backend Development",
-  "Learning and practicing: Data Structures, Algorithms, Database Design, OOP",
-  "Participated in backend development group projects",
-  "Researched Clean Architecture and Design Patterns"
+  "Major: Software Engineering, specializing in Backend Development",
+  "GPA: 3.2/4.0 - Cumulative Grade Point Average",
+  "Learning and practicing: Data Structures, Algorithms, Database Design, OOP, Design Patterns",
+  "Participated in backend development group projects with .NET and Node.js",
+  "Researched and applied Clean Architecture, SOLID principles, Microservices"
 ]
 
 # Contact
@@ -308,21 +311,26 @@ icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><pat
 
 +++
 
-I'm **Pham Minh Kha**, a final-year Computer Science student specializing in **Backend Development** with .NET Core and Node.js.
+## Hey! I'm Kha 👋
 
-### Experience
+> **"Code is not just to run, but to tell a story"**
 
-Through 5 personal and group projects, I have:
-- Built RESTful APIs handling thousands of requests with authentication/authorization
-- Designed and optimized databases (SQL Server, MongoDB) from schema design to query optimization
-- Implemented caching with Redis reducing 60% database load
-- Applied Clean Architecture and SOLID principles for maintainable code
-- Deployed with Docker and CI/CD pipelines
+I'm passionate about Backend Development - where good logic and architecture create powerful systems. Code is how I solve problems and build things that matter.
 
-### Approach
+### What am I doing?
 
-I focus on code quality, scalability, and best practices. Always analyze requirements before coding, implement comprehensive error handling, and document clearly. Fast learner through documentation and hands-on practice.
+Currently, I'm focused on .NET Core and Node.js to build API backends. I love the feeling when a system runs smoothly, handles tons of requests, and the code is easy to maintain when adding new features.
 
-### Goal
+I've built 5 projects ranging from a vocabulary learning app, e-commerce backend, to task management with real-time updates. Each project taught me something new - from Clean Architecture, CQRS pattern, to database optimization and caching with Redis.
 
-Seeking Backend Developer Intern or Junior position to work with senior engineers, contribute to production systems, and grow in an environment with code review culture and modern tech stack.
+### What do I love?
+
+- **Clean Code**: I believe good code doesn't just work - it should be readable and understandable
+- **Problem Solving**: Love the feeling after debugging a tough bug or optimizing performance
+- **Learning**: There's something new to learn every day, and I enjoy that
+
+### Where am I heading?
+
+I'm looking for an internship or Junior Backend Developer position. I want to work with people better than me, learn more about system design, and contribute to real products.
+
+If you're looking for someone passionate about backend, eager to learn and contribute - let's connect! 🚀
